@@ -1,4 +1,4 @@
-import 'package:dictionary/colors.dart';
+import 'package:dictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 
 class ConfirmationDialog extends StatelessWidget {

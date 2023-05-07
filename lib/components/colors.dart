@@ -16,8 +16,10 @@ var routeredColor = Colors.red;
 var routeyellowColor = Colors.yellow[600];
 var routegreenColor = Colors.green;
 
-var minColor = const Color.fromARGB(255, 21, 197, 220);
-var selectColor = const Color.fromARGB(255, 65, 65, 65);
+// var mainColor = const Color.fromARGB(255, 21, 197, 220);
+var mainColor =  Colors.amber;
+var selectColor = const Color.fromARGB(255, 36, 36, 36);
+// var selectColor = const Color.fromARGB(255, 255, 248, 225);
 
 //Markers
 

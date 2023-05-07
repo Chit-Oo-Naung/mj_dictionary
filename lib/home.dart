@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:dictionary/colors.dart';
+import 'package:dictionary/components/colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,7 +13,7 @@ import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'components/rounded_input_field.dart';
+import 'package:dictionary/components/colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    print("HOME>>>>");
+    // print("HOME>>>>");
     _streamController = StreamController();
     _stream = _streamController.stream;
 
@@ -85,10 +85,13 @@ class _HomePageState extends State<HomePage>
   _getCloudData() async {
     final prefs = await SharedPreferences.getInstance();
     final storedData = prefs.getString("stored_data") ?? "";
-    print("SD>> $storedData");
+    // print("SD>> $storedData");
     if (storedData != "") {
       List userData = json.decode(storedData);
       _streamController.add(userData);
+
+      List _modifiedData = groupJSONByUniqueKey(userData, "level");
+      debugPrint("LEVEL LIST >>> $_modifiedData");
     }
 
     final url = Uri.parse(
@@ -136,6 +139,22 @@ class _HomePageState extends State<HomePage>
     }
 
     _streamController.add(outputList);
+  }
+
+  List<dynamic> groupJSONByUniqueKey(
+    List<dynamic> json,
+    String uniqueKey,
+  ) {
+    Map filtered = Map();
+
+    for (var i in json) {
+      if (!filtered.containsKey(i[uniqueKey])) {
+        filtered[i[uniqueKey]] = i;
+      }
+    }
+    List result = [];
+    filtered.forEach((k, v) => result.add(v));
+    return result;
   }
 
   @override
@@ -324,261 +343,278 @@ class _HomePageState extends State<HomePage>
       //   // //   ),
       //   // // ),
       // ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Positioned(
-                top: 0,
-                left: 0,
-                child: Container(
-                  color: selectColor,
-                  height: 70,
-                  width: MediaQuery.of(context).size.width,
-                )),
-            Column(
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  child: Row(
-                    children: [
-                      Text(
-                        "MJ Dictionary",
-                        style: TextStyle(
-                            fontSize: 19,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
+      body: Stack(
+        children: [
+          Positioned(
+              top: 0,
+              left: 0,
+              child: Container(
+                // color: mainColor,
+                height: 70,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(30.0),
+                      bottomRight: Radius.circular(30.0)),
+                  color: mainColor,
                 ),
-                Row(
+              )),
+          Column(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Row(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      width: MediaQuery.of(context).size.width,
-                      alignment: const Alignment(-1.0, 0.0),
-                      child: Container(
-                        child: AnimatedContainer(
-                          duration: const Duration(seconds: 1),
-                          height: 48.0,
-                          width: (toggle == 0)
-                              ? 48.0
-                              : MediaQuery.of(context).size.width,
-                          curve: Curves.easeOut,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30.0),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black26,
-                                spreadRadius: -10.0,
-                                blurRadius: 10.0,
-                                offset: Offset(0.0, 10.0),
-                              ),
-                            ],
-                          ),
-                          child: Stack(
-                            children: [
-                              AnimatedPositioned(
-                                duration: const Duration(seconds: 5),
-                                top: 6.0,
-                                right: 7.0,
-                                curve: Curves.easeOut,
-                                child: AnimatedOpacity(
-                                  opacity: (toggle == 0) ? 0.0 : 1.0,
-                                  duration: const Duration(seconds: 3),
-                                  child: showClear
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            debugPrint("CLICK CLEAR>>");
-                                            _controller.clear();
-                                            FocusScope.of(context)
-                                                .requestFocus(nodeSearch);
-                                          },
-                                          child: Container(
-                                            padding: const EdgeInsets.all(8.0),
-                                            decoration: BoxDecoration(
-                                              color: const Color(0xffF2F3F7),
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                            ),
-                                            child: AnimatedBuilder(
-                                              child: const Icon(
-                                                Icons.close_rounded,
-                                                size: 20.0,
-                                              ),
-                                              builder: (context, widget) {
-                                                return Transform.rotate(
-                                                  angle: _con.value * 2.0 * pi,
-                                                  child: widget,
-                                                );
-                                              },
-                                              animation: _con,
-                                            ),
-                                          ),
-                                        )
-                                      : Container(),
-                                ),
-                              ),
-                              AnimatedPositioned(
+                    // Text(
+                    //   "MJ Dictionary",
+                    //   style: TextStyle(
+                    //       fontSize: 19,
+                    //       color: selectColor,
+                    //       fontWeight: FontWeight.bold),
+                    // )
+                    Text("MJ Dictionary",
+                        style: TextStyle(
+                            fontSize: 19.0,
+                            fontWeight: FontWeight.bold,
+                            foreground: Paint()
+                              ..shader = const LinearGradient(
+                                colors: <Color>[
+                                  Colors.black,
+                                  Color.fromARGB(255, 137, 37, 37),
+                                  Color.fromARGB(255, 137, 37, 37),
+                                ],
+                              ).createShader(
+                                  Rect.fromLTWH(0.0, 0.0, 200.0, 100.0))))
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    width: MediaQuery.of(context).size.width,
+                    alignment: const Alignment(-1.0, 0.0),
+                    child: Container(
+                      child: AnimatedContainer(
+                        duration: const Duration(seconds: 1),
+                        height: 48.0,
+                        width: (toggle == 0)
+                            ? 48.0
+                            : MediaQuery.of(context).size.width,
+                        curve: Curves.easeOut,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30.0),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black26,
+                              spreadRadius: -10.0,
+                              blurRadius: 10.0,
+                              offset: Offset(0.0, 10.0),
+                            ),
+                          ],
+                        ),
+                        child: Stack(
+                          children: [
+                            AnimatedPositioned(
+                              duration: const Duration(seconds: 5),
+                              top: 6.0,
+                              right: 7.0,
+                              curve: Curves.easeOut,
+                              child: AnimatedOpacity(
+                                opacity: (toggle == 0) ? 0.0 : 1.0,
                                 duration: const Duration(seconds: 3),
-                                left: (toggle == 0) ? 20.0 : 40.0,
-                                curve: Curves.easeOut,
-                                top: 11.0,
-                                child: AnimatedOpacity(
-                                  opacity: (toggle == 0) ? 0.0 : 1.0,
-                                  duration: const Duration(seconds: 2),
-                                  child: Container(
-                                    height: 23.0,
-                                    width: 180.0,
-                                    child: TextField(
-                                      controller: _controller,
-                                      focusNode: nodeSearch,
-                                      onChanged: (String text) {
-                                        // if (_debounce?.isActive ?? false) _debounce.cancel();
-                                        // _debounce = Timer(const Duration(milliseconds: 1000), () {
-                                        _search();
-                                        setState(() {
-                                          if (_controller.text.isEmpty) {
-                                            showClear = false;
-                                          } else {
-                                            showClear = true;
-                                          }
-                                        });
-                                        // });
-                                      },
-                                      cursorRadius: const Radius.circular(10.0),
-                                      cursorWidth: 2.0,
-                                      cursorColor: Colors.black,
-                                      decoration: InputDecoration(
-                                        floatingLabelBehavior:
-                                            FloatingLabelBehavior.never,
-                                        labelText: 'Search...',
-                                        labelStyle: const TextStyle(
-                                          color: Color(0xff5B5B5B),
-                                          fontSize: 17.0,
-                                          fontWeight: FontWeight.w500,
+                                child: showClear
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          debugPrint("CLICK CLEAR>>");
+                                          _controller.clear();
+                                          FocusScope.of(context)
+                                              .requestFocus(nodeSearch);
+                                        },
+                                        child: Container(
+                                          padding: const EdgeInsets.all(8.0),
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xffF2F3F7),
+                                            borderRadius:
+                                                BorderRadius.circular(30.0),
+                                          ),
+                                          child: AnimatedBuilder(
+                                            child: const Icon(
+                                              Icons.close_rounded,
+                                              size: 20.0,
+                                            ),
+                                            builder: (context, widget) {
+                                              return Transform.rotate(
+                                                angle: _con.value * 2.0 * pi,
+                                                child: widget,
+                                              );
+                                            },
+                                            animation: _con,
+                                          ),
                                         ),
-                                        alignLabelWithHint: true,
-                                        border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                          borderSide: BorderSide.none,
-                                        ),
+                                      )
+                                    : Container(),
+                              ),
+                            ),
+                            AnimatedPositioned(
+                              duration: const Duration(seconds: 3),
+                              left: (toggle == 0) ? 20.0 : 40.0,
+                              curve: Curves.easeOut,
+                              top: 11.0,
+                              child: AnimatedOpacity(
+                                opacity: (toggle == 0) ? 0.0 : 1.0,
+                                duration: const Duration(seconds: 2),
+                                child: Container(
+                                  height: 23.0,
+                                  width: 180.0,
+                                  child: TextField(
+                                    controller: _controller,
+                                    focusNode: nodeSearch,
+                                    onChanged: (String text) {
+                                      // if (_debounce?.isActive ?? false) _debounce.cancel();
+                                      // _debounce = Timer(const Duration(milliseconds: 1000), () {
+                                      _search();
+                                      setState(() {
+                                        if (_controller.text.isEmpty) {
+                                          showClear = false;
+                                        } else {
+                                          showClear = true;
+                                        }
+                                      });
+                                      // });
+                                    },
+                                    cursorRadius: const Radius.circular(10.0),
+                                    cursorWidth: 2.0,
+                                    cursorColor: Colors.black,
+                                    decoration: InputDecoration(
+                                      floatingLabelBehavior:
+                                          FloatingLabelBehavior.never,
+                                      labelText: 'Search...',
+                                      labelStyle: const TextStyle(
+                                        color: Color(0xff5B5B5B),
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      alignLabelWithHint: true,
+                                      border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
+                                        borderSide: BorderSide.none,
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              Material(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(30.0),
-                                child: IconButton(
-                                  splashRadius: 19.0,
-                                  icon: Image.asset(
-                                    'assets/search.png',
-                                    height: 18.0,
-                                  ),
-                                  onPressed: () {
-                                    // setState(
-                                    //   () {
-                                    //     if (toggle == 0) {
-                                    //       toggle = 1;
-                                    //       _con.forward();
-                                    //     } else {
-                                    //       toggle = 0;
-                                    //       _controller.clear();
-                                    //       _con.reverse();
-                                    //     }
-                                    //   },
-                                    // );
-                                  },
+                            ),
+                            Material(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30.0),
+                              child: IconButton(
+                                splashRadius: 19.0,
+                                icon: Image.asset(
+                                  'assets/search.png',
+                                  height: 18.0,
                                 ),
+                                onPressed: () {
+                                  // setState(
+                                  //   () {
+                                  //     if (toggle == 0) {
+                                  //       toggle = 1;
+                                  //       _con.forward();
+                                  //     } else {
+                                  //       toggle = 0;
+                                  //       _controller.clear();
+                                  //       _con.reverse();
+                                  //     }
+                                  //   },
+                                  // );
+                                },
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.all(3.0),
-                    child: StreamBuilder(
-                      stream: _stream,
-                      builder: (BuildContext ctx, AsyncSnapshot snapshot) {
-                        if (snapshot.data == null) {
-                          return const Center(
-                            child: Text("Enter a search word"),
-                          );
-                        }
-
-                        if (snapshot.data == "waiting") {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-
-                        return ListView.separated(
-                          keyboardDismissBehavior:
-                              ScrollViewKeyboardDismissBehavior.onDrag,
-                          scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                          // itemExtent: 50,
-                          padding: const EdgeInsets.all(0),
-                          itemCount: snapshot.data.length,
-                          separatorBuilder: (BuildContext context, int index) =>
-                              const Divider(height: 1),
-                          itemBuilder: (BuildContext context, int index) {
-                            // return Container(child: Text("ABC>>> ${snapshot.data.length}"),);
-                            return ListTile(
-                              dense: true,
-                              visualDensity: const VisualDensity(
-                                  vertical: -3), // to compact
-                              onTap: () {
-                                debugPrint("CLICK>> ${snapshot.data[index]}");
-                              },
-                              title: Text(
-                                lan
-                                    ? snapshot.data[index]["japan"]
-                                    : snapshot.data[index]["myanmar"],
-                                style: const TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              subtitle: Text(
-                                lan
-                                    ? snapshot.data[index]["myanmar"]
-                                    : snapshot.data[index]["japan"],
-                                style: const TextStyle(
-                                    fontSize: 10,
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                              trailing: GestureDetector(
-                                  onTap: () async {
-                                    debugPrint("Click Speak>>>");
-                                    await tts.speak(
-                                        "${snapshot.data[index]["japan"]}");
-                                    debugPrint("Click Speak Done>>>");
-                                  },
-                                  child: const Icon(
-                                    Icons.volume_down_alt,
-                                  )),
-                            );
-                          },
+                  ),
+                ],
+              ),
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.all(3.0),
+                  child: StreamBuilder(
+                    stream: _stream,
+                    builder: (BuildContext ctx, AsyncSnapshot snapshot) {
+                      if (snapshot.data == null) {
+                        return const Center(
+                          child: Text("Enter a search word"),
                         );
-                      },
-                    ),
+                      }
+
+                      if (snapshot.data == "waiting") {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+
+                      return ListView.separated(
+                        keyboardDismissBehavior:
+                            ScrollViewKeyboardDismissBehavior.onDrag,
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        // itemExtent: 50,
+                        padding: const EdgeInsets.all(0),
+                        itemCount: snapshot.data.length,
+                        separatorBuilder: (BuildContext context, int index) =>
+                            const Divider(height: 1),
+                        itemBuilder: (BuildContext context, int index) {
+                          // return Container(child: Text("ABC>>> ${snapshot.data.length}"),);
+                          return ListTile(
+                            dense: true,
+                            visualDensity:
+                                const VisualDensity(vertical: -3), // to compact
+                            onTap: () {
+                              debugPrint("CLICK>> ${snapshot.data[index]}");
+                            },
+                            title: Text(
+                              lan
+                                  ? snapshot.data[index]["japan"]
+                                  : snapshot.data[index]["myanmar"],
+                              style: const TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              lan
+                                  ? snapshot.data[index]["myanmar"]
+                                  : snapshot.data[index]["japan"],
+                              style: const TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.normal),
+                            ),
+                            trailing: GestureDetector(
+                                onTap: () async {
+                                  debugPrint("Click Speak>>>");
+                                  await tts.speak(
+                                      "${snapshot.data[index]["japan"]}");
+                                  debugPrint("Click Speak Done>>>");
+                                },
+                                child: const Icon(
+                                  Icons.volume_down_alt,
+                                )),
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
-              ],
-            )
-          ],
-        ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

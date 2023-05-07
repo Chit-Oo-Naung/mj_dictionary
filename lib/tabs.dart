@@ -1,8 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:dictionary/alphabet.dart';
 import 'package:dictionary/bookmark.dart';
-import 'package:dictionary/colors.dart';
+import 'package:dictionary/components/colors.dart';
 import 'package:dictionary/dialog-helper.dart';
 import 'package:dictionary/home.dart';
+import 'package:dictionary/lessons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
@@ -18,14 +20,27 @@ class TabsPage extends StatefulWidget {
 class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
   late TabController _tabController;
 
+  static const _kFontFam = 'menuIcons';
+  static const String? _kFontPkg = null;
+
+  static const IconData book_1 =
+      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData font =
+      IconData(0xf031, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData language =
+      IconData(0xf1ab, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData book =
+      IconData(0xf314, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+
   // int _page = 0;
   // GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
   void initState() {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     super.initState();
 
-    _tabController = new TabController(vsync: this, length: 2);
+    _tabController = TabController(vsync: this, length: 5);
     _tabController.index = widget.tabIndex;
     _selectedItemPosition = widget.tabIndex;
   }
@@ -175,22 +190,20 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
   //     ),
   //   );
   // }
-  SnakeBarBehaviour snakeBarStyle = SnakeBarBehaviour.pinned;
+  SnakeBarBehaviour snakeBarStyle = SnakeBarBehaviour.floating;
   // ShapeBorder? bottomBarShape = const RoundedRectangleBorder(
   //   borderRadius: BorderRadius.all(Radius.circular(25)),
   // );
 
-  ShapeBorder? bottomBarShape = const BeveledRectangleBorder(
-      borderRadius: BorderRadius.only(
-    topLeft: Radius.circular(25),
-    topRight: Radius.circular(25),
-  ));
+  ShapeBorder? bottomBarShape = const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(25)),
+  );
   Color selectedColor = selectColor;
   Color unselectedColor = selectColor;
   int _selectedItemPosition = 2;
-  SnakeShape snakeShape = SnakeShape.rectangle;
+  SnakeShape snakeShape = SnakeShape.circle;
 
-  EdgeInsets padding = const EdgeInsets.all(0);
+  EdgeInsets padding = const EdgeInsets.only(left: 8, right: 8, bottom: 8);
 
   bool showSelectedLabels = true;
   bool showUnselectedLabels = true;
@@ -214,7 +227,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
       backgroundColor: Colors.white,
       // bottomNavigationBar: menu(),
       bottomNavigationBar: SnakeNavigationBar.color(
-        // height: 80,
+        height: 50,
         behaviour: snakeBarStyle,
         snakeShape: snakeShape,
         shape: bottomBarShape,
@@ -233,24 +246,33 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
 
         showUnselectedLabels: showUnselectedLabels,
         showSelectedLabels: showSelectedLabels,
-backgroundColor: Color.fromARGB(255, 159, 159, 159),
+        backgroundColor: mainColor,
         currentIndex: _selectedItemPosition,
         onTap: (index) => setState(() {
           _selectedItemPosition = index;
           _tabController.index = index;
         }),
         items: const [
+          BottomNavigationBarItem(
+              icon: Icon(font), label: 'Alphabet'),
+          BottomNavigationBarItem(
+              icon: Icon(language), label: 'Kanji'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark), label: 'bookmark'),
+              icon: Icon(book_1), label: 'Lessons'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite_rounded), label: 'Favourite'),
         ],
         selectedLabelStyle: const TextStyle(fontSize: 14),
         unselectedLabelStyle: const TextStyle(fontSize: 10),
       ),
-      body: new TabBarView(
-        physics: NeverScrollableScrollPhysics(),
+      body: TabBarView(
+        physics: const NeverScrollableScrollPhysics(),
         children: <Widget>[
+          AlphabetPage(),
+          LessonsPage(),
           HomePage(),
+          LessonsPage(),
           BookmarkPage(),
           // SettingMain(),
         ],
