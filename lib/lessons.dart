@@ -1,79 +1,118 @@
 import 'dart:convert';
 
 import 'package:dictionary/components/colors.dart';
+import 'package:dictionary/components/jsonprovider.dart';
+import 'package:dictionary/kanji.dart';
+import 'package:dictionary/unit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LessonsPage extends StatefulWidget {
-  const LessonsPage({super.key});
+  final int tabIndex;
+  const LessonsPage({
+    super.key,
+    required this.tabIndex,
+  });
 
   @override
   State<LessonsPage> createState() => _LessonsPageState();
 }
 
 class _LessonsPageState extends State<LessonsPage> {
-  late String level = "N5";
+  late String level = "";
   late String unit = "";
+  late List unitList = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (levelList.isNotEmpty) {
+      level = levelList[0]["level"];
+      _getUnits(level);
+    }
+  }
+
+  _getUnits(lvl) async {
+    final prefs = await SharedPreferences.getInstance();
+    final storedData = prefs.getString("stored_data") ?? "";
+    // print("SD>> $storedData");
+    List jsonList = [];
+    if (storedData != "") {
+      jsonList = json.decode(storedData);
+
+      setState(() {
+        unitList = getLessons(jsonList, lvl);
+      });
+    }
+  }
 
 // This shows a CupertinoModalPopup which hosts a CupertinoActionSheet.
-  void _showActionSheet(BuildContext context) {
+  void _showLevelActionSheet(BuildContext context) {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Title'),
-        message: const Text('Message'),
+        title: const Text('Level'),
+        // message: const Text('Message'),
         actions: <CupertinoActionSheetAction>[
-          CupertinoActionSheetAction(
-            /// This parameter indicates the action would be a default
-            /// defualt behavior, turns the action's text to bold text.
-            isDefaultAction: true,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Default Action'),
-          ),
-          CupertinoActionSheetAction(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Action'),
-          ),
-          CupertinoActionSheetAction(
-            /// This parameter indicates the action would perform
-            /// a destructive action such as delete or exit and turns
-            /// the action's text color to red.
-            isDestructiveAction: true,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Destructive Action'),
-          ),
+          for (var i = 0; i < levelList.length; i++)
+            CupertinoActionSheetAction(
+              /// This parameter indicates the action would be a default
+              /// defualt behavior, turns the action's text to bold text.
+              isDefaultAction: true,
+              onPressed: () {
+                debugPrint("CHANGE LEVEL>> ${levelList[i]["level"]}");
+                setState(() {
+                  level = levelList[i]["level"];
+
+                  _getUnits(level);
+                });
+                Navigator.pop(context);
+              },
+              child: Text(levelList[i]["level"]),
+            ),
+
+          // CupertinoActionSheetAction(
+          //   onPressed: () {
+          //     Navigator.pop(context);
+          //   },
+          //   child: const Text('Action'),
+          // ),
+          // CupertinoActionSheetAction(
+          //   /// This parameter indicates the action would perform
+          //   /// a destructive action such as delete or exit and turns
+          //   /// the action's text color to red.
+          //   isDestructiveAction: true,
+          //   onPressed: () {
+          //     Navigator.pop(context);
+          //   },
+          //   child: const Text('Destructive Action'),
+          // ),
         ],
       ),
     );
   }
 
-  clickCard() async {
-    final prefs = await SharedPreferences.getInstance();
-    final storedData = prefs.getString("stored_data") ?? "";
-    // print("SD>> $storedData");
-    if (storedData != "") {
-      List userData = json.decode(storedData);
-      // _streamController.add(userData);
-
-      List _modifiedData = groupJSONByUniqueKey(userData, "level");
-      debugPrint("LEVEL LIST >>> ${_modifiedData}");
+  clickCard(unit) async {
+    print("TABINDEX>> ${widget.tabIndex}");
+    if (widget.tabIndex == 1) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return KanjiPage(
+          unit: unit,
+          level: level,
+          unitList: unitList,
+        );
+      }));
+    } else {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return UnitPage(
+          unit: unit,
+          level: level,
+          unitList: unitList,
+        );
+      }));
     }
-
-    // final url = Uri.parse(
-    //     'https://drive.google.com/uc?export=view&id=1LdFG9fEBi3TUTLiawVX2ghbWS8-qUvMI');
-    // final response = await http.get(url);
-    // // if (response.statusCode == 200) {
-    // final data = json.decode(utf8.decode(response.bodyBytes));
-    // prefs.setString("stored_data", json.encode(data["items"]));
-
-    // // _streamController.add(data["items"]);
   }
 
   @override
@@ -103,7 +142,7 @@ class _LessonsPageState extends State<LessonsPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Lessons",
+                      widget.tabIndex == 1 ? "Kanji" : "Lessons",
                       style: TextStyle(
                         fontSize: 19.0,
                         fontWeight: FontWeight.bold,
@@ -119,42 +158,44 @@ class _LessonsPageState extends State<LessonsPage> {
                           ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        _showActionSheet(context);
-                        debugPrint("Click Level>>");
-                      },
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                level,
-                                style: TextStyle(
-                                  fontSize: 19.0,
-                                  fontWeight: FontWeight.bold,
-                                  foreground: Paint()
-                                    ..shader = const LinearGradient(
-                                      colors: <Color>[
-                                        Colors.black,
-                                        Color.fromARGB(255, 137, 37, 37),
-                                        Color.fromARGB(255, 137, 37, 37),
-                                      ],
-                                    ).createShader(
-                                      const Rect.fromLTWH(
-                                          0.0, 0.0, 200.0, 100.0),
+                    level.isEmpty
+                        ? Container()
+                        : GestureDetector(
+                            onTap: () {
+                              _showLevelActionSheet(context);
+                              debugPrint("Click Level>>");
+                            },
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      level,
+                                      style: TextStyle(
+                                        fontSize: 19.0,
+                                        fontWeight: FontWeight.bold,
+                                        foreground: Paint()
+                                          ..shader = const LinearGradient(
+                                            colors: <Color>[
+                                              Colors.black,
+                                              Color.fromARGB(255, 137, 37, 37),
+                                              Color.fromARGB(255, 137, 37, 37),
+                                            ],
+                                          ).createShader(
+                                            const Rect.fromLTWH(
+                                                0.0, 0.0, 200.0, 100.0),
+                                          ),
+                                      ),
                                     ),
-                                ),
-                              ),
-                              const Icon(
-                                Icons.swap_horiz_rounded,
-                                color: Color.fromARGB(255, 137, 37, 37),
-                              )
-                            ],
+                                    const Icon(
+                                      Icons.swap_horiz_rounded,
+                                      color: Color.fromARGB(255, 137, 37, 37),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           )
-                        ],
-                      ),
-                    )
                   ],
                 ),
               ),
@@ -171,11 +212,11 @@ class _LessonsPageState extends State<LessonsPage> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4),
-                          itemCount: 25,
+                          itemCount: unitList.length,
                           itemBuilder: (BuildContext context, int index) {
                             return GestureDetector(
-                              onTap: (){
-                                clickCard();
+                              onTap: () {
+                                clickCard(unitList[index]["lesson"]);
                               },
                               child: Card(
                                 shape: RoundedRectangleBorder(
@@ -201,7 +242,7 @@ class _LessonsPageState extends State<LessonsPage> {
                                         child: Padding(
                                       padding: const EdgeInsets.only(top: 8.0),
                                       child: Text(
-                                        '${index + 1}',
+                                        '${unitList[index]["lesson"]}',
                                         style: const TextStyle(
                                             fontSize: 23,
                                             fontWeight: FontWeight.bold),
@@ -228,20 +269,3 @@ class _LessonsPageState extends State<LessonsPage> {
     );
   }
 }
-
-List<dynamic> groupJSONByUniqueKey(
-  List<dynamic> json,
-  String uniqueKey,
-) {
-  Map filtered = Map();
-
-  for (var i in json) {
-    if (!filtered.containsKey(i[uniqueKey])) {
-      filtered[i[uniqueKey]] = i;
-    }
-  }
-  List result = [];
-  filtered.forEach((k, v) => result.add(v));
-  return result;
-}
-

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:dictionary/components/colors.dart';
+import 'package:dictionary/components/jsonprovider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -86,22 +87,36 @@ class _HomePageState extends State<HomePage>
     final prefs = await SharedPreferences.getInstance();
     final storedData = prefs.getString("stored_data") ?? "";
     // print("SD>> $storedData");
+    List jsonList = [];
     if (storedData != "") {
-      List userData = json.decode(storedData);
-      _streamController.add(userData);
+      jsonList = json.decode(storedData);
+      // _streamController.add(userData);
 
-      List _modifiedData = groupJSONByUniqueKey(userData, "level");
-      debugPrint("LEVEL LIST >>> $_modifiedData");
+      _streamController.add(jsonList);
+      await addLevel(jsonList);
+      // List _modifiedData = groupJSONByUniqueKey(userData, "level");
+      // debugPrint("LEVEL LIST >>> $_modifiedData");
     }
 
-    final url = Uri.parse(
-        'https://drive.google.com/uc?export=view&id=1LdFG9fEBi3TUTLiawVX2ghbWS8-qUvMI');
-    final response = await http.get(url);
-    // if (response.statusCode == 200) {
-    final data = json.decode(utf8.decode(response.bodyBytes));
-    prefs.setString("stored_data", json.encode(data["items"]));
+    if (firstTime) {
+      try {
+        final url = Uri.parse(
+            'https://drive.google.com/uc?export=view&id=1LdFG9fEBi3TUTLiawVX2ghbWS8-qUvMI');
+        final response = await http.get(url);
+        // if (response.statusCode == 200) {
+        final data = json.decode(utf8.decode(response.bodyBytes));
+        jsonList = data["items"];
+        prefs.setString("stored_data", json.encode(data["items"]));
+        setState(() {
+          firstTime = false;
+        });
+      } catch (er) {
+        print(er);
+      }
+    }
 
-    // _streamController.add(data["items"]);
+    _streamController.add(jsonList);
+    await addLevel(jsonList);
   }
 
   Future<String> get _localPath async {
@@ -570,41 +585,47 @@ class _HomePageState extends State<HomePage>
                             const Divider(height: 1),
                         itemBuilder: (BuildContext context, int index) {
                           // return Container(child: Text("ABC>>> ${snapshot.data.length}"),);
-                          return ListTile(
-                            dense: true,
-                            visualDensity:
-                                const VisualDensity(vertical: -3), // to compact
-                            onTap: () {
-                              debugPrint("CLICK>> ${snapshot.data[index]}");
-                            },
-                            title: Text(
-                              lan
-                                  ? snapshot.data[index]["japan"]
-                                  : snapshot.data[index]["myanmar"],
-                              style: const TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                          return Container(
+                            decoration: BoxDecoration(
+                                color: index % 2 == 0
+                                    ? Colors.white
+                                    : Colors.amber[50]),
+                            child: ListTile(
+                              dense: true,
+                              visualDensity: const VisualDensity(
+                                  vertical: -3), // to compact
+                              onTap: () {
+                                debugPrint("CLICK>> ${snapshot.data[index]}");
+                              },
+                              title: Text(
+                                lan
+                                    ? snapshot.data[index]["japan"]
+                                    : snapshot.data[index]["myanmar"],
+                                style: const TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              subtitle: Text(
+                                lan
+                                    ? snapshot.data[index]["myanmar"]
+                                    : snapshot.data[index]["japan"],
+                                style: const TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.normal),
+                              ),
+                              trailing: GestureDetector(
+                                  onTap: () async {
+                                    debugPrint("Click Speak>>>");
+                                    await tts.speak(
+                                        "${snapshot.data[index]["japan"]}");
+                                    debugPrint("Click Speak Done>>>");
+                                  },
+                                  child: const Icon(
+                                    Icons.volume_down_alt,
+                                  )),
                             ),
-                            subtitle: Text(
-                              lan
-                                  ? snapshot.data[index]["myanmar"]
-                                  : snapshot.data[index]["japan"],
-                              style: const TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.normal),
-                            ),
-                            trailing: GestureDetector(
-                                onTap: () async {
-                                  debugPrint("Click Speak>>>");
-                                  await tts.speak(
-                                      "${snapshot.data[index]["japan"]}");
-                                  debugPrint("Click Speak Done>>>");
-                                },
-                                child: const Icon(
-                                  Icons.volume_down_alt,
-                                )),
                           );
                         },
                       );

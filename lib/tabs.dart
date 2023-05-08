@@ -1,13 +1,18 @@
+import 'dart:convert';
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:dictionary/alphabet.dart';
 import 'package:dictionary/bookmark.dart';
 import 'package:dictionary/components/colors.dart';
-import 'package:dictionary/dialog-helper.dart';
+import 'package:dictionary/components/dialog-helper.dart';
+import 'package:dictionary/components/jsonprovider.dart';
 import 'package:dictionary/home.dart';
 import 'package:dictionary/lessons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 class TabsPage extends StatefulWidget {
   final int tabIndex;
@@ -43,6 +48,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
     _tabController = TabController(vsync: this, length: 5);
     _tabController.index = widget.tabIndex;
     _selectedItemPosition = widget.tabIndex;
+    _getCloudData();
   }
 
   @override
@@ -50,6 +56,42 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
     _tabController.dispose();
 
     super.dispose();
+  }
+
+  _getCloudData() async {
+    final prefs = await SharedPreferences.getInstance();
+    final storedData = prefs.getString("stored_data") ?? "";
+    // print("SD>> $storedData");
+    List jsonList = [];
+    if (storedData != "") {
+      jsonList = json.decode(storedData);
+      await addLevel(jsonList);
+      // _streamController.add(userData);
+
+      // List _modifiedData = groupJSONByUniqueKey(userData, "level");
+      // debugPrint("LEVEL LIST >>> $_modifiedData");
+    }
+
+    if (firstTime) {
+      try {
+        final url = Uri.parse(
+            'https://drive.google.com/uc?export=view&id=1LdFG9fEBi3TUTLiawVX2ghbWS8-qUvMI');
+        final response = await http.get(url);
+        // if (response.statusCode == 200) {
+        final data = json.decode(utf8.decode(response.bodyBytes));
+        jsonList = data["items"];
+        prefs.setString("stored_data", json.encode(data["items"]));
+        setState(() {
+          firstTime = false;
+        });
+      } catch (er) {
+        print(er);
+      }
+    }
+
+    await addLevel(jsonList);
+
+    // _streamController.add(data["items"]);
   }
 
   onWillPop() async {
@@ -253,13 +295,10 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
           _tabController.index = index;
         }),
         items: const [
-          BottomNavigationBarItem(
-              icon: Icon(font), label: 'Alphabet'),
-          BottomNavigationBarItem(
-              icon: Icon(language), label: 'Kanji'),
+          BottomNavigationBarItem(icon: Icon(font), label: 'Alphabet'),
+          BottomNavigationBarItem(icon: Icon(language), label: 'Kanji'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
-          BottomNavigationBarItem(
-              icon: Icon(book_1), label: 'Lessons'),
+          BottomNavigationBarItem(icon: Icon(book_1), label: 'Lessons'),
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite_rounded), label: 'Favourite'),
         ],
@@ -268,15 +307,19 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
       ),
       body: TabBarView(
         physics: const NeverScrollableScrollPhysics(),
-        children: <Widget>[
+        controller: _tabController,
+        children: const <Widget>[
           AlphabetPage(),
-          LessonsPage(),
+          LessonsPage(
+            tabIndex: 1,
+          ),
           HomePage(),
-          LessonsPage(),
+          LessonsPage(
+            tabIndex: 3,
+          ),
           BookmarkPage(),
           // SettingMain(),
         ],
-        controller: _tabController,
       ),
     );
     //   return Scaffold(
