@@ -99,7 +99,7 @@ class _AlphabetPageState extends State<AlphabetPage>
                         controller: tabController,
                         onTap: (((value) => {
                               setState(() {
-                                tabIndex = value;                                
+                                tabIndex = value;
                               })
                             })),
                         // give the indicator a decoration (color and border radius)
@@ -181,6 +181,106 @@ class AlphabetListView extends StatelessWidget {
       tts.setSpeechRate(0.4);
     }
 
+    void showFancyCustomDialog(BuildContext context, imgName) {
+      Dialog fancyDialog = Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          height: 300.0,
+          width: 300.0,
+          child: Stack(
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: 250,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Image.asset(imgName),
+              ),
+              // Container(
+              //   width: double.infinity,
+              //   height: 50,
+              //   alignment: Alignment.bottomCenter,
+              //   decoration: BoxDecoration(
+              //     color: Colors.red,
+              //     borderRadius: BorderRadius.only(
+              //       topLeft: Radius.circular(12),
+              //       topRight: Radius.circular(12),
+              //     ),
+              //   ),
+              //   child: Align(
+              //     alignment: Alignment.center,
+              //     child: Text(
+              //       "Dialog Title!",
+              //       style: TextStyle(
+              //           color: Colors.white,
+              //           fontSize: 20,
+              //           fontWeight: FontWeight.w600),
+              //     ),
+              //   ),
+              // ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: mainColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
+                      ),
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Got it!",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              // Align(
+              //   // These values are based on trial & error method
+              //   alignment: Alignment(1.05, -1.05),
+              //   child: InkWell(
+              //     onTap: () {
+              //       Navigator.pop(context);
+              //     },
+              //     child: Container(
+              //       decoration: BoxDecoration(
+              //         color: Colors.grey[200],
+              //         borderRadius: BorderRadius.circular(12),
+              //       ),
+              //       child: Icon(
+              //         Icons.close,
+              //         color: Colors.black,
+              //       ),
+              //     ),
+              //   ),
+              // ),
+            ],
+          ),
+        ),
+      );
+      showDialog(
+          context: context, builder: (BuildContext context) => fancyDialog);
+    }
+
     return GridView.builder(
       gridDelegate:
           const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
@@ -192,6 +292,11 @@ class AlphabetListView extends StatelessWidget {
                 onTap: () async {
                   await tts.speak("${list[index]["jp"]}");
                 },
+                onLongPress: () {
+                  if (list[index]["img"] != "") {
+                    showFancyCustomDialog(context, list[index]["img"]);
+                  }
+                },
                 child: Card(
                   // color: Colors.primaries[index % 10],
                   color: Colors.amber[100],
@@ -201,24 +306,38 @@ class AlphabetListView extends StatelessWidget {
                   ),
                   shadowColor: Colors.amberAccent,
                   elevation: 5,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "${list[index]["jp"]}",                          
-                          style: const TextStyle(
-                              color: Colors.black87,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                  child: Stack(
+                    children: [
+                      list[index]["img"] == ""
+                          ? Container()
+                          : Positioned(
+                              right: 5,
+                              bottom: 5,
+                              child: Icon(
+                                Icons.arrow_upward_rounded,
+                                size: 11,
+                                color: Colors.grey,
+                              )),
+                      Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "${list[index]["jp"]}",
+                              style: const TextStyle(
+                                  color: Colors.black87,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "${list[index]["eng"]}",
+                              style: const TextStyle(
+                                  color: Colors.black87, fontSize: 16),
+                            ),
+                          ],
                         ),
-                        Text(
-                          "${list[index]["eng"]}",
-                          style: const TextStyle(
-                              color: Colors.black87, fontSize: 16),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               );

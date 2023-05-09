@@ -83,17 +83,35 @@ class _HomePageState extends State<HomePage>
   //   _streamController.add(data["items"]);
   // }
 
+  List shuffle(List items) {
+    var random = new Random();
+
+    // Go through all elements.
+    for (var i = items.length - 1; i > 0; i--) {
+      // Pick a pseudorandom number according to the list length
+      var n = random.nextInt(i + 1);
+
+      var temp = items[i];
+      items[i] = items[n];
+      items[n] = temp;
+    }
+
+    return items;
+  }
+
   _getCloudData() async {
     final prefs = await SharedPreferences.getInstance();
     final storedData = prefs.getString("stored_data") ?? "";
     // print("SD>> $storedData");
     List jsonList = [];
+    bool restored = false;
     if (storedData != "") {
       jsonList = json.decode(storedData);
       // _streamController.add(userData);
 
-      _streamController.add(jsonList);
+      _streamController.add(shuffle(jsonList));
       await addLevel(jsonList);
+      restored = true;
       // List _modifiedData = groupJSONByUniqueKey(userData, "level");
       // debugPrint("LEVEL LIST >>> $_modifiedData");
     }
@@ -109,14 +127,16 @@ class _HomePageState extends State<HomePage>
         prefs.setString("stored_data", json.encode(data["items"]));
         setState(() {
           firstTime = false;
+          if (!restored) {
+            _streamController.add(shuffle(jsonList));
+          }
+
+          addLevel(jsonList);
         });
       } catch (er) {
         print(er);
       }
     }
-
-    _streamController.add(jsonList);
-    await addLevel(jsonList);
   }
 
   Future<String> get _localPath async {
@@ -580,7 +600,12 @@ class _HomePageState extends State<HomePage>
                         shrinkWrap: true,
                         // itemExtent: 50,
                         padding: const EdgeInsets.all(0),
-                        itemCount: snapshot.data.length,
+                        // itemCount: snapshot.data.length,
+                        itemCount: snapshot.data == null
+                            ? 0
+                            : (snapshot.data.length > 15
+                                ? 15
+                                : snapshot.data.length),
                         separatorBuilder: (BuildContext context, int index) =>
                             const Divider(height: 1),
                         itemBuilder: (BuildContext context, int index) {
