@@ -1,6 +1,6 @@
 {
-    "name": "dictionary",
-    "short_name": "dictionary",
+    "name": "mjdictionary",
+    "short_name": "mjdictionary",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

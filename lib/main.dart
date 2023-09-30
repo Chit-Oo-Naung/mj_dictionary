@@ -1,18 +1,32 @@
-import 'dart:async';
-import 'dart:convert';
-
-import 'package:dictionary/components/jsonprovider.dart';
-import 'package:dictionary/home.dart';
-import 'package:dictionary/tabs.dart';
-import 'package:dictionary/test.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:mjdictionary/components/custom_animation.dart';
+import 'package:mjdictionary/tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart';
-import 'package:provider/provider.dart';
 
 void main() {
-  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+  Paint.enableDithering = true;
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: [SystemUiOverlay.bottom]);
   runApp(const MyApp());
+  configLoading();
+}
+
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.dark
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..progressColor = Colors.black
+    ..backgroundColor = Colors.amber
+    ..indicatorColor = Colors.black
+    ..textColor = Colors.black
+    ..maskColor = Colors.black.withOpacity(0.5)
+    ..userInteractions = false
+    ..dismissOnTap = false
+    ..customAnimation = CustomAnimation();
 }
 
 class MyApp extends StatelessWidget {
@@ -31,6 +45,7 @@ class MyApp extends StatelessWidget {
       home: const TabsPage(
         tabIndex: 2,
       ),
+      builder: EasyLoading.init(),
     );
   }
 }

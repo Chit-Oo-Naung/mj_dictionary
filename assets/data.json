@@ -3,11 +3,6303 @@
         {
             "myanmar": "ကျွန်ုပ်၊ ကျွန်တော်/ ကျွန်မ",
             "japan": "わたし",
-            "type": "N",
+            "romaji": "watashi",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "私",
             "sentence": [
                 {
-                    "myanmar": "ကျွန်တော်သည် မီရဖြစ်ပါသည်။",
-                    "japan": "わたしは　ミヤーです。"
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သင်၊ ခင်ဗျား၊ ရှင်",
+            "japan": "あなた",
+            "romaji": "anata",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "貴方",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟိုလူ (ဟိုပုဂ္ဂိုလ်)",
+            "japan": "あのひと",
+            "romaji": "anohito",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "あの人",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဦး~၊ ဒေါ်~",
+            "japan": "~さん",
+            "romaji": "~san",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မောင်~၊ မ~",
+            "japan": "~ちゃん",
+            "romaji": "~cyan",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~လူမျိုး",
+            "japan": "~じん",
+            "romaji": "~jin",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဆရာ/ ဆရာမ",
+            "japan": "せんせい",
+            "romaji": "sensei",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "先生",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျောင်းဆရာ/ နည်းပြဆရာ",
+            "japan": "きょうし",
+            "romaji": "kyoushi",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "教師",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျောင်းသား/ ကျောင်းသူ",
+            "japan": "がくせい",
+            "romaji": "gakusei",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "学生",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကုမ္ပဏီဝန်ထမ်း",
+            "japan": "かいしゃいん",
+            "romaji": "kaisyain",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "会社員",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဝန်ထမ်း",
+            "japan": "しゃいん",
+            "romaji": "syain",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "社員",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘဏ်ဝန်ထမ်း",
+            "japan": "ぎんこういん",
+            "romaji": "ginkouin",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "銀行員",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဆရာဝန်",
+            "japan": "いしゃ",
+            "romaji": "isya",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "医者",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သုတေသနပညာရှင်",
+            "japan": "けんきゅうしゃ",
+            "romaji": "kenkyuusya",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "研究者",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တက္ကသိုလ်",
+            "japan": "だいがく",
+            "romaji": "daigaku",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "大学",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဆေးရုံ၊ ဆေးခန်း",
+            "japan": "びょういん",
+            "romaji": "byouin",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "病院",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်သူ (ဘယ်ပုဂ္ဂိုလ်) (どなた သည် だれ ၏ ယဥ်ကျေးသောအသုံး)",
+            "japan": "だれ（どなた）",
+            "romaji": "dare (donata)",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~နှစ် (အသက်ကိုဆိုလိုသည်)",
+            "japan": "~さい",
+            "romaji": "~sai",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~歳",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်နှနှစ်၊ အသက်ဘယ်လောက် (おいくつ　သည် なんさい ၏ယဥ်ကျေးသောအသုံး)",
+            "japan": "なんさい（おいくつ）",
+            "romaji": "nansai (oikutsu)",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何歳",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟုတ်ကဲ့",
+            "japan": "はい",
+            "romaji": "hai",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟင့်အင်း",
+            "japan": "いいえ",
+            "romaji": "iie",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တွေ့ရတာဝမ်းသာပါတယ်။ (မိမိကိုယ်ကိုမိတ်ဆက်ရာတွင်ပထမဆုံးအနေဖြင့်ပြောသောစကား)",
+            "japan": "はじめまして",
+            "romaji": "hajimemashite",
+            "type": "p",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "初めまして",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~က/မှလာပါတယ်။",
+            "japan": "~から きました",
+            "romaji": "~karakimashita",
+            "type": "p",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~から来ました",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "[ကျေးဇူးပြု၍] ရင်းရင်းနှီးနှီးဆက်ဆံပါလို့ [တောင်းဆိုပါရစေ]။/ ရင်းရင်းနှီးနှီးရှိချင်ပါတယ်။",
+            "japan": "[どうぞ] よろしく [おねがいします]。",
+            "romaji": "douzoyoroshikuonegaishimasu",
+            "type": "p",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "[どうぞ] よろしく [お願いします]。",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်ဆိတ်လောက် (တစ်ဖက်လူ၏အမည်၊ လိပ်စာ စသည့်ကိုယ်ရေးကိုယ်တာနှင့်ဆိုင်သော အကြောင်းအရာတို့ကို မေးမြန်းသောအခါတွင် သုံးသည်။",
+            "japan": "しつれいですが",
+            "romaji": "shitsureidesuga",
+            "type": "p",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "失礼ですが",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နာမည်ဘယ်လိုခေါ်ပါသလဲ။",
+            "japan": "おなまえは？",
+            "romaji": "onamaeha?",
+            "type": "p",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "お名前派？",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီဘက်က~ပါ။",
+            "japan": "こちらは~さんです。",
+            "romaji": "kochirahasandesu",
+            "type": "p",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အမေရိက",
+            "japan": "アメリカ",
+            "romaji": "amerika",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အင်္ဂလန်",
+            "japan": "イギリス",
+            "romaji": "igirisu",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အိန္ဒိယ",
+            "japan": "インド",
+            "romaji": "indo",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အင်ဒိုနီးရှား",
+            "japan": "インドネシア",
+            "romaji": "indoneshia",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကိုရီးယား",
+            "japan": "かんこく",
+            "romaji": "kankoku",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ထိုင်း/ယိုးဒယား",
+            "japan": "タイ",
+            "romaji": "tai",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တရုတ်",
+            "japan": "ちゅうごく",
+            "romaji": "chuugoku",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဂျာမနီ",
+            "japan": "ドイツ",
+            "romaji": "doitsu",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဂျပန်",
+            "japan": "にほん",
+            "romaji": "nihon",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "日本",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘရာဇီး",
+            "japan": "ブラヅル",
+            "romaji": "buraduru",
+            "type": "n",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "やま",
+            "romaji": "yama",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "やま",
+            "onnyomi": "サイ",
+            "level": "N5",
+            "kanji": "山",
+            "sentence": [
+                {
+                    "myanmar": "တောင်",
+                    "japan": "やま",
+                    "kanji": "山",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ဖူဂျီတောင်",
+                    "japan": "ふぎさん",
+                    "kanji": "ふぎ山",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "တောင်တက်ခြင်း",
+                    "japan": "とぎん",
+                    "kanji": "登山",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "かわ",
+            "romaji": "kawa",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "かわ",
+            "onnyomi": "セイ",
+            "level": "N5",
+            "kanji": "川",
+            "sentence": [
+                {
+                    "myanmar": "မြစ်",
+                    "japan": "かわ",
+                    "kanji": "川",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Mr.Yamagawa",
+                    "japan": "やまがわさん",
+                    "kanji": "山川さん",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "အင်းဒက်မြစ်",
+                    "japan": "インダスがわ",
+                    "kanji": "インダス川",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "た",
+            "romaji": "ta",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "た",
+            "onnyomi": "デン",
+            "level": "N5",
+            "kanji": "田",
+            "sentence": [
+                {
+                    "myanmar": "စပါးခင်း",
+                    "japan": "たんぼ",
+                    "kanji": "田",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Mr.Yamada",
+                    "japan": "やまださん",
+                    "kanji": "山田さん",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ရေသွန်းစပါး",
+                    "japan": "すいでん",
+                    "kanji": "水田",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ရေနံမြေ",
+                    "japan": "ゆでん",
+                    "kanji": "油田",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "ひ",
+            "romaji": "hi",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "ひ/び",
+            "onnyomi": "ニチ/ニヅツ",
+            "level": "N5",
+            "kanji": "日",
+            "sentence": [
+                {
+                    "myanmar": "နေ",
+                    "japan": "ひ",
+                    "kanji": "日",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Sunday",
+                    "japan": "にちようび",
+                    "kanji": "日曜日",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ဂျပန်",
+                    "japan": "にほん",
+                    "kanji": "日本",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "အားလပ်ရက်",
+                    "japan": "きゅうじつ",
+                    "kanji": "休日",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "つき",
+            "romaji": "tsuki",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "つき",
+            "onnyomi": "ゲツ/ガツ",
+            "level": "N5",
+            "kanji": "月",
+            "sentence": [
+                {
+                    "myanmar": "လ",
+                    "japan": "つき",
+                    "kanji": "月",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Monday",
+                    "japan": "げつようび",
+                    "kanji": "月曜日",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "၁လပိုင်း(January)",
+                    "japan": "いちがつ",
+                    "kanji": "１月",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ယခုလ",
+                    "japan": "こんげつ",
+                    "kanji": "今月",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "ひ",
+            "romaji": "hi",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "ひ",
+            "onnyomi": "カ",
+            "level": "N5",
+            "kanji": "火",
+            "sentence": [
+                {
+                    "myanmar": "မီး",
+                    "japan": "ひ",
+                    "kanji": "火",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Tuesday",
+                    "japan": "かようび",
+                    "kanji": "火曜日",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "မီးတောင်",
+                    "japan": "かざん",
+                    "kanji": "火山",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "မီးလောက်မှု",
+                    "japan": "かじ",
+                    "kanji": "火事",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "みず",
+            "romaji": "mizu",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "みず",
+            "onnyomi": "スイ",
+            "level": "N5",
+            "kanji": "水",
+            "sentence": [
+                {
+                    "myanmar": "ရေ",
+                    "japan": "みず",
+                    "kanji": "水",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Wednesday",
+                    "japan": "すいようび",
+                    "kanji": "水曜日",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ရေသွန်းစပါး",
+                    "japan": "すいでん",
+                    "kanji": "水田",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ရေပိုက်",
+                    "japan": "すいどう",
+                    "kanji": "水道",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "き",
+            "romaji": "ki",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "き",
+            "onnyomi": "モク",
+            "level": "N5",
+            "kanji": "木",
+            "sentence": [
+                {
+                    "myanmar": "သစ်ပင်",
+                    "japan": "き",
+                    "kanji": "木",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Thursday",
+                    "japan": "もくようび",
+                    "kanji": "木曜日",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "きん / かね",
+            "romaji": "kinkane",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "かね",
+            "onnyomi": "キン",
+            "level": "N5",
+            "kanji": "金",
+            "sentence": [
+                {
+                    "myanmar": "ပိုက်ဆံ",
+                    "japan": "おかね",
+                    "kanji": "お金",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ရွှေ",
+                    "japan": "きん",
+                    "kanji": "金",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Friday",
+                    "japan": "きんようび",
+                    "kanji": "金曜日",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "つち",
+            "romaji": "tsuchi",
+            "type": "kanji",
+            "lesson": "1",
+            "new": "",
+            "konnyomi": "つち",
+            "onnyomi": "ド/ト",
+            "level": "N5",
+            "kanji": "土",
+            "sentence": [
+                {
+                    "myanmar": "မြေကြီး",
+                    "japan": "つち",
+                    "kanji": "土",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "Saturday",
+                    "japan": "どようび",
+                    "kanji": "土曜日",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "ကုန်းမြေ",
+                    "japan": "とち",
+                    "kanji": "土地",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "いち",
+            "romaji": "ichi",
+            "type": "kanji",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "ひとーつ",
+            "onnyomi": "イチ/イッ",
+            "level": "N5",
+            "kanji": "一",
+            "sentence": [
+                {
+                    "myanmar": "၁ခု",
+                    "japan": "ひとつ",
+                    "kanji": "一つ",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "၁လပိုင်း",
+                    "japan": "いちがつ",
+                    "kanji": "一月",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "၁ရက်နေ့",
+                    "japan": "*ついたち",
+                    "kanji": "一日",
+                    "sennew": ""
+                },
+                {
+                    "myanmar": "၁ရက်",
+                    "japan": "いちにち",
+                    "kanji": "一日",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒါ (ပြောသူ၏ အနီး၌ရှိသောအရာ)",
+            "japan": "これ",
+            "romaji": "kore",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲ့ဒါ (ပြောသူ၏ အနီး၌ရှိသောအရာ)",
+            "japan": "それ",
+            "romaji": "sore",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟိုဟာ (ပြောသူ၊ နာသူတို့မှ ကွာလှမ်းသောနေရာ၌ရှိသောအရာ)",
+            "japan": "あれ",
+            "romaji": "are",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီ~",
+            "japan": "この~",
+            "romaji": "kono",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲ့ဒီ~",
+            "japan": "その~",
+            "romaji": "sono",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟို~",
+            "japan": "あの~",
+            "romaji": "ano",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စာအုပ်",
+            "japan": "ほん",
+            "romaji": "hon",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "本",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဘိဓာန်",
+            "japan": "じしょ",
+            "romaji": "zisyo",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "辞書",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မဂ္ဂဇင်း",
+            "japan": "ざっし",
+            "romaji": "zasshi",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "雑誌",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သတင်းစာ",
+            "japan": "しんぶん",
+            "romaji": "shinbun",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "新聞",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဗလာစာအုပ်၊ မှတ်စုစာအုပ်",
+            "japan": "ノート",
+            "romaji": "noto",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အိတ်ဆောင်မှတ်စု",
+            "japan": "てちょう",
+            "romaji": "tecyou",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "手帳",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လပ်စာကတ်",
+            "japan": "めいし",
+            "romaji": "meishi",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "名刺",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "(ခရက်ဒစ်)ကတ်",
+            "japan": "カード",
+            "romaji": "kado",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ခဲတံ",
+            "japan": "えんびつ",
+            "romaji": "enbitsu",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "鉛津",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘောပင်",
+            "japan": "ボールペン",
+            "romaji": "borupen",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ခဲဆံဘောပင်",
+            "japan": "シャープペンシル",
+            "romaji": "syapupenshiru",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သော့ (သော့ချောင်း၊သော့အိမ်)",
+            "japan": "かぎ",
+            "romaji": "kagi",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "鍵",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နာရီ",
+            "japan": "とけい",
+            "romaji": "tokei",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "時計",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ထီး",
+            "japan": "かさ",
+            "romaji": "kasa",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "傘",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အိတ်၊ လွယ်အိတ်",
+            "japan": "かばん",
+            "romaji": "kaban",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စီဒီ",
+            "japan": "CD",
+            "romaji": "cd",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရုပ်မြင်သံကြား၊ တီဗီ",
+            "japan": "テレビ",
+            "romaji": "terebi",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရေဒီယို",
+            "japan": "ラヅオ",
+            "romaji": "raduo",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကင်မရာ",
+            "japan": "カメラ",
+            "romaji": "kamera",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကွန်ပျူတာ",
+            "japan": "コンビューター",
+            "romaji": "konbyuta",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကား၊ (မော်တော်) ယာဉ်",
+            "japan": "くるま",
+            "romaji": "kuruma",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "車",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စာကြည့်ခုံ၊ စာရေးခုံ",
+            "japan": "つくえ",
+            "romaji": "tsukue",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "机",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ထိုင်ခုံ",
+            "japan": "いす",
+            "romaji": "isu",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ချော့ကလက်",
+            "japan": "チョコレート",
+            "romaji": "cyokoreto",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကော်ဖီ",
+            "japan": "コーヒー",
+            "romaji": "kohi",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အပြန်လက်ဆောင်၊ အမှတ်တရလက်ဆောင်",
+            "japan": "[お]みやげ",
+            "romaji": "omiyage",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "[お]土産",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အင်္ဂလိပ်စာ",
+            "japan": "えいご",
+            "romaji": "eigo",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "英語",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဂျပန်စာ",
+            "japan": "にほんご",
+            "romaji": "nihongo",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "日本語",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~စာ၊ ~ဘာသာ",
+            "japan": "~ご",
+            "romaji": "go",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~語",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘာ၊ ဘယ်ဟာ",
+            "japan": "なん",
+            "romaji": "nan",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲ့ဒီလို",
+            "japan": "そう",
+            "romaji": "sou",
+            "type": "n",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲ့..၊ ဟို.. (အားနာသော၊ ချီတုံချတုံဖြစ်သောစိတ်ဖြင့်တစ်ဖက်လူအားလှမ်း၍ခေါ်သောစကား)",
+            "japan": "あのう",
+            "romaji": "anou",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟင် (မထင်တှတ်ထားသောအရာကိုကြားလိုက်ရသောအခါမျိုးတွင်အသုံးပြုသည်။)",
+            "japan": "えっ",
+            "romaji": "e",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ယူပါ။ လက်ခံပါ။ (ပစ္စည်းတစ်စုံတစ်ခုကို လက်ခံယူစေလိုသောအခါမျိုးတွင်အသုံးပြုသည်။)",
+            "japan": "どうそ。",
+            "romaji": "douso",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျေးဇူးတင်ပါတယ်။",
+            "japan": "[どうも]ありがとう[ございます]。",
+            "romaji": "domoarigatougozaimasu",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟုတ်လား။",
+            "japan": "そうですか。",
+            "romaji": "soudesuka",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မဟုတ်ဘူး။",
+            "japan": "ちがいます",
+            "romaji": "chigaimasu",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "違います",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အယ် (ရုတ်တရက်သတိပြုမိသောအခါမျိုးတွင် အသုံးပြုသည်။)",
+            "japan": "あ",
+            "romaji": "a",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အခုချိန်ကစပြီးအကူညီရယူပါရစေ၊ (အခုချိန်ကစ၍ပတ်သက်ဆက်ဆံရမည့်လူနှင့်ပထမဆုံးအကြိမ်တွေ့သောအခါတွင်ပြောသောနှုတ်ဆက်စကား)",
+            "japan": "これから　おせわに　なります。",
+            "romaji": "korekaraosewaninarimasu",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "これから　お世話に　なります。",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျွန်တော့်/ကျွန်မဘက်ကလည်းရင်းရင်းနှီးနှီးရှိချင်ပါတယ်။",
+            "japan": "こちらこそ　[どうぞ]　よろしく　[おねがいします]。",
+            "romaji": "kochirakosodouzoyoroshikuonedaishimasu",
+            "type": "p",
+            "lesson": "2",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "こちらこそ　[どうぞ]　よろしく　[お願いします]",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီ",
+            "japan": "ここ",
+            "romaji": "koko",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲဒီ",
+            "japan": "そこ",
+            "romaji": "soko",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟို",
+            "japan": "あそこ",
+            "romaji": "asoko",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်",
+            "japan": "どこ",
+            "romaji": "doko",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီဘက်(ここ၏ယဉ်ကျေးသောအသုံး)",
+            "japan": "こちら",
+            "romaji": "kochira",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲဒီဘက်(そこ၏ယဉ်ကျေးသောအသုံး)",
+            "japan": "そちら",
+            "romaji": "sochira",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟိုဘက်(あそこ၏ယဉ်ကျေးသောအသုံး)",
+            "japan": "あちら",
+            "romaji": "achira",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်(どこ၏ယဉ်ကျေးသောအသုံး)",
+            "japan": "どちら",
+            "romaji": "dochira",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စာသင်ခန်း",
+            "japan": "きょうしつ",
+            "romaji": "kyoushitsu",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "教室",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ထမင်းစားဆောင်၊ စားသောက်ဆိုင်၊ ကန်တင်း",
+            "japan": "しょくどう",
+            "romaji": "syokudou",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "食堂",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရုံးခန်း",
+            "japan": "じむしょ",
+            "romaji": "jimusyo",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "事務所",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အစည်းအဝေးခန်း",
+            "japan": "かいぎしつ",
+            "romaji": "kaigishitsu",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "会議室",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဧည့်ကြိုကောင်တာ",
+            "japan": "うけつけ",
+            "romaji": "uketsuke",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "受付",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နားနေခန်း",
+            "japan": "ロビー",
+            "romaji": "robi",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အခန်း",
+            "japan": "へや",
+            "romaji": "heya",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "部屋",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အိမ်သာ(သန့်စင်ခန်း)",
+            "japan": "トイレ（おてあらい）",
+            "romaji": "toireotearai",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "お手洗い",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လှေကား",
+            "japan": "かいだん",
+            "romaji": "kaidan",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "階段",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဓာတ်လှေကား",
+            "japan": "イレベーター",
+            "romaji": "irebeta",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရွေ့လျားစက်လှေကား",
+            "japan": "イスカレーター",
+            "romaji": "isukareta",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အလိုလျောက်ဈေးရောင်းစက်",
+            "japan": "じどうはんばいき",
+            "romaji": "jidouhanbaiki",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "自動販売機",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တယ်လီဖုန် (ဖုန်း၊ဖုန်းလာ၍ခေါ်ပေးခြင်း)",
+            "japan": "でんわ",
+            "romaji": "denwa",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "電話",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တိုင်းပြည်၊ နိုင်ငံ",
+            "japan": "[お]くに",
+            "romaji": "",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "[お]国",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကုမ္ပဏီ",
+            "japan": "かいしゃ",
+            "romaji": "kaisya",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "会社",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အိမ်",
+            "japan": "うち",
+            "romaji": "uchi",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဖိနပ်",
+            "japan": "くつ",
+            "romaji": "kutsu",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "靴",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နက်ကတိုင်",
+            "japan": "ネクタイ",
+            "romaji": "nekutai",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဝိုင်အရက်",
+            "japan": "ワイン",
+            "romaji": "wain",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အရောင်း (ပစ္စည်းထားသော)နေရာ",
+            "japan": "うりば",
+            "romaji": "uriba",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "売り場",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မြေအောက်",
+            "japan": "ちか",
+            "romaji": "chika",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "地下",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~ထပ်",
+            "japan": "~かい（だい）",
+            "romaji": "kaidai",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~楷",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်နှထပ်၊ ဘယ်အထပ်",
+            "japan": "なんがい",
+            "romaji": "nangai",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何階",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~ယန်း၊ ယန်း",
+            "japan": "~えん",
+            "romaji": "en",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~円",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်လောက် (ငွေကြေးတွင်သာသုံးသည်)",
+            "japan": "いくら",
+            "romaji": "ikura",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်ရာ၊ ရာ",
+            "japan": "ひゃく",
+            "romaji": "hyaku",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "百",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်ထောင်၊ ထောင်",
+            "japan": "せん",
+            "romaji": "sen",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "千",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်သောင်း၊ သောင်း",
+            "japan": "まん",
+            "romaji": "man",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "万",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်ဆိတ်လောက် (တစ်စုံတစ်ဦးကိုခေါ်သောအခါတွင်သုံးသည်။)",
+            "japan": "すみません。",
+            "romaji": "sumimasen",
+            "type": "p",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျေးဇူးပဲ။ ကျေးဇူးပါ။",
+            "japan": "どうも",
+            "romaji": "doumo",
+            "type": "p",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကြိုဆိုပါတယ်။ (ဆိုင်အတွင်းသို့ဝင်လာသော ဧည့်သည်အားနှုတ်ခွန်းဆက်ခြင်း)",
+            "japan": "いらっしゃいませ。",
+            "romaji": "irassyaimase",
+            "type": "p",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "[~ကို]ပြပေးပါ။",
+            "japan": "[~を]]みせてください。",
+            "romaji": "womisetekudasai",
+            "type": "p",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "[~を]見せてください。",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကဲ၊ ဒါဖြင့်",
+            "japan": "じゃ",
+            "romaji": "jya",
+            "type": "p",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "[~ကို]ပေးပါ။",
+            "japan": "[~を]ください。",
+            "romaji": "wokudasai",
+            "type": "p",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အီတလီ",
+            "japan": "イタリア",
+            "romaji": "itaria",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဆွစ်ဇလန်",
+            "japan": "スイス",
+            "romaji": "suisu",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပြင်သစ်",
+            "japan": "フランス",
+            "romaji": "furansu",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဂျာကာတာ",
+            "japan": "ジャカルタ",
+            "romaji": "jyakaruta",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘန်ကောက်",
+            "japan": "バンコク",
+            "romaji": "bankoku",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘာလင်",
+            "japan": "ベルリン",
+            "romaji": "berurin",
+            "type": "n",
+            "lesson": "3",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": 
+            "အိပ်ရာထသည်,ထားသည် ",
+            "japan": "おきます",
+            "romaji": "okimasu",
+            "type": "v",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "起きます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အိပ်သည်",
+            "japan": "ねます",
+            "romaji": "nemasu",
+            "type": "v",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "寝ます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အလုပ်လုပ်သည်",
+            "japan": "はたらきます",
+            "romaji": "hatarakimasu",
+            "type": "v",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "働きます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အနားယူသည်",
+            "japan": "やすみます",
+            "romaji": "yasumimasu",
+            "type": "v",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "休みます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လေ့လာသည်။ ဆည်းပူးသည်။ ကျက်မှတ်သည်။",
+            "japan": "べんきょうします",
+            "romaji": "benkyooshimasu",
+            "type": "v",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "勉強します",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပြီးဆုံးသည်။",
+            "japan": "おわります",
+            "romaji": "owarimasu",
+            "type": "v",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "終わります",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကုန်တိုက်",
+            "japan": "デパート",
+            "romaji": "depaato",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘဏ်",
+            "japan": "ぎんこう",
+            "romaji": "ginkoo",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "銀行",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စာတိုက်",
+            "japan": "ゆうびんきょく",
+            "romaji": "ruubinkyoku",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "郵便局",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စာကြည့်တိုက်",
+            "japan": "としょかん",
+            "romaji": "toshokan",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "図書館",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+
+
+        {
+            "myanmar": "အနုပညာပြတိုက်",
+            "japan": "びじゅつかん",
+            "romaji": "bijuttskan",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "美術館",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ယခု",
+            "japan": "いま",
+            "romaji": "ima",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "今",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~နာရီ",
+            "japan": "~じ",
+            "romaji": "ji",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~時",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~မိနစ်/မိနစ်~",
+            "japan": "~ふん/~ぷん",
+            "romaji": "~fun/~pun",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~分",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ခွဲ၊တစ်ဝက်",
+            "japan": "はん",
+            "romaji": "han",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "半",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်နှနာရီ",
+            "japan": "なんじ",
+            "romaji": "nanji",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何時",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်နှမိနှစ်",
+            "japan": "なんぷん",
+            "romaji": "nanpun",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何分",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နံနက်ပိုင်း",
+            "japan": "ごぜん",
+            "romaji": "gozen",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "午前",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မွန်းလွဲပိုင်း",
+            "japan": "ごご",
+            "romaji": "gogo",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "午後",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နံနက်",
+            "japan": "あさ",
+            "romaji": "asa",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "朝",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },{
+            "myanmar": "နေ့၊နေ့လယ် ",
+            "japan": "ひる",
+            "romaji": "hiru",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "昼",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ည",
+            "japan": "ばん（よる）",
+            "romaji": "ban(yoru)",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "晩（夜）",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်နေ့က",
+            "japan": "おととい",
+            "romaji": "ototoi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်နေ့က",
+            "japan": "きのう",
+            "romaji": "kinoo",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "昨日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီနေ့",
+            "japan": "きょう",
+            "romaji": "kyoo",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "今日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မနက်ဖြန်၊မနက်ဖန်",
+            "japan": "あした",
+            "romaji": "ashita",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "明日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်နေ့က",
+            "japan": "あさって",
+            "romaji": "asatte",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "明後日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီနေ့မနက်၊ဒီမနက်",
+            "japan": "けさ",
+            "romaji": "kesa",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "今朝",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီနေ့ည၊ဒီည",
+            "japan": "こんばん",
+            "romaji": "konban",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "今晩",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အနားယူချိန်၊အားလပ်ရက်၊နားရက်",
+            "japan": "やすみ",
+            "romaji": "yasumi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "休み",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နေ့ခင်းနားချိန်",
+            "japan": "ひるやすみ",
+            "romaji": "hiruyasumi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "昼休み",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စာမေးပွဲ",
+            "japan": "しけん",
+            "romaji": "shiken",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "試験",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အစည်းအဝေး",
+            "japan": "かいぎ",
+            "romaji": "kaigi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "会議",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရုပ်ရှင်",
+            "japan": "えいが",
+            "romaji": "eiga",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "映画",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မနက်တိုင်း",
+            "japan": "まいあさ",
+            "romaji": "maiasa",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "毎朝",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ညတိုင်း",
+            "japan": "まいばん",
+            "romaji": "maiban",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "毎晩",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နေ့တိုင်း",
+            "japan": "まいにち",
+            "romaji": "mainichi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "毎日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တနင်္လာနေ့",
+            "japan": "げつようび",
+            "romaji": "getsuyoobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "月曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အင်္ဂါနေ့",
+            "japan": "かようび",
+            "romaji": "kayoobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "火曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဗုဒ္ဓဟူးနေ့",
+            "japan": "すいようび",
+            "romaji": "suiyoobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "水曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },{
+            "myanmar": "ကြာသပတေးနေ့",
+            "japan": "もくようび",
+            "romaji": "mokuyoobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "木曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သောကြာနေ့",
+            "japan": "きんようび",
+            "romaji": "kinyouobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "金曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စနေနေ့",
+            "japan": "どようび",
+            "romaji": "doyoobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "土曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တနင်္ဂနွေနေ့",
+            "japan": "にちようび",
+            "romaji": "nichiyoobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "日曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်နေ့၊ဘယ်ရက်",
+            "japan": "なんようび",
+            "romaji": "nanyoobi",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何曜日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မှ/က",
+            "japan": "〜から",
+            "romaji": "kara",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အထိ",
+            "japan": "〜まで",
+            "romaji": "made",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နှင့်",
+            "japan": "〜と〜",
+            "romaji": "to",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မလွယ်ဘူးနော်။ဒုက္ခပဲနော်။",
+            "japan": "たいへんですね",
+            "romaji": "taihendessune",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နံပါတ်",
+            "japan": "ばんごう",
+            "romaji": "bangou",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "番号",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နံပါတ်ဘယ်လောက်",
+            "japan": "なんばん",
+            "romaji": "nanban",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲ့ဒီဘက်",
+            "japan": "そちら",
+            "romaji": "sochira",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နယူးယောက်",
+            "japan": "ニユーヨーク",
+            "romaji": "niyuuyooku",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပီကင်း",
+            "japan": "ペキン",
+            "romaji": "pekin",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နံပါတ်",
+            "japan": "ロサンゼルス",
+            "romaji": "rosanzerusu",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လန်ဒန်",
+            "japan": "ロンドン",
+            "romaji": "rondon",
+            "type": "n",
+            "lesson": "4",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သွားသည်",
+            "japan": "いきます",
+            "romaji": "ikimasu",
+            "type": "v",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "行きます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လာသည်",
+            "japan": "きます",
+            "romaji": "kimasu",
+            "type": "v",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "来ます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပြန်သည်",
+            "japan": "かえります",
+            "romaji": "kaerimasu",
+            "type": "v",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "帰ります",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျောင်း",
+            "japan": "がっこう",
+            "romaji": "gakkou",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "学校",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စူပါမားကက်",
+            "japan": "スーパー",
+            "romaji": "supa",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘူတာ",
+            "japan": "えき",
+            "romaji": "eki",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "駅",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လေယာဉ်ပျံ",
+            "japan": "ひこうき",
+            "romaji": "hikouki",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "飛行機",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သင်္ဘော",
+            "japan": "ふね",
+            "romaji": "fune",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "船",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရထား",
+            "japan": "でんしゃ",
+            "romaji": "densya",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "電車",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မြေအောက်ရထား",
+            "japan": "ちかてつ",
+            "romaji": "chikatetsu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "地下鉄",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျည်ဆန်ရထား",
+            "japan": "しんかんせん",
+            "romaji": "shinkansen",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "新幹線",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘက်စကား",
+            "japan": "バス",
+            "romaji": "basu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တက္ကစီ",
+            "japan": "タクシー",
+            "romaji": "takushi",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စက်ဘီး",
+            "japan": "じてんしゃ",
+            "romaji": "jitensya",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "自転車",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လမ်းလျှောက်ပြီး",
+            "japan": "あるいて",
+            "romaji": "aruite",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "歩いて",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လူ",
+            "japan": "ひと",
+            "romaji": "hito",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "ひと",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သူငယ်ချင်း",
+            "japan": "ともだち",
+            "romaji": "tomodachi",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "友達",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သူ၊ ယောက်ျားလေးသူငယ်ချင်း(ရည်းစား)",
+            "japan": "かれ",
+            "romaji": "kare",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "彼",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သူမ၊ မိန်းကလေးသူငယ်ချင်း(ရည်းစား)",
+            "japan": "かのじょ",
+            "romaji": "kanojyo",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "彼女",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မိသားစု",
+            "japan": "かぞく",
+            "romaji": "kazoku",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "家族",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်ယောက်တည်း",
+            "japan": "ひとりで",
+            "romaji": "hitoride",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "一人で",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပြီးခဲ့တဲ့ပတ်",
+            "japan": "せんしゅう",
+            "romaji": "sensyuu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "先週",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီအပတ်",
+            "japan": "こんしゅう",
+            "romaji": "konsyuu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "今週",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လာမည့်အပတ်၊ နောက်အပတ်",
+            "japan": "らいしゅう",
+            "romaji": "raisyuu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "来週",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပြီးခဲ့တဲ့လ",
+            "japan": "せんげつ",
+            "romaji": "sengetsu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "先月",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီလ",
+            "japan": "こんげつ",
+            "romaji": "kongetsu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "今月",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လာမည့်လ၊ နောက်လ",
+            "japan": "らいげつ",
+            "romaji": "raigetsu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "来月",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပြီးခဲ့တဲ့နှစ်၊ မနှစ်က",
+            "japan": "きょねん",
+            "romaji": "kyonen",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "去年",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒီနှစ်",
+            "japan": "ことし",
+            "romaji": "kotoshi",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "今年",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လာမည့်နှစ်၊ နောက်နှစ်",
+            "japan": "らいねん",
+            "romaji": "rainen",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "来年",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~နှစ် (ခုနှစ်သက္ကရာဇ်ကိုဆိုလိုသည်။)",
+            "japan": "~ねん",
+            "romaji": "nen",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~年",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်နှစ်",
+            "japan": "なんねん",
+            "romaji": "nannen",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何年",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~လ",
+            "japan": "~がつ",
+            "romaji": "gatsu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~月",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်လ",
+            "japan": "なんがつ",
+            "romaji": "nangatsu",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何月",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၁ရက်နေ့၊ ၁ရက်",
+            "japan": "ついたち",
+            "romaji": "tsuitachi",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "１日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၂ရက်နေ့၊ ၂ရက်",
+            "japan": "ふつか",
+            "romaji": "futsuka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "２日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၃ရက်နေ့၊ ၃ရက်",
+            "japan": "みっか",
+            "romaji": "mikka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "３日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၄ရက်နေ့၊ ၄ရက်",
+            "japan": "よっか",
+            "romaji": "yokka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "４日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၅ရက်နေ့၊ ၅ရက်",
+            "japan": "いつか",
+            "romaji": "itsuka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "５日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၆ရက်နေ့၊ ၆ရက်",
+            "japan": "むいか",
+            "romaji": "muika",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "６日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၇ရက်နေ့၊ ၇ရက်",
+            "japan": "なのか",
+            "romaji": "nanoka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "７日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၈ရက်နေ့၊ ၈ရက်",
+            "japan": "ようか",
+            "romaji": "youka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "８日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၉ရက်နေ့၊ ၉ရက်",
+            "japan": "ここのか",
+            "romaji": "kokonoka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "９日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "၁၀ရက်နေ့၊ ၁၀ရက်",
+            "japan": "とおか",
+            "romaji": "tooka",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "１０日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~ရက်နေ့၊ ~ရက်",
+            "japan": "~にち",
+            "romaji": "nichi",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်ရက်နေ့၊ ဘယ်ရက်",
+            "japan": "なんにち",
+            "romaji": "nannichi",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘယ်အချိန်၊ ဘယ်တော့",
+            "japan": "いつ",
+            "romaji": "itst",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မွေးနေ့",
+            "japan": "はんじょうび",
+            "romaji": "tanjyoubi",
+            "type": "n",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "誕生日",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟုတ်တယ်နော်။",
+            "japan": "そうですね。",
+            "romaji": "soudesune",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကျေးဇူးတင်ပါတယ်။",
+            "japan": "[どうも]ありがとう ございます。",
+            "romaji": "doumoarigatougozaimasu",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မဟုတ်တာရပါတယ်။",
+            "japan": "どういたしまして",
+            "romaji": "douitashimashite",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "~စင်္ကြန် (ဘူတာမှစင်္ကြန်နံပါတ်)",
+            "japan": "~ばんせん",
+            "romaji": "bansen",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "~番線",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နောက်လာမည့်",
+            "japan": "つぎの",
+            "romaji": "tsugino",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "次の",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရိုးရိုး (ရထားအမျိုးအစား)",
+            "japan": "ふつう",
+            "romaji": "futsuu",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "普通",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အမြန် (ရထားအမျိုးအစား)",
+            "japan": "きゅうこう",
+            "romaji": "kyuukou",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "急行",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အထူးအမြန် (ရထားအမျိုးအစား)",
+            "japan": "とっきゅう",
+            "romaji": "tokkyuu",
+            "type": "p",
+            "lesson": "5",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "特急",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စားသည်",
+            "japan": "たべます",
+            "romaji": "tabemasu",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "食べます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သောက်သည်",
+            "japan": "のみます",
+            "romaji": "nomimasu",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "飲みます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရှူသည် [ဆေးလိပ်ကို~] (ဆေးလိပ်ကိုသောက်သည်)",
+            "japan": "すいます　[たばこを~]",
+            "romaji": "suimasu tabakowo",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "吸います",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကြည့်သည်၊ မြင်သည်",
+            "japan": "みます",
+            "romaji": "mimasu",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "見ます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နားထောင်သည်၊ မေးမြန်းသည်",
+            "japan": "[に]　ききます",
+            "romaji": "kikimasu",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "聞きます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရေးသည် (かきます သည်ပန်းချီဆွဲသည်ဟူ၍လည်းအဓိပ္ပယ်ရသည်။)",
+            "japan": "かきます",
+            "romaji": "kakimasu",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "書きます",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဝယ်သည်",
+            "japan": "かいます",
+            "romaji": "kaimasu",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "買います",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရိုက်သည် (ဓာတ်ပုံကို~)",
+            "japan": "とります　[しゃしんを~]",
+            "romaji": "torimasu syashinwo",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "獲ります",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပြုလုပ်သည်၊ လုပ်ဆောင်သည်",
+            "japan": "します",
+            "romaji": "shimasu",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တွေ့သည် [သူငယ်ချင်းနှင့်~]",
+            "japan": "あいます　[ともだちに~]",
+            "romaji": "aimasu tomodachini",
+            "type": "v",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "会います",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ထမင်း",
+            "japan": "ごはん",
+            "romaji": "gohan",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မနက်စာ",
+            "japan": "あさごはん",
+            "romaji": "asagohan",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "朝ごはん",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နေ့လယ်စာ",
+            "japan": "ひるごはん",
+            "romaji": "hirugohan",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "昼ごはん",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ညစာ",
+            "japan": "ばんごはん",
+            "romaji": "bangohan",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "晩ごはん",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပေါင်မုန့်",
+            "japan": "パン",
+            "romaji": "pan",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဥ၊ ကြက်ဥ",
+            "japan": "たまご",
+            "romaji": "tamago",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "卵",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အသား",
+            "japan": "にく",
+            "romaji": "niku",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "肉",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ငါး",
+            "japan": "さかな",
+            "romaji": "sakana",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "魚",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဟင်းသီးဟင်းရွက်",
+            "japan": "やさい",
+            "romaji": "yasai",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "野菜",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "သစ်သီး",
+            "japan": "くだもの",
+            "romaji": "kudamono",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "果物",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရေ",
+            "japan": "みず",
+            "romaji": "mizu",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "水",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လက်ဖက်ရည်ကြမ်း၊ ရေနွေးကြမ်း",
+            "japan": "おちゃ",
+            "romaji": "ocya",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "お茶",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "လက်ဖက်ရည်",
+            "japan": "こうちゃ",
+            "romaji": "koucya",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "紅茶",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "နွားနို့",
+            "japan": "ぢゅうにゅう(ミルク)",
+            "romaji": "gyuunyuu　miruku",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "牛乳",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဖျော်ရည်",
+            "japan": "ジュース",
+            "romaji": "jyusu",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘီယာ",
+            "japan": "ビール",
+            "romaji": "biru",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အရက်",
+            "japan": "[お]さけ",
+            "romaji": "osake",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "[お]酒",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဆေးလိပ်",
+            "japan": "とばこ",
+            "romaji": "tobako",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "စာ (ပေးစာ၊ပြန်စာ)",
+            "japan": "てがみ",
+            "romaji": "tegami",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "手紙",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အစီရင်ခံစာ၊ ရီပို့",
+            "japan": "レポート",
+            "romaji": "repoto",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဓာတ်ပုံ",
+            "japan": "しゃしん",
+            "romaji": "syashin",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "写真",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဗီဒီယိုတိပ်၊ ဗီဒီယိုစက်",
+            "japan": "ビデオ",
+            "romaji": "bideo",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဆိုင်",
+            "japan": "みせ",
+            "romaji": "mise",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "店",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ခြံ၊ ခြံဝန်း",
+            "japan": "にわ",
+            "romaji": "niwa",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "庭",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အိမ်စာ (~をします:အိမ်စာကိုလုပ်သည်)",
+            "japan": "しゅくだい",
+            "romaji": "syukudai",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "宿題",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တင်းနစ် (~をします:တင်းနစ်ရိုက်သည်)",
+            "japan": "テニス",
+            "romaji": "tenisu",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘောလုံး (~をします:ဘောလုံးကိုကန်သည်)",
+            "japan": "サッカー",
+            "romaji": "sakka",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ပန်းကြည့်ခြင်း (~をします:ပန်းကြည့်သည်)",
+            "japan": "[お]はなみ",
+            "romaji": "ohanami",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "[お]花見",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘာ၊ ဘာလဲ",
+            "japan": "なに",
+            "romaji": "nani",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အတူတူ၊ အတူတကွ",
+            "japan": "いっしょに",
+            "romaji": "issyoni",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ခဏ၊ နည်းနည်း",
+            "japan": "ちょっと",
+            "romaji": "cyotto",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အမြဲတမ်း",
+            "japan": "いつも",
+            "romaji": "itsumo",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "တစ်ခါတစ်ရံ",
+            "japan": "ときどき",
+            "romaji": "tokidoki",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "時々",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အဲ့ဒီနောက်၊ ထို့နောက်",
+            "japan": "それから",
+            "romaji": "sorekara",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "အင်း၊ အေး",
+            "japan": "ええ",
+            "romaji": "ee",
+            "type": "p",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကောင်းတယ်နော်၊ ကောင်းတာပေါ့။",
+            "japan": "いいですね。",
+            "romaji": "iidesune",
+            "type": "p",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကောင်းပါပြီ၊ နားလည်ပါပြီ။",
+            "japan": "わかりました。",
+            "romaji": "wakarimashita",
+            "type": "p",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဘာပါလဲ။ (ပြန်ထူးသောအခါတွင်သုံးသည်။)",
+            "japan": "なんですか",
+            "romaji": "nandesuka",
+            "type": "p",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "何ですか。",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ဒါဖြင့်၊ မနက်ဖြန်တွေ့ကြမယ်။",
+            "japan": "じゃ、また [あした]",
+            "romaji": "jyamata ashita",
+            "type": "p",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "မက္ကဆီကို",
+            "japan": "メキシコ",
+            "romaji": "mekishiko",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "",
+            "japan": "",
+            "romaji": "",
+            "type": "n",
+            "lesson": "6",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N5",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ကြည့်သည်၊ ကြည့်ရှုစစ်ဆေးသည်၊ စမ်းသပ်ကြည့်ရှုသည်။",
+            "japan": "みます",
+            "romaji": "mimasu",
+            "type": "v",
+            "lesson": "26",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N4",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
+                }
+            ]
+        },
+        {
+            "myanmar": "ရှာသည်၊ ရှာဖွေသည်။",
+            "japan": "さがします",
+            "romaji": "sagashimasu",
+            "type": "v",
+            "lesson": "26",
+            "new": "",
+            "konnyomi": "",
+            "onnyomi": "",
+            "level": "N4",
+            "kanji": "",
+            "sentence": [
+                {
+                    "myanmar": "",
+                    "japan": "",
+                    "kanji": "",
+                    "sennew": ""
                 }
             ]
         }

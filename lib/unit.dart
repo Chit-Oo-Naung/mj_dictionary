@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:dictionary/components/checkbox.dart';
-import 'package:dictionary/components/colors.dart';
+import 'package:mjdictionary/components/checkbox.dart';
+import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:dictionary/components/checkbox_type.dart';
+import 'package:mjdictionary/components/checkbox_type.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -58,8 +58,7 @@ class _UnitPageState extends State<UnitPage> {
 
         meaningList = jsonList
             .where((o) =>
-                o['level'].contains(widget.level) &&
-                o['lesson'].contains(unit))
+                o['level'].contains(widget.level) && o['lesson'].contains(unit))
             .toList();
       });
     }
@@ -133,6 +132,11 @@ class _UnitPageState extends State<UnitPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: mainColor,
+        toolbarHeight: 0,
+      ),
       body: Stack(
         children: [
           Positioned(
@@ -140,7 +144,7 @@ class _UnitPageState extends State<UnitPage> {
               left: 0,
               child: Container(
                 // color: mainColor,
-                height: 90,
+                height: 80,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
@@ -152,7 +156,7 @@ class _UnitPageState extends State<UnitPage> {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -235,7 +239,10 @@ class _UnitPageState extends State<UnitPage> {
                       textValue: "Kanji",
                       onChanged: (value) {
                         setState(() {
-                          kanji = value;
+                          if (!hira && !meaning) {
+                          } else {
+                            kanji = value;
+                          }
                         });
                       },
                       value: kanji,
@@ -255,7 +262,10 @@ class _UnitPageState extends State<UnitPage> {
                       textValue: "Hira",
                       onChanged: (value) {
                         setState(() {
-                          hira = value;
+                          if (!kanji && !meaning) {
+                          } else {
+                            hira = value;
+                          }
                         });
                       },
                       value: hira,
@@ -275,7 +285,10 @@ class _UnitPageState extends State<UnitPage> {
                       textValue: "Meaning",
                       onChanged: (value) {
                         setState(() {
-                          meaning = value;
+                          if (!kanji && !hira) {
+                          } else {
+                            meaning = value;
+                          }
                         });
                       },
                       value: meaning,
@@ -338,40 +351,44 @@ class _UnitPageState extends State<UnitPage> {
                                   color: index % 2 == 0
                                       ? Colors.white
                                       : Colors.amber[50]),
-                              child: ListTile(
-                                dense: true,
-                                visualDensity: const VisualDensity(
-                                    vertical: -3), // to compact
-                                onTap: () {
-                                  // debugPrint("CLICK>> ${snapshot.data[index]}");
-                                },
-                                title: Text(
-                                  "${kanji ? meaningList[index]["kanji"] == '' ? hira ? "" : meaningList[index]["japan"] : meaningList[index]["kanji"] + "   " : ""}"
-                                  "${hira ? meaningList[index]["japan"] : ""}",
-                                  style: const TextStyle(
-                                      fontSize: 15,
-                                      // color: Color.fromARGB(255, 6, 111, 134),
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                subtitle: Text(
-                                  meaning ? meaningList[index]["myanmar"] : "",
-                                  style: const TextStyle(
-                                      fontSize: 11,
-                                      color: Colors.black54,
-                                      fontWeight: FontWeight.normal),
-                                ),
-                                trailing: GestureDetector(
-                                    onTap: () async {
-                                      debugPrint("Click Speak>>>");
-                                      await tts.speak(
-                                          "${meaningList[index]["japan"]}");
-                                      debugPrint("Click Speak Done>>>");
-                                    },
-                                    child: const Icon(
-                                      Icons.volume_down_alt,
-                                    )),
-                              ),
+                              child: meaningList[index]["type"] == "kanji"
+                                  ? Container()
+                                  : ListTile(
+                                      dense: true,
+                                      visualDensity: const VisualDensity(
+                                          vertical: -3), // to compact
+                                      onTap: () {
+                                        // debugPrint("CLICK>> ${snapshot.data[index]}");
+                                      },
+                                      title: Text(
+                                        "${kanji ? meaningList[index]["kanji"] == '' ? hira ? "" : meaningList[index]["japan"] : meaningList[index]["kanji"] + "   " : ""}"
+                                        "${hira ? meaningList[index]["japan"] : ""}",
+                                        style: const TextStyle(
+                                            fontSize: 15,
+                                            // color: Color.fromARGB(255, 6, 111, 134),
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        meaning
+                                            ? meaningList[index]["myanmar"]
+                                            : "",
+                                        style: const TextStyle(
+                                            fontSize: 11,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                      trailing: GestureDetector(
+                                          onTap: () async {
+                                            debugPrint("Click Speak>>>");
+                                            await tts.speak(
+                                                "${meaningList[index]["japan"]}");
+                                            debugPrint("Click Speak Done>>>");
+                                          },
+                                          child: const Icon(
+                                            Icons.volume_down_alt,
+                                          )),
+                                    ),
                             );
                           },
                         ),

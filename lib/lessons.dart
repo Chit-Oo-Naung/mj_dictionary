@@ -1,12 +1,14 @@
 import 'dart:convert';
 
-import 'package:dictionary/components/colors.dart';
-import 'package:dictionary/components/jsonprovider.dart';
-import 'package:dictionary/kanji.dart';
-import 'package:dictionary/unit.dart';
+import 'package:mjdictionary/components/colors.dart';
+import 'package:mjdictionary/components/jsonprovider.dart';
+import 'package:mjdictionary/kanji.dart';
+import 'package:mjdictionary/unit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'components/gradient_text.dart';
 
 class LessonsPage extends StatefulWidget {
   final int tabIndex;
@@ -43,7 +45,12 @@ class _LessonsPageState extends State<LessonsPage> {
       jsonList = json.decode(storedData);
 
       setState(() {
-        unitList = getLessons(jsonList, lvl);
+        if (widget.tabIndex == 1) {
+          unitList = getKanjiLessons(jsonList, lvl);
+          // unitList = getLessons(jsonList, lvl);
+        } else {
+          unitList = getLessons(jsonList, lvl);
+        }
       });
     }
   }
@@ -137,27 +144,38 @@ class _LessonsPageState extends State<LessonsPage> {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    GradientText(
                       widget.tabIndex == 1 ? "Kanji" : "Lessons",
                       style: TextStyle(
                         fontSize: 19.0,
                         fontWeight: FontWeight.bold,
-                        foreground: Paint()
-                          ..shader = const LinearGradient(
-                            colors: <Color>[
-                              Colors.black,
-                              Color.fromARGB(255, 137, 37, 37),
-                              Color.fromARGB(255, 137, 37, 37),
-                            ],
-                          ).createShader(
-                            const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
-                          ),
                       ),
+                      gradient: LinearGradient(colors: [
+                        Colors.black,
+                        Color.fromARGB(255, 137, 37, 37),
+                      ]),
                     ),
+                    // Text(
+                    //   widget.tabIndex == 1 ? "Kanji" : "Lessons",
+                    //   style: TextStyle(
+                    //     fontSize: 19.0,
+                    //     fontWeight: FontWeight.bold,
+                    //     foreground: Paint()
+                    //       ..shader = const LinearGradient(
+                    //         colors: <Color>[
+                    //           Colors.black,
+                    //           Color.fromARGB(255, 137, 37, 37),
+                    //           Color.fromARGB(255, 137, 37, 37),
+                    //         ],
+                    //       ).createShader(
+                    //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
+                    //       ),
+                    //   ),
+                    // ),
                     level.isEmpty
                         ? Container()
                         : GestureDetector(
@@ -169,24 +187,35 @@ class _LessonsPageState extends State<LessonsPage> {
                               children: [
                                 Row(
                                   children: [
-                                    Text(
+                                    GradientText(
                                       level,
                                       style: TextStyle(
                                         fontSize: 19.0,
                                         fontWeight: FontWeight.bold,
-                                        foreground: Paint()
-                                          ..shader = const LinearGradient(
-                                            colors: <Color>[
-                                              Colors.black,
-                                              Color.fromARGB(255, 137, 37, 37),
-                                              Color.fromARGB(255, 137, 37, 37),
-                                            ],
-                                          ).createShader(
-                                            const Rect.fromLTWH(
-                                                0.0, 0.0, 200.0, 100.0),
-                                          ),
                                       ),
+                                      gradient: LinearGradient(colors: [
+                                        Colors.black,
+                                        Color.fromARGB(255, 137, 37, 37),
+                                      ]),
                                     ),
+                                    // Text(
+                                    //   level,
+                                    //   style: TextStyle(
+                                    //     fontSize: 19.0,
+                                    //     fontWeight: FontWeight.bold,
+                                    //     foreground: Paint()
+                                    //       ..shader = const LinearGradient(
+                                    //         colors: <Color>[
+                                    //           Colors.black,
+                                    //           Color.fromARGB(255, 137, 37, 37),
+                                    //           Color.fromARGB(255, 137, 37, 37),
+                                    //         ],
+                                    //       ).createShader(
+                                    //         const Rect.fromLTWH(
+                                    //             0.0, 0.0, 200.0, 100.0),
+                                    //       ),
+                                    //   ),
+                                    // ),
                                     const Icon(
                                       Icons.swap_horiz_rounded,
                                       color: Color.fromARGB(255, 137, 37, 37),

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "dictionary" "\0"
+            VALUE "FileDescription", "mjdictionary" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "dictionary" "\0"
+            VALUE "InternalName", "mjdictionary" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "dictionary.exe" "\0"
-            VALUE "ProductName", "dictionary" "\0"
+            VALUE "OriginalFilename", "mjdictionary.exe" "\0"
+            VALUE "ProductName", "mjdictionary" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

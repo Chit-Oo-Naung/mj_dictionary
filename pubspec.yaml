@@ -1,6 +1,5 @@
-name: dictionary
+name: mjdictionary
 description: A new Flutter project.
-
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -17,10 +16,10 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.1+1
+version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.0 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -40,20 +39,23 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   flutter_snake_navigationbar: ^0.6.1
   path_provider: ^2.0.14
-  shared_preferences: ^2.1.0
   flutter_tts: ^3.6.3
   provider: ^6.0.5
   flutter_launcher_icons: ^0.12.0
-  # getwidget: ^3.1.1
+  flutter_easyloading: ^3.0.5
+  flutter_inappwebview: ^5.7.2+3
+  scroll_to_index: ^3.0.1
+  shared_preferences: ^2.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  
 flutter_icons:
   android: "launcher_icon" 
   ios: true
   image_path: "assets/logo.png"
+
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

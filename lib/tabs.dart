@@ -1,13 +1,14 @@
 import 'dart:convert';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:dictionary/alphabet.dart';
-import 'package:dictionary/bookmark.dart';
-import 'package:dictionary/components/colors.dart';
-import 'package:dictionary/components/dialog-helper.dart';
-import 'package:dictionary/components/jsonprovider.dart';
-import 'package:dictionary/home.dart';
-import 'package:dictionary/lessons.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:mjdictionary/alphabet.dart';
+import 'package:mjdictionary/more.dart';
+import 'package:mjdictionary/components/colors.dart';
+import 'package:mjdictionary/components/dialog-helper.dart';
+import 'package:mjdictionary/components/jsonprovider.dart';
+import 'package:mjdictionary/home.dart';
+import 'package:mjdictionary/lessons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
@@ -42,7 +43,11 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    //   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //   systemNavigationBarColor: selectColor, // navigation bar color
+    //   statusBarColor: mainColor, // status bar color
+    // ));
     super.initState();
 
     _tabController = TabController(vsync: this, length: 5);
@@ -51,10 +56,15 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
     _getCloudData();
   }
 
+  void statusCallback(EasyLoadingStatus status) {
+    print('Loading Status $status');
+  }
+
   @override
   void dispose() {
     _tabController.dispose();
-
+    EasyLoading.showSuccess('Use in initState');
+    EasyLoading.addStatusCallback(statusCallback);
     super.dispose();
   }
 
@@ -74,17 +84,43 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
 
     if (firstTime) {
       try {
+        if (storedData == "") {
+          EasyLoading.instance.loadingStyle = EasyLoadingStyle.custom;
+          EasyLoading.instance.animationStyle =
+              EasyLoadingAnimationStyle.custom;
+          EasyLoading.instance.indicatorType = EasyLoadingIndicatorType.pulse;
+          await EasyLoading.show(
+            status: 'Syncing...',
+            maskType: EasyLoadingMaskType.clear,
+          );
+        }
+
         final url = Uri.parse(
             'https://drive.google.com/uc?export=view&id=1LdFG9fEBi3TUTLiawVX2ghbWS8-qUvMI');
-        final response = await http.get(url);
-        // if (response.statusCode == 200) {
-        final data = json.decode(utf8.decode(response.bodyBytes));
-        jsonList = data["items"];
-        prefs.setString("stored_data", json.encode(data["items"]));
-        setState(() {
-          firstTime = false;
-        });
+        final response = await http.get(url).timeout(
+          const Duration(seconds: 15),
+          onTimeout: () {
+            // Time has run out, do what you wanted to do.
+            return http.Response(
+                'Server failed!', 500); // Request Timeout response status code
+          },
+        );
+        debugPrint("${response.statusCode}");
+        if (response.statusCode == 200) {
+          final data = json.decode(utf8.decode(response.bodyBytes));
+          jsonList = data["items"];
+          prefs.setString("stored_data", json.encode(data["items"]));
+          setState(() {
+            firstTime = false;
+          });
+
+          if (storedData == "") {
+            await EasyLoading.dismiss();
+            EasyLoading.showSuccess('Ok! let\'s go..');
+          }
+        }
       } catch (er) {
+        await EasyLoading.showError("Server failed!", dismissOnTap: false);
         print(er);
       }
     }
@@ -266,6 +302,11 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: mainColor,
+        toolbarHeight: 0,
+      ),
       backgroundColor: Colors.white,
       // bottomNavigationBar: menu(),
       bottomNavigationBar: SnakeNavigationBar.color(
@@ -300,26 +341,28 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
           BottomNavigationBarItem(icon: Icon(book_1), label: 'Lessons'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_rounded), label: 'Favourite'),
+              icon: Icon(Icons.move_up_rounded), label: 'More'),
         ],
         selectedLabelStyle: const TextStyle(fontSize: 14),
         unselectedLabelStyle: const TextStyle(fontSize: 10),
       ),
-      body: TabBarView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: _tabController,
-        children: const <Widget>[
-          AlphabetPage(),
-          LessonsPage(
-            tabIndex: 1,
-          ),
-          HomePage(),
-          LessonsPage(
-            tabIndex: 3,
-          ),
-          BookmarkPage(),
-          // SettingMain(),
-        ],
+      body: SafeArea(
+        child: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: _tabController,
+          children: const <Widget>[
+            AlphabetPage(),
+            LessonsPage(
+              tabIndex: 1,
+            ),
+            HomePage(),
+            LessonsPage(
+              tabIndex: 3,
+            ),
+            BookmarkPage(),
+            // SettingMain(),
+          ],
+        ),
       ),
     );
     //   return Scaffold(

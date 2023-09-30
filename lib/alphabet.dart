@@ -1,9 +1,11 @@
 import 'dart:ui';
 
-import 'package:dictionary/components/alphabetJSON.dart';
-import 'package:dictionary/components/colors.dart';
+import 'package:mjdictionary/components/alphabetJSON.dart';
+import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+
+import 'components/gradient_text.dart';
 
 class AlphabetPage extends StatefulWidget {
   const AlphabetPage({super.key});
@@ -22,7 +24,7 @@ class _AlphabetPageState extends State<AlphabetPage>
   @override
   void initState() {
     tabController = TabController(length: 2, vsync: this);
-    super.initState();
+    super.initState();  
 
     tts.setLanguage('ja');
     tts.setSpeechRate(0.4);
@@ -44,7 +46,7 @@ class _AlphabetPageState extends State<AlphabetPage>
               left: 0,
               child: Container(
                 // color: mainColor,
-                height: 85,
+                height: 76,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
@@ -55,26 +57,37 @@ class _AlphabetPageState extends State<AlphabetPage>
               )),
           Column(children: [
             Padding(
-              padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 0),
               child: Row(
                 children: [
-                  Text(
-                    "Alphabet",
-                    style: TextStyle(
-                      fontSize: 19.0,
-                      fontWeight: FontWeight.bold,
-                      foreground: Paint()
-                        ..shader = const LinearGradient(
-                          colors: <Color>[
-                            Colors.black,
-                            Color.fromARGB(255, 137, 37, 37),
-                            Color.fromARGB(255, 137, 37, 37),
-                          ],
-                        ).createShader(
-                          const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
-                        ),
+                  GradientText(
+                      "Alphabet",
+                      style: TextStyle(
+                        fontSize: 19.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      gradient: LinearGradient(colors: [
+                        Colors.black,
+                        Color.fromARGB(255, 137, 37, 37),
+                      ]),
                     ),
-                  ),
+                  // Text(
+                  //   "Alphabet",
+                  //   style: TextStyle(
+                  //     fontSize: 19.0,
+                  //     fontWeight: FontWeight.bold,
+                  //     foreground: Paint()
+                  //       ..shader = const LinearGradient(
+                  //         colors: <Color>[
+                  //           Colors.black,
+                  //           Color.fromARGB(255, 137, 37, 37),
+                  //           Color.fromARGB(255, 137, 37, 37),
+                  //         ],
+                  //       ).createShader(
+                  //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
+                  //       ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -135,7 +148,7 @@ class _AlphabetPageState extends State<AlphabetPage>
                           // first tab bar view widget
                           Container(
                               // color: Colors,.red,
-                              padding: const EdgeInsets.all(8),
+                              padding: const EdgeInsets.only(left:8,right:8,top:3,bottom: 3),
                               child: AlphabetListView(
                                 list: hiraganaLst,
                               )),

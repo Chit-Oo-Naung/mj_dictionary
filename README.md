@@ -1,4 +1,4 @@
-# dictionary
+# mjdictionary
 
 A new Flutter project.
 

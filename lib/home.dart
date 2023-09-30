@@ -3,18 +3,15 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:dictionary/components/colors.dart';
-import 'package:dictionary/components/jsonprovider.dart';
-import 'package:flutter/foundation.dart';
+import 'package:mjdictionary/components/colors.dart';
+import 'package:mjdictionary/components/jsonprovider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:dictionary/components/colors.dart';
+import 'components/gradient_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,6 +39,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   void initState() {
+    Paint.enableDithering = true;
     super.initState();
     // print("HOME>>>>");
     _streamController = StreamController();
@@ -128,6 +126,7 @@ class _HomePageState extends State<HomePage>
         setState(() {
           firstTime = false;
           if (!restored) {
+            jsonList = jsonList.where((o) => o['type'] != "kanji").toList();
             _streamController.add(shuffle(jsonList));
           }
 
@@ -146,7 +145,8 @@ class _HomePageState extends State<HomePage>
 
   _search() async {
     if (_controller.text.isEmpty) {
-      _streamController.add(null);
+      _getCloudData();
+      // _streamController.add(null);
       return;
     }
 
@@ -154,6 +154,7 @@ class _HomePageState extends State<HomePage>
 
     final prefs = await SharedPreferences.getInstance();
     List userData = json.decode(prefs.getString("stored_data")!);
+    userData = userData.where((o) => o['type'] != "kanji").toList();
     List outputList = userData
         .where((o) =>
             o['myanmar'].contains(_controller.text.trim()) ||
@@ -190,6 +191,16 @@ class _HomePageState extends State<HomePage>
     List result = [];
     filtered.forEach((k, v) => result.add(v));
     return result;
+  }
+
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[Color(0xffDA44bb), Color(0xff8921aa)],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+
+   @override
+  void dispose() {
+    _streamController.close();
+    super.dispose();
   }
 
   @override
@@ -397,8 +408,7 @@ class _HomePageState extends State<HomePage>
           Column(
             children: [
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                padding: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
                 child: Row(
                   children: [
                     // Text(
@@ -408,19 +418,35 @@ class _HomePageState extends State<HomePage>
                     //       color: selectColor,
                     //       fontWeight: FontWeight.bold),
                     // )
-                    Text("MJ Dictionary",
-                        style: TextStyle(
-                            fontSize: 19.0,
-                            fontWeight: FontWeight.bold,
-                            foreground: Paint()
-                              ..shader = const LinearGradient(
-                                colors: <Color>[
-                                  Colors.black,
-                                  Color.fromARGB(255, 137, 37, 37),
-                                  Color.fromARGB(255, 137, 37, 37),
-                                ],
-                              ).createShader(
-                                  Rect.fromLTWH(0.0, 0.0, 200.0, 100.0))))
+                    GradientText(
+                      "MJ Dictionary",
+                      style: TextStyle(
+                        fontSize: 19.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      gradient: LinearGradient(colors: [
+                        Colors.black,
+                        Color.fromARGB(255, 137, 37, 37),
+                      ]),
+                    ),
+                    // Text(
+                    //   "MJ Dictionary",
+                    //   style: TextStyle(
+                    //     fontSize: 19.0,
+                    //     fontWeight: FontWeight.bold,
+                    //     // foreground: Paint()..shader = linearGradient,
+                    //     // foreground: Paint()
+                    //     //   ..shader = const LinearGradient(
+                    //     //     colors: <Color>[
+                    //     //       Colors.black,
+                    //     //       Color.fromARGB(255, 137, 37, 37),
+                    //     //       Color.fromARGB(255, 137, 37, 37),
+                    //     //     ],
+                    //     //   ).createShader(
+                    //     //     Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
+                    //     //   ),
+                    //   ),
+                    // )
                   ],
                 ),
               ),
@@ -437,7 +463,7 @@ class _HomePageState extends State<HomePage>
                         width: (toggle == 0)
                             ? 48.0
                             : MediaQuery.of(context).size.width,
-                        curve: Curves.easeOut,
+                        curve: Curves.easeOut,                        
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(30.0),
@@ -452,47 +478,7 @@ class _HomePageState extends State<HomePage>
                         ),
                         child: Stack(
                           children: [
-                            AnimatedPositioned(
-                              duration: const Duration(seconds: 5),
-                              top: 6.0,
-                              right: 7.0,
-                              curve: Curves.easeOut,
-                              child: AnimatedOpacity(
-                                opacity: (toggle == 0) ? 0.0 : 1.0,
-                                duration: const Duration(seconds: 3),
-                                child: showClear
-                                    ? GestureDetector(
-                                        onTap: () {
-                                          debugPrint("CLICK CLEAR>>");
-                                          _controller.clear();
-                                          FocusScope.of(context)
-                                              .requestFocus(nodeSearch);
-                                        },
-                                        child: Container(
-                                          padding: const EdgeInsets.all(8.0),
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xffF2F3F7),
-                                            borderRadius:
-                                                BorderRadius.circular(30.0),
-                                          ),
-                                          child: AnimatedBuilder(
-                                            child: const Icon(
-                                              Icons.close_rounded,
-                                              size: 20.0,
-                                            ),
-                                            builder: (context, widget) {
-                                              return Transform.rotate(
-                                                angle: _con.value * 2.0 * pi,
-                                                child: widget,
-                                              );
-                                            },
-                                            animation: _con,
-                                          ),
-                                        ),
-                                      )
-                                    : Container(),
-                              ),
-                            ),
+                            
                             AnimatedPositioned(
                               duration: const Duration(seconds: 3),
                               left: (toggle == 0) ? 20.0 : 40.0,
@@ -502,8 +488,8 @@ class _HomePageState extends State<HomePage>
                                 opacity: (toggle == 0) ? 0.0 : 1.0,
                                 duration: const Duration(seconds: 2),
                                 child: Container(
-                                  height: 23.0,
-                                  width: 180.0,
+                                  height: 25.0,
+                                  width: MediaQuery.of(context).size.width * 0.80,
                                   child: TextField(
                                     controller: _controller,
                                     focusNode: nodeSearch,
@@ -541,6 +527,48 @@ class _HomePageState extends State<HomePage>
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+                            AnimatedPositioned(
+                              duration: const Duration(seconds: 5),
+                              top: 6.0,
+                              right: 7.0,
+                              curve: Curves.easeOut,
+                              child: AnimatedOpacity(
+                                opacity: (toggle == 0) ? 0.0 : 1.0,
+                                duration: const Duration(seconds: 3),
+                                child: showClear
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          debugPrint("CLICK CLEAR>>");
+                                          _controller.clear();
+                                          _getCloudData();
+                                          FocusScope.of(context)
+                                              .requestFocus(nodeSearch);
+                                        },
+                                        child: Container(
+                                          padding: const EdgeInsets.all(8.0),
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xffF2F3F7),
+                                            borderRadius:
+                                                BorderRadius.circular(30.0),
+                                          ),
+                                          child: AnimatedBuilder(
+                                            child: const Icon(
+                                              Icons.close_rounded,
+                                              size: 20.0,
+                                            ),
+                                            builder: (context, widget) {
+                                              return Transform.rotate(
+                                                angle: _con.value * 2.0 * pi,
+                                                child: widget,
+                                              );
+                                            },
+                                            animation: _con,
+                                          ),
+                                        ),
+                                      )
+                                    : Container(),
                               ),
                             ),
                             Material(
@@ -584,6 +612,12 @@ class _HomePageState extends State<HomePage>
                       if (snapshot.data == null) {
                         return const Center(
                           child: Text("Enter a search word"),
+                        );
+                      }
+
+                      if (snapshot.data.length == 0) {
+                        return const Center(
+                          child: Text("Oops! no results found"),
                         );
                       }
 
@@ -643,6 +677,8 @@ class _HomePageState extends State<HomePage>
                               trailing: GestureDetector(
                                   onTap: () async {
                                     debugPrint("Click Speak>>>");
+                                    await tts.setSharedInstance(true);
+                                   
                                     await tts.speak(
                                         "${snapshot.data[index]["japan"]}");
                                     debugPrint("Click Speak Done>>>");

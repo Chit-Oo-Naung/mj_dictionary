@@ -1,4 +1,4 @@
-import 'package:dictionary/components/checkbox_type.dart';
+import 'package:mjdictionary/components/checkbox_type.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:getwidget/getwidget.dart';

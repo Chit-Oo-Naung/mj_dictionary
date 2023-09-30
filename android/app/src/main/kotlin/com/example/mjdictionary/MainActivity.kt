@@ -1,4 +1,4 @@
-package com.mjdictionary.edu
+package com.example.mjdictionary
 
 import io.flutter.embedding.android.FlutterActivity
 

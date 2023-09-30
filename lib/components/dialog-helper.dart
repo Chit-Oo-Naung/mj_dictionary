@@ -1,6 +1,6 @@
 // import 'package:bpms/alert_dialog.dart';
 
-import 'package:dictionary/components/alert_dialog.dart';
+import 'package:mjdictionary/components/alert_dialog.dart';
 import 'package:flutter/material.dart';
 // import 'alert_dialog.dart';
 
