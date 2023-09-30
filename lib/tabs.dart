@@ -12,6 +12,7 @@ import 'package:mjdictionary/lessons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+import 'package:mjdictionary/utils/icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
@@ -26,18 +27,7 @@ class TabsPage extends StatefulWidget {
 class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
   late TabController _tabController;
 
-  static const _kFontFam = 'menuIcons';
-  static const String? _kFontPkg = null;
-
-  static const IconData book_1 =
-      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData font =
-      IconData(0xf031, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData language =
-      IconData(0xf1ab, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData book =
-      IconData(0xf314, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-
+  
   // int _page = 0;
   // GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 

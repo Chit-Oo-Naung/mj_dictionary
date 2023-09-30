@@ -146,21 +146,13 @@ class _KaiwaPageState extends State<KaiwaPage> {
                         Color.fromARGB(255, 137, 37, 37),
                       ]),
                     ),
-                    Text(
-                      "",
-                      style: TextStyle(
-                        fontSize: 19.0,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()
-                          ..shader = const LinearGradient(
-                            colors: <Color>[
-                              Colors.black,
-                              Color.fromARGB(255, 137, 37, 37),
-                              Color.fromARGB(255, 137, 37, 37),
-                            ],
-                          ).createShader(
-                            const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
-                          ),
+                    GestureDetector(
+                      onTap: () {
+                        
+                      },
+                      child: const Icon(
+                        Icons.settings,
+                        color: Color.fromARGB(255, 137, 37, 37),
                       ),
                     ),
                   ],
@@ -219,8 +211,17 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                     const Color.fromRGBO(244, 67, 54, 1),
                                 child: Container(
                                   decoration: BoxDecoration(
+                                      border: currentIndex == index
+                                          ? Border(
+                                              left: BorderSide(
+                                                color: Color.fromARGB(
+                                                    255, 18, 121, 206),
+                                                width: 5.0,
+                                              ),
+                                            )
+                                          : Border(),
                                       color: currentIndex == index
-                                          ? Colors.blue[300]
+                                          ? Color.fromARGB(255, 206, 216, 224)
                                           : index % 2 == 0
                                               ? Colors.white
                                               : Colors.amber[50]),
@@ -231,6 +232,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                     onTap: () {
                                       debugPrint(
                                           "CLICK>> ${snapshot.data[index]}");
+                                      setState(() {
+                                        currentIndex = index;
+                                      });
                                     },
                                     title: Text(
                                       lan
@@ -241,25 +245,59 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    subtitle: Text(
-                                      lan
-                                          ? snapshot.data[index]["english"]
-                                          : snapshot.data[index]["japan"],
-                                      style: const TextStyle(
-                                          fontSize: 11,
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.normal),
+                                    // subtitle: Text(
+                                    //   lan
+                                    //       ? snapshot.data[index]["english"]
+                                    //       : snapshot.data[index]["japan"],
+                                    //   style: const TextStyle(
+                                    //       fontSize: 11,
+                                    //       color: Colors.black54,
+                                    //       fontWeight: FontWeight.normal),
+                                    // ),
+                                    subtitle: Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              snapshot.data[index]["english"],
+                                              style: const TextStyle(
+                                                  fontSize: 13,
+                                                  color: Colors.black54,
+                                                  fontWeight:
+                                                      FontWeight.normal),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              snapshot.data[index]["myanmar"],
+                                              style: const TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.black54,
+                                                  fontWeight:
+                                                      FontWeight.normal),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
                                     trailing: GestureDetector(
                                         onTap: () async {
                                           debugPrint("Click Speak>>>");
-                                          final languages =
-                                              await tts.getLanguages;
-                                          print("LANGUAGES ==> $languages");
-                                          await tts.setSharedInstance(true);
-                                          tts.setLanguage('my');
+                                          // final languages =
+                                          //     await tts.getLanguages;
+                                          // print("LANGUAGES ==> $languages");
+                                          // await tts.setSharedInstance(true);
+                                          // tts.setLanguage('my');
+                                          // await tts.speak(
+                                          //     "${snapshot.data[index]["myanmar"]}");
+                                          setState(() {
+                                            currentIndex = index;
+                                          });
+                                          tts.setLanguage('ja');
                                           await tts.speak(
-                                              "${snapshot.data[index]["myanmar"]}");
+                                              "${snapshot.data[index]["japan"]}");
                                           debugPrint("Click Speak Done>>>");
                                         },
                                         child: const Icon(

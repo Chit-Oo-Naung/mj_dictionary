@@ -1,7 +1,10 @@
+import 'package:mjdictionary/alphabet.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/kaiwa.dart';
+import 'package:mjdictionary/lessons.dart';
 import 'package:mjdictionary/translate.dart';
+import 'package:mjdictionary/utils/icons.dart';
 
 import 'components/gradient_text.dart';
 
@@ -14,16 +17,28 @@ class BookmarkPage extends StatefulWidget {
 
 class _BookmarkPageState extends State<BookmarkPage> {
   List moreList = [
+    {"title": "Alphabet", "icon": font, "page": AlphabetPage()},
+    {
+      "title": "Kanji",
+      "icon": language,
+      "page": LessonsPage(
+        tabIndex: 1,
+      ),
+    },
+    {
+      "title": "Lessons",
+      "icon": book_1,
+      "page": LessonsPage(
+        tabIndex: 3,
+      ),
+    },
     {
       "title": "Grammar",
       "icon": Icons.menu_book_rounded,
       "page": TranslatePage()
     },
-    {
-      "title": "Kaiwa",
-      "icon": Icons.tag_faces_sharp,
-      "page": KaiwaPage()
-    },
+    {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
+    {"title": "Memorise Kotoba", "icon": Icons.memory_rounded, "page": KaiwaPage()},
     {"title": "Translate", "icon": Icons.translate, "page": TranslatePage()},
   ];
 
@@ -133,9 +148,10 @@ class _BookmarkPageState extends State<BookmarkPage> {
                                       ),
                                       SizedBox(
                                         height: 5,
-                                      ),
+                                      ),                                    
                                       Text(
                                         '${moreList[index]["title"]}',
+                                        textAlign: TextAlign.center,
                                         style: const TextStyle(
                                             fontSize: 13,
                                             fontWeight: FontWeight.bold),
