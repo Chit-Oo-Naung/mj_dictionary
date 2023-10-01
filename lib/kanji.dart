@@ -406,7 +406,6 @@ class _KanjiPageState extends State<KanjiPage>
                                                 } else {
                                                   hira = value;
                                                 }
-                                                
                                               });
                                             },
                                             value: hira,
@@ -439,7 +438,6 @@ class _KanjiPageState extends State<KanjiPage>
                                                 } else {
                                                   meaning = value;
                                                 }
-                                                
                                               });
                                             },
                                             value: meaning,
@@ -772,6 +770,9 @@ class KanjiMeaningListView extends StatelessWidget {
             trailing: GestureDetector(
                 onTap: () async {
                   debugPrint("Click Speak>>>");
+                  await tts.setSharedInstance(true);
+                  await tts.awaitSynthCompletion(true);
+                  await tts.awaitSpeakCompletion(true);
                   await tts.speak("${meaningList[index]["japan"]}");
                   debugPrint("Click Speak Done>>>");
                 },

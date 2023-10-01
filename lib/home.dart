@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage>
     colors: <Color>[Color(0xffDA44bb), Color(0xff8921aa)],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
-   @override
+  @override
   void dispose() {
     _streamController.close();
     super.dispose();
@@ -463,7 +463,7 @@ class _HomePageState extends State<HomePage>
                         width: (toggle == 0)
                             ? 48.0
                             : MediaQuery.of(context).size.width,
-                        curve: Curves.easeOut,                        
+                        curve: Curves.easeOut,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(30.0),
@@ -478,7 +478,6 @@ class _HomePageState extends State<HomePage>
                         ),
                         child: Stack(
                           children: [
-                            
                             AnimatedPositioned(
                               duration: const Duration(seconds: 3),
                               left: (toggle == 0) ? 20.0 : 40.0,
@@ -489,7 +488,8 @@ class _HomePageState extends State<HomePage>
                                 duration: const Duration(seconds: 2),
                                 child: Container(
                                   height: 25.0,
-                                  width: MediaQuery.of(context).size.width * 0.80,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.80,
                                   child: TextField(
                                     controller: _controller,
                                     focusNode: nodeSearch,
@@ -678,7 +678,9 @@ class _HomePageState extends State<HomePage>
                                   onTap: () async {
                                     debugPrint("Click Speak>>>");
                                     await tts.setSharedInstance(true);
-                                   
+                                    await tts.awaitSynthCompletion(true);
+                                    await tts.awaitSpeakCompletion(true);
+
                                     await tts.speak(
                                         "${snapshot.data[index]["japan"]}");
                                     debugPrint("Click Speak Done>>>");

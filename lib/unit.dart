@@ -381,6 +381,11 @@ class _UnitPageState extends State<UnitPage> {
                                       trailing: GestureDetector(
                                           onTap: () async {
                                             debugPrint("Click Speak>>>");
+                                            await tts.setSharedInstance(true);
+                                            await tts
+                                                .awaitSynthCompletion(true);
+                                            await tts
+                                                .awaitSpeakCompletion(true);
                                             await tts.speak(
                                                 "${meaningList[index]["japan"]}");
                                             debugPrint("Click Speak Done>>>");

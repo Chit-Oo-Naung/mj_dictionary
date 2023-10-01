@@ -7,6 +7,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
 import 'package:mjdictionary/components/jsonProvider.dart';
+import 'package:mjdictionary/kaiwa_setting.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -148,7 +149,10 @@ class _KaiwaPageState extends State<KaiwaPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return KaiwaSettingPage();
+                        }));
                       },
                       child: const Icon(
                         Icons.settings,
@@ -295,6 +299,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                           setState(() {
                                             currentIndex = index;
                                           });
+                                          await tts.setSharedInstance(true);
+                                          await tts.awaitSynthCompletion(true);
+                                          await tts.awaitSpeakCompletion(true);
                                           tts.setLanguage('ja');
                                           await tts.speak(
                                               "${snapshot.data[index]["japan"]}");
@@ -344,11 +351,16 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                                 preferPosition:
                                                     AutoScrollPosition.end);
                                             tts.setLanguage('ja');
+                                            await tts.setSharedInstance(true);
+                                            await tts
+                                                .awaitSynthCompletion(true);
+                                            await tts
+                                                .awaitSpeakCompletion(true);
                                             await tts.speak(
                                                 "${snapshot.data[i]["japan"]}");
-                                            tts.setLanguage('en-US');
-                                            await tts.speak(
-                                                "${snapshot.data[i]["english"]}");
+                                            // tts.setLanguage('en-US');
+                                            // await tts.speak(
+                                            //     "${snapshot.data[i]["english"]}");
                                             if (snapshot.data.length - 1 == i) {
                                               setState(() {
                                                 playList = false;

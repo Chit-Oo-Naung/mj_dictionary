@@ -24,7 +24,7 @@ class _AlphabetPageState extends State<AlphabetPage>
   @override
   void initState() {
     tabController = TabController(length: 2, vsync: this);
-    super.initState();  
+    super.initState();
 
     tts.setLanguage('ja');
     tts.setSpeechRate(0.4);
@@ -61,16 +61,16 @@ class _AlphabetPageState extends State<AlphabetPage>
               child: Row(
                 children: [
                   GradientText(
-                      "Alphabet",
-                      style: TextStyle(
-                        fontSize: 19.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      gradient: LinearGradient(colors: [
-                        Colors.black,
-                        Color.fromARGB(255, 137, 37, 37),
-                      ]),
+                    "Alphabet",
+                    style: TextStyle(
+                      fontSize: 19.0,
+                      fontWeight: FontWeight.bold,
                     ),
+                    gradient: LinearGradient(colors: [
+                      Colors.black,
+                      Color.fromARGB(255, 137, 37, 37),
+                    ]),
+                  ),
                   // Text(
                   //   "Alphabet",
                   //   style: TextStyle(
@@ -148,7 +148,8 @@ class _AlphabetPageState extends State<AlphabetPage>
                           // first tab bar view widget
                           Container(
                               // color: Colors,.red,
-                              padding: const EdgeInsets.only(left:8,right:8,top:3,bottom: 3),
+                              padding: const EdgeInsets.only(
+                                  left: 8, right: 8, top: 3, bottom: 3),
                               child: AlphabetListView(
                                 list: hiraganaLst,
                               )),
@@ -303,6 +304,9 @@ class AlphabetListView extends StatelessWidget {
             ? Container()
             : GestureDetector(
                 onTap: () async {
+                  await tts.setSharedInstance(true);
+                  await tts.awaitSynthCompletion(true);
+                  await tts.awaitSpeakCompletion(true);
                   await tts.speak("${list[index]["jp"]}");
                 },
                 onLongPress: () {

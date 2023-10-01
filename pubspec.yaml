@@ -46,6 +46,7 @@ dependencies:
   flutter_inappwebview: ^5.7.2+3
   scroll_to_index: ^3.0.1
   shared_preferences: ^2.2.1
+  card_swiper: ^3.0.1
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,9 @@
 import 'package:mjdictionary/alphabet.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:mjdictionary/grammar.dart';
 import 'package:mjdictionary/kaiwa.dart';
+import 'package:mjdictionary/kotoba.dart';
 import 'package:mjdictionary/lessons.dart';
 import 'package:mjdictionary/translate.dart';
 import 'package:mjdictionary/utils/icons.dart';
@@ -17,28 +19,28 @@ class BookmarkPage extends StatefulWidget {
 
 class _BookmarkPageState extends State<BookmarkPage> {
   List moreList = [
-    {"title": "Alphabet", "icon": font, "page": AlphabetPage()},
-    {
-      "title": "Kanji",
-      "icon": language,
-      "page": LessonsPage(
-        tabIndex: 1,
-      ),
-    },
-    {
-      "title": "Lessons",
-      "icon": book_1,
-      "page": LessonsPage(
-        tabIndex: 3,
-      ),
-    },
+    // {"title": "Alphabet", "icon": font, "page": AlphabetPage()},
+    // {
+    //   "title": "Kanji",
+    //   "icon": language,
+    //   "page": LessonsPage(
+    //     tabIndex: 1,
+    //   ),
+    // },
+    // {
+    //   "title": "Lessons",
+    //   "icon": book_1,
+    //   "page": LessonsPage(
+    //     tabIndex: 3,
+    //   ),
+    // },
     {
       "title": "Grammar",
       "icon": Icons.menu_book_rounded,
-      "page": TranslatePage()
+      "page": GrammarPage()
     },
     {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
-    {"title": "Memorise Kotoba", "icon": Icons.memory_rounded, "page": KaiwaPage()},
+    {"title": "FlashCard Kotoba", "icon": Icons.memory_rounded, "page": KotobaPage()},
     {"title": "Translate", "icon": Icons.translate, "page": TranslatePage()},
   ];
 
