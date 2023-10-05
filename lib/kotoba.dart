@@ -9,7 +9,8 @@ import 'package:mjdictionary/components/gradient_text.dart';
 import 'package:mjdictionary/kaiwa_setting.dart';
 
 class KotobaPage extends StatefulWidget {
-  const KotobaPage({super.key});
+  final List kotobalist;
+  const KotobaPage({super.key, required this.kotobalist});
 
   @override
   State<KotobaPage> createState() => _KotobaPageState();
@@ -17,64 +18,64 @@ class KotobaPage extends StatefulWidget {
 
 class _KotobaPageState extends State<KotobaPage> {
   final FlutterTts tts = FlutterTts();
-  List kotobalist = [
-    {
-      "myanmar": "ကျွန်ုပ်၊ ကျွန်တော်/ ကျွန်မ",
-      "japan": "わたし",
-      "romaji": "watashi",
-      "type": "n",
-      "lesson": "1",
-      "new": "",
-      "konnyomi": "",
-      "onnyomi": "",
-      "level": "N5",
-      "kanji": "私",
-      "sentence": [
-        {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
-      ]
-    },
-    {
-      "myanmar": "သင်၊ ခင်ဗျား၊ ရှင်",
-      "japan": "あなた",
-      "romaji": "anata",
-      "type": "n",
-      "lesson": "1",
-      "new": "",
-      "konnyomi": "",
-      "onnyomi": "",
-      "level": "N5",
-      "kanji": "貴方",
-      "sentence": [
-        {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
-      ]
-    },
-    {
-      "myanmar": "ဟိုလူ (ဟိုပုဂ္ဂိုလ်)",
-      "japan": "あのひと",
-      "romaji": "anohito",
-      "type": "n",
-      "lesson": "1",
-      "new": "",
-      "konnyomi": "",
-      "onnyomi": "",
-      "level": "N5",
-      "kanji": "あの人",
-      "sentence": [
-        {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
-      ]
-    },
-  ];
+  // List kotobalist = [
+  //   {
+  //     "myanmar": "ကျွန်ုပ်၊ ကျွန်တော်/ ကျွန်မ",
+  //     "japan": "わたし",
+  //     "romaji": "watashi",
+  //     "type": "n",
+  //     "lesson": "1",
+  //     "new": "",
+  //     "konnyomi": "",
+  //     "onnyomi": "",
+  //     "level": "N5",
+  //     "kanji": "私",
+  //     "sentence": [
+  //       {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
+  //     ]
+  //   },
+  //   {
+  //     "myanmar": "သင်၊ ခင်ဗျား၊ ရှင်",
+  //     "japan": "あなた",
+  //     "romaji": "anata",
+  //     "type": "n",
+  //     "lesson": "1",
+  //     "new": "",
+  //     "konnyomi": "",
+  //     "onnyomi": "",
+  //     "level": "N5",
+  //     "kanji": "貴方",
+  //     "sentence": [
+  //       {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
+  //     ]
+  //   },
+  //   {
+  //     "myanmar": "ဟိုလူ (ဟိုပုဂ္ဂိုလ်)",
+  //     "japan": "あのひと",
+  //     "romaji": "anohito",
+  //     "type": "n",
+  //     "lesson": "1",
+  //     "new": "",
+  //     "konnyomi": "",
+  //     "onnyomi": "",
+  //     "level": "N5",
+  //     "kanji": "あの人",
+  //     "sentence": [
+  //       {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
+  //     ]
+  //   },
+  // ];
 
   @override
   void initState() {
     // kotobalist.add(kotobalist[0]["showtop"] = boolValue);
     tts.setLanguage('ja');
     tts.setSpeechRate(0.4);
-    for (var i = 0; i < kotobalist.length; i++) {
+    for (var i = 0; i < widget.kotobalist.length; i++) {
       // ! True - Japan Top || False - Myanmar Top
       var boolValue = Random().nextBool();
-      kotobalist[i]["showtop"] = boolValue;
-      kotobalist[i]["showanswer"] = false;
+      widget.kotobalist[i]["showtop"] = boolValue;
+      widget.kotobalist[i]["showanswer"] = false;
     }
 
     super.initState();
@@ -144,7 +145,7 @@ class _KotobaPageState extends State<KotobaPage> {
             ),
             Expanded(
               child: Container(
-                padding: const EdgeInsets.only(top: 18.0, left: 0, right: 0),
+                padding: const EdgeInsets.only(top: 18.0, left: 0, right: 0,),
                 child: Column(
                   children: [
                     SizedBox(
@@ -155,274 +156,287 @@ class _KotobaPageState extends State<KotobaPage> {
                         onIndexChanged: (value) {},
                         onTap: (index) {
                           setState(() {});
-                          kotobalist[index]["showanswer"] = true;
+                          widget.kotobalist[index]["showanswer"] = true;
                         },
                         itemBuilder: (BuildContext context, int index) {
-                          return Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              //set border radius more than 50% of height and width to make circle
-                            ),
-                            elevation: 5,
-                            shadowColor: Colors.black,
-                            color: Colors.white,
-                            // color: Colors.primaries[index % 10][100],
-                            child: Container(
-                              // padding: EdgeInsets.all(10),
-
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    bottom: 0,
-                                    right: 0,
-                                    left: 0,
-                                    child: GestureDetector(
-                                      onTap: () async {
-                                        debugPrint("Click Speak>>>");
-                                        await tts.setSharedInstance(true);
-                                        await tts.awaitSynthCompletion(true);
-                                        await tts.awaitSpeakCompletion(true);
-
-                                        await tts.speak(
-                                            "${kotobalist[index]["japan"]}");
-                                        debugPrint("Click Speak Done>>>");
-                                      },
-                                      child: Container(
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          borderRadius: const BorderRadius.only(
-                                              bottomLeft: Radius.circular(30.0),
-                                              bottomRight:
-                                                  Radius.circular(30.0)),
-                                          color: mainColor,
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.volume_down_alt,
-                                              size: 30,
-                                            )
-                                            // Text(
-                                            //   'Footer',
-                                            //   textAlign: TextAlign.center,
-                                            //   style: const TextStyle(
-                                            //       fontSize: 13,
-                                            //       fontWeight: FontWeight.bold),
-                                            // ),
-                                          ],
+                          return Container(
+                             padding: EdgeInsets.only(bottom: 10),
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                //set border radius more than 50% of height and width to make circle
+                              ),
+                              elevation: 5,
+                              shadowColor: Colors.black,
+                              color: Colors.white,
+                              // color: Colors.primaries[index % 10][100],
+                              child: Container(
+                                // padding: EdgeInsets.all(10),
+                                                
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      bottom: 0,
+                                      right: 0,
+                                      left: 0,
+                                      child: GestureDetector(
+                                        onTap: () async {
+                                          debugPrint("Click Speak>>>");
+                                          await tts.setSharedInstance(true);
+                                          await tts.awaitSynthCompletion(true);
+                                          await tts.awaitSpeakCompletion(true);
+                                                
+                                          await tts.speak(
+                                              "${widget.kotobalist[index]["japan"]}");
+                                          debugPrint("Click Speak Done>>>");
+                                        },
+                                        child: Container(
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            borderRadius: const BorderRadius.only(
+                                                bottomLeft: Radius.circular(30.0),
+                                                bottomRight:
+                                                    Radius.circular(30.0)),
+                                            color: mainColor,
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.volume_down_alt,
+                                                size: 30,
+                                              )
+                                              // Text(
+                                              //   'Footer',
+                                              //   textAlign: TextAlign.center,
+                                              //   style: const TextStyle(
+                                              //       fontSize: 13,
+                                              //       fontWeight: FontWeight.bold),
+                                              // ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  LayoutBuilder(
-                                    builder: (BuildContext context,
-                                        BoxConstraints constraints) {
-                                      return Column(
-                                        children: [
-                                          Container(
-                                            height:
-                                                (constraints.maxHeight / 2) -
-                                                    25,
-                                            child: kotobalist[index]["showtop"]
-                                                ? Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Flexible(
-                                                            child: Text(
-                                                              '${kotobalist[index]["japan"]}',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style:
-                                                                  const TextStyle(
-                                                                fontSize: 18,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Flexible(
-                                                            child: Text(
-                                                              '${kotobalist[index]["kanji"]}',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style:
-                                                                  const TextStyle(
-                                                                fontSize: 28,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  )
-                                                : Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Flexible(
-                                                            child: Text(
-                                                              '${kotobalist[index]["myanmar"]}',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style:
-                                                                  const TextStyle(
-                                                                fontSize: 20,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                          ),
-                                          Container(
-                                            height:
-                                                (constraints.maxHeight / 2) -
-                                                    25,
-                                            child: !kotobalist[index]
-                                                    ["showanswer"]
-                                                ? Container()
-                                                : kotobalist[index]["showtop"]
-                                                    ? Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Flexible(
-                                                                child: Text(
-                                                                  '${kotobalist[index]["myanmar"]}',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      const TextStyle(
-                                                                    fontSize:
-                                                                        20,
-                                                                  ),
+                                    LayoutBuilder(
+                                      builder: (BuildContext context,
+                                          BoxConstraints constraints) {
+                                        return Column(
+                                          children: [
+                                            Container(
+                                              height:
+                                                  (constraints.maxHeight / 2) -
+                                                      25,
+                                              padding: EdgeInsets.only(
+                                                  top: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.1),
+                                              child: widget.kotobalist[index]["showtop"]
+                                                  ? Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                '${widget.kotobalist[index]["japan"]}',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style:
+                                                                    const TextStyle(
+                                                                  fontSize: 18,
                                                                 ),
                                                               ),
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      )
-                                                    : Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Flexible(
-                                                                child: Text(
-                                                                  '${kotobalist[index]["japan"]}',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      const TextStyle(
-                                                                    fontSize:
-                                                                        18,
-                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                '${widget.kotobalist[index]["kanji"]}',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style:
+                                                                    const TextStyle(
+                                                                  fontSize: 28,
                                                                 ),
                                                               ),
-                                                            ],
-                                                          ),
-                                                          Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Flexible(
-                                                                child: Text(
-                                                                  '${kotobalist[index]["kanji"]}',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      const TextStyle(
-                                                                    fontSize:
-                                                                        28,
-                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    )
+                                                  : Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                '${widget.kotobalist[index]["myanmar"]}',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style:
+                                                                    const TextStyle(
+                                                                  fontSize: 20,
                                                                 ),
                                                               ),
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      ),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  ),
-                                ],
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                            ),
+                                            Container(
+                                              height:
+                                                  (constraints.maxHeight / 2) -
+                                                      25,
+                                                      padding: EdgeInsets.only(
+                                                  bottom: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.12),
+                                              child: !widget.kotobalist[index]
+                                                      ["showanswer"]
+                                                  ? Container()
+                                                  : widget.kotobalist[index]["showtop"]
+                                                      ? Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Flexible(
+                                                                  child: Text(
+                                                                    '${widget.kotobalist[index]["myanmar"]}',
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style:
+                                                                        const TextStyle(
+                                                                      fontSize:
+                                                                          20,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        )
+                                                      : Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Flexible(
+                                                                  child: Text(
+                                                                    '${widget.kotobalist[index]["japan"]}',
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style:
+                                                                        const TextStyle(
+                                                                      fontSize:
+                                                                          18,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Flexible(
+                                                                  child: Text(
+                                                                    '${widget.kotobalist[index]["kanji"]}',
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style:
+                                                                        const TextStyle(
+                                                                      fontSize:
+                                                                          28,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );
                         },
-                        itemCount: kotobalist.length,
+                        itemCount: widget.kotobalist.length,
                         viewportFraction: 0.85,
                         scale: 0.9,
                         loop: false,

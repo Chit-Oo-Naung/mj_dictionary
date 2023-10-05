@@ -1,4 +1,5 @@
 import 'package:mjdictionary/alphabet.dart';
+import 'package:mjdictionary/choose_units.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/grammar.dart';
@@ -40,7 +41,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
       "page": GrammarPage()
     },
     {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
-    {"title": "FlashCard Kotoba", "icon": Icons.memory_rounded, "page": KotobaPage()},
+    {"title": "FlashCard Kotoba", "icon": Icons.memory_rounded, "page": ChooseUnitsPage()},
     {"title": "Translate", "icon": Icons.translate, "page": TranslatePage()},
   ];
 

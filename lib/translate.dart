@@ -71,23 +71,17 @@ class _TranslatePageState extends State<TranslatePage> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(top: 40.0, left: 0, right: 0),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: InAppWebView(
-                        initialUrlRequest: URLRequest(
-                          url: Uri.parse(
-                            "https://translate.google.com/?hl=my&sl=ja&tl=my&op=translate",
-                          ),
-                        ),
-                        initialOptions: InAppWebViewGroupOptions(
-                          crossPlatform: InAppWebViewOptions(
-                            javaScriptEnabled: true,
-                          ),
-                        ),
-                      ),
+                child: InAppWebView(
+                  initialUrlRequest: URLRequest(
+                    url: Uri.parse(
+                      "https://translate.google.com/?hl=my&sl=ja&tl=my&op=translate",
                     ),
-                  ],
+                  ),
+                  initialOptions: InAppWebViewGroupOptions(
+                    crossPlatform: InAppWebViewOptions(
+                      javaScriptEnabled: true,
+                    ),
+                  ),
                 ),
               ),
             )

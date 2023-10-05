@@ -349,7 +349,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                             _autoScrollController.scrollToIndex(
                                                 i,
                                                 preferPosition:
-                                                    AutoScrollPosition.end);
+                                                    AutoScrollPosition.middle);
                                             tts.setLanguage('ja');
                                             await tts.setSharedInstance(true);
                                             await tts
@@ -369,7 +369,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                                     .scrollToIndex(0,
                                                         preferPosition:
                                                             AutoScrollPosition
-                                                                .end);
+                                                                .begin);
                                               });
                                             }
                                             if (!playList) {

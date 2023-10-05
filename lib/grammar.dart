@@ -68,16 +68,16 @@ class _GrammarPageState extends State<GrammarPage> {
                 ),
               ],
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 40.0, left: 0, right: 0),
-                child: Column(
-                  children: [
+            // Expanded(
+            //   child: Padding(
+            //     padding: const EdgeInsets.only(top: 40.0, left: 0, right: 0),
+            //     child: Column(
+            //       children: [
                     
-                  ],
-                ),
-              ),
-            )
+            //       ],
+            //     ),
+            //   ),
+            // )
           ],
         ));
   }
