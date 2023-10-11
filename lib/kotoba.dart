@@ -20,67 +20,33 @@ class KotobaPage extends StatefulWidget {
 class _KotobaPageState extends State<KotobaPage> {
   final FlutterTts tts = FlutterTts();
   List kotobalist = [];
-  //   {
-  //     "myanmar": "ကျွန်ုပ်၊ ကျွန်တော်/ ကျွန်မ",
-  //     "japan": "わたし",
-  //     "romaji": "watashi",
-  //     "type": "n",
-  //     "lesson": "1",
-  //     "new": "",
-  //     "konnyomi": "",
-  //     "onnyomi": "",
-  //     "level": "N5",
-  //     "kanji": "私",
-  //     "sentence": [
-  //       {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
-  //     ]
-  //   },
-  //   {
-  //     "myanmar": "သင်၊ ခင်ဗျား၊ ရှင်",
-  //     "japan": "あなた",
-  //     "romaji": "anata",
-  //     "type": "n",
-  //     "lesson": "1",
-  //     "new": "",
-  //     "konnyomi": "",
-  //     "onnyomi": "",
-  //     "level": "N5",
-  //     "kanji": "貴方",
-  //     "sentence": [
-  //       {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
-  //     ]
-  //   },
-  //   {
-  //     "myanmar": "ဟိုလူ (ဟိုပုဂ္ဂိုလ်)",
-  //     "japan": "あのひと",
-  //     "romaji": "anohito",
-  //     "type": "n",
-  //     "lesson": "1",
-  //     "new": "",
-  //     "konnyomi": "",
-  //     "onnyomi": "",
-  //     "level": "N5",
-  //     "kanji": "あの人",
-  //     "sentence": [
-  //       {"myanmar": "", "japan": "", "kanji": "", "sennew": ""}
-  //     ]
-  //   },
-  // ];
+  bool random = false;
+  bool showTopRandom = true;
+  bool changeJM = false;
 
   @override
   void initState() {
     // kotobalist.add(kotobalist[0]["showtop"] = boolValue);
     tts.setLanguage('ja');
     tts.setSpeechRate(0.4);
-    kotobalist = shuffle(widget.kotobalist);
+    _getList();
+
+    super.initState();
+  }
+
+  _getList() {
+    if (random) {
+      kotobalist = shuffle(widget.kotobalist);
+    } else {
+      kotobalist = widget.kotobalist;
+    }
+
     for (var i = 0; i < kotobalist.length; i++) {
       // ! True - Japan Top || False - Myanmar Top
       var boolValue = Random().nextBool();
-      kotobalist[i]["showtop"] = boolValue;
+      kotobalist[i]["showtop"] = showTopRandom ? boolValue : changeJM;
       kotobalist[i]["showanswer"] = false;
     }
-
-    super.initState();
   }
 
   @override
@@ -132,10 +98,24 @@ class _KotobaPageState extends State<KotobaPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return KaiwaSettingPage();
-                      }));
+                      debugPrint("CLICK >>");
+                      random = !random;
+                      _getList();
+                      setState(() {});
+                      // Navigator.push(context,
+                      //     MaterialPageRoute(builder: (context) {
+                      //   return KaiwaSettingPage();
+                      // }));
+                    },
+                    onDoubleTap: () {
+                      showTopRandom = !showTopRandom;
+                      _getList();
+                      setState(() {});
+                    },
+                    onLongPress: () {
+                      changeJM = !changeJM;
+                      _getList();
+                      setState(() {});
                     },
                     child: const Icon(
                       Icons.settings,
@@ -147,7 +127,11 @@ class _KotobaPageState extends State<KotobaPage> {
             ),
             Expanded(
               child: Container(
-                padding: const EdgeInsets.only(top: 18.0, left: 0, right: 0,),
+                padding: const EdgeInsets.only(
+                  top: 18.0,
+                  left: 0,
+                  right: 0,
+                ),
                 child: Column(
                   children: [
                     SizedBox(
@@ -162,7 +146,7 @@ class _KotobaPageState extends State<KotobaPage> {
                         },
                         itemBuilder: (BuildContext context, int index) {
                           return Container(
-                             padding: EdgeInsets.only(bottom: 10),
+                            padding: EdgeInsets.only(bottom: 10),
                             child: Card(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30),
@@ -174,7 +158,7 @@ class _KotobaPageState extends State<KotobaPage> {
                               // color: Colors.primaries[index % 10][100],
                               child: Container(
                                 // padding: EdgeInsets.all(10),
-                                                
+
                                 child: Stack(
                                   children: [
                                     Positioned(
@@ -187,7 +171,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                           await tts.setSharedInstance(true);
                                           await tts.awaitSynthCompletion(true);
                                           await tts.awaitSpeakCompletion(true);
-                                                
+
                                           await tts.speak(
                                               "${kotobalist[index]["japan"]}");
                                           debugPrint("Click Speak Done>>>");
@@ -195,10 +179,12 @@ class _KotobaPageState extends State<KotobaPage> {
                                         child: Container(
                                           height: 50,
                                           decoration: BoxDecoration(
-                                            borderRadius: const BorderRadius.only(
-                                                bottomLeft: Radius.circular(30.0),
-                                                bottomRight:
-                                                    Radius.circular(30.0)),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                                    bottomLeft:
+                                                        Radius.circular(30.0),
+                                                    bottomRight:
+                                                        Radius.circular(30.0)),
                                             color: mainColor,
                                           ),
                                           child: Row(
@@ -237,7 +223,8 @@ class _KotobaPageState extends State<KotobaPage> {
                                                           .size
                                                           .height *
                                                       0.1),
-                                              child: kotobalist[index]["showtop"]
+                                              child: kotobalist[index]
+                                                      ["showtop"]
                                                   ? Column(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -329,7 +316,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                               height:
                                                   (constraints.maxHeight / 2) -
                                                       25,
-                                                      padding: EdgeInsets.only(
+                                              padding: EdgeInsets.only(
                                                   bottom: MediaQuery.of(context)
                                                           .size
                                                           .height *
