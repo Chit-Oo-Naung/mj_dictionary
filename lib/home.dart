@@ -8,6 +8,7 @@ import 'package:mjdictionary/components/jsonprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:http/http.dart' as http;
+import 'package:mjdictionary/utils/formula.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -81,21 +82,7 @@ class _HomePageState extends State<HomePage>
   //   _streamController.add(data["items"]);
   // }
 
-  List shuffle(List items) {
-    var random = new Random();
 
-    // Go through all elements.
-    for (var i = items.length - 1; i > 0; i--) {
-      // Pick a pseudorandom number according to the list length
-      var n = random.nextInt(i + 1);
-
-      var temp = items[i];
-      items[i] = items[n];
-      items[n] = temp;
-    }
-
-    return items;
-  }
 
   _getCloudData() async {
     final prefs = await SharedPreferences.getInstance();

@@ -7,6 +7,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
 import 'package:mjdictionary/kaiwa_setting.dart';
+import 'package:mjdictionary/utils/formula.dart';
 
 class KotobaPage extends StatefulWidget {
   final List kotobalist;
@@ -18,7 +19,7 @@ class KotobaPage extends StatefulWidget {
 
 class _KotobaPageState extends State<KotobaPage> {
   final FlutterTts tts = FlutterTts();
-  // List kotobalist = [
+  List kotobalist = [];
   //   {
   //     "myanmar": "ကျွန်ုပ်၊ ကျွန်တော်/ ကျွန်မ",
   //     "japan": "わたし",
@@ -71,11 +72,12 @@ class _KotobaPageState extends State<KotobaPage> {
     // kotobalist.add(kotobalist[0]["showtop"] = boolValue);
     tts.setLanguage('ja');
     tts.setSpeechRate(0.4);
-    for (var i = 0; i < widget.kotobalist.length; i++) {
+    kotobalist = shuffle(widget.kotobalist);
+    for (var i = 0; i < kotobalist.length; i++) {
       // ! True - Japan Top || False - Myanmar Top
       var boolValue = Random().nextBool();
-      widget.kotobalist[i]["showtop"] = boolValue;
-      widget.kotobalist[i]["showanswer"] = false;
+      kotobalist[i]["showtop"] = boolValue;
+      kotobalist[i]["showanswer"] = false;
     }
 
     super.initState();
@@ -156,7 +158,7 @@ class _KotobaPageState extends State<KotobaPage> {
                         onIndexChanged: (value) {},
                         onTap: (index) {
                           setState(() {});
-                          widget.kotobalist[index]["showanswer"] = true;
+                          kotobalist[index]["showanswer"] = true;
                         },
                         itemBuilder: (BuildContext context, int index) {
                           return Container(
@@ -187,7 +189,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                           await tts.awaitSpeakCompletion(true);
                                                 
                                           await tts.speak(
-                                              "${widget.kotobalist[index]["japan"]}");
+                                              "${kotobalist[index]["japan"]}");
                                           debugPrint("Click Speak Done>>>");
                                         },
                                         child: Container(
@@ -235,7 +237,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                                           .size
                                                           .height *
                                                       0.1),
-                                              child: widget.kotobalist[index]["showtop"]
+                                              child: kotobalist[index]["showtop"]
                                                   ? Column(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -254,7 +256,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                                           children: [
                                                             Flexible(
                                                               child: Text(
-                                                                '${widget.kotobalist[index]["japan"]}',
+                                                                '${kotobalist[index]["japan"]}',
                                                                 textAlign:
                                                                     TextAlign
                                                                         .center,
@@ -276,7 +278,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                                           children: [
                                                             Flexible(
                                                               child: Text(
-                                                                '${widget.kotobalist[index]["kanji"]}',
+                                                                '${kotobalist[index]["kanji"]}',
                                                                 textAlign:
                                                                     TextAlign
                                                                         .center,
@@ -308,7 +310,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                                           children: [
                                                             Flexible(
                                                               child: Text(
-                                                                '${widget.kotobalist[index]["myanmar"]}',
+                                                                '${kotobalist[index]["myanmar"]}',
                                                                 textAlign:
                                                                     TextAlign
                                                                         .center,
@@ -332,10 +334,10 @@ class _KotobaPageState extends State<KotobaPage> {
                                                           .size
                                                           .height *
                                                       0.12),
-                                              child: !widget.kotobalist[index]
+                                              child: !kotobalist[index]
                                                       ["showanswer"]
                                                   ? Container()
-                                                  : widget.kotobalist[index]["showtop"]
+                                                  : kotobalist[index]["showtop"]
                                                       ? Column(
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
@@ -354,7 +356,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                                               children: [
                                                                 Flexible(
                                                                   child: Text(
-                                                                    '${widget.kotobalist[index]["myanmar"]}',
+                                                                    '${kotobalist[index]["myanmar"]}',
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -387,7 +389,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                                               children: [
                                                                 Flexible(
                                                                   child: Text(
-                                                                    '${widget.kotobalist[index]["japan"]}',
+                                                                    '${kotobalist[index]["japan"]}',
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -410,7 +412,7 @@ class _KotobaPageState extends State<KotobaPage> {
                                                               children: [
                                                                 Flexible(
                                                                   child: Text(
-                                                                    '${widget.kotobalist[index]["kanji"]}',
+                                                                    '${kotobalist[index]["kanji"]}',
                                                                     textAlign:
                                                                         TextAlign
                                                                             .center,
@@ -436,7 +438,7 @@ class _KotobaPageState extends State<KotobaPage> {
                             ),
                           );
                         },
-                        itemCount: widget.kotobalist.length,
+                        itemCount: kotobalist.length,
                         viewportFraction: 0.85,
                         scale: 0.9,
                         loop: false,
