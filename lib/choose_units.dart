@@ -102,26 +102,27 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
   startKotoba() async {
     debugPrint("SELECTED Start >>> ");
     List choosedUnitsLst = [];
-    if (unitList.isNotEmpty) {
-      for (var i = 0; i < unitList.length; i++) {
-        if (unitList[i]["selected"] == true) {
-          List jsonList = json.decode(storedData);
-          for (var j = 0; j < jsonList.length; j++) {
-            if ((unitList[i]["lesson"] == jsonList[j]["lesson"]) &&
-                jsonList[j]["type"] != "kanji") {
-              choosedUnitsLst.add(jsonList[j]);
-            }
+
+    for (var i = 0; i < unitList.length; i++) {
+      if (unitList[i]["selected"] == true) {
+        List jsonList = json.decode(storedData);
+        for (var j = 0; j < jsonList.length; j++) {
+          if ((unitList[i]["lesson"] == jsonList[j]["lesson"]) &&
+              jsonList[j]["type"] != "kanji") {
+            choosedUnitsLst.add(jsonList[j]);
           }
         }
       }
-      Future.delayed(const Duration(seconds: 1), () {
+    }
+    Future.delayed(const Duration(milliseconds: 500), () {
+      if (choosedUnitsLst.isNotEmpty) {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
           return KotobaPage(
             kotobalist: choosedUnitsLst,
           );
         }));
-      });
-    }
+      }
+    });
   }
 
   @override
@@ -243,8 +244,7 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
               //
               Expanded(
                 child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 10.0, left: 10, right: 10),
+                  padding: const EdgeInsets.only(top: 0.0, left: 10, right: 10),
                   child: Column(
                     children: [
                       Expanded(
@@ -284,12 +284,15 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                 // color: Colors.primaries[index % 10][100],
                                 child: Stack(
                                   children: [
-                                    const Positioned(
+                                    Positioned(
                                         top: 5,
                                         left: 10,
                                         child: Text(
                                           "Unit",
                                           style: TextStyle(
+                                              // color: unitList[index]["selected"]
+                                              //     ? Colors.blue.shade200
+                                              //     : Colors.black,
                                               fontSize: 13,
                                               fontWeight: FontWeight.w400),
                                         )),
@@ -298,7 +301,10 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                       padding: const EdgeInsets.only(top: 8.0),
                                       child: Text(
                                         '${unitList[index]["lesson"]}',
-                                        style: const TextStyle(
+                                        style: TextStyle(
+                                            // color: unitList[index]["selected"]
+                                            //     ? Colors.blue.shade200
+                                            //     : Colors.black,
                                             fontSize: 23,
                                             fontWeight: FontWeight.bold),
                                       ),

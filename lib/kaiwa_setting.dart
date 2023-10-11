@@ -34,7 +34,7 @@ class _KaiwaSettingPageState extends State<KaiwaSettingPage> {
         Column(
           children: [
             Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15, top: 25),
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
