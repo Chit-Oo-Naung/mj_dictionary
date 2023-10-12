@@ -70,13 +70,14 @@ class _GrammarFormPageState extends State<GrammarFormPage> {
                     ],
                   ),
                 ),
+                Expanded(
+                  child: Padding(
+                      padding:
+                          const EdgeInsets.only(top: 40.0, left: 0, right: 0),
+                      child: Html(data: "${widget.htmlData}")),
+                )
               ],
             ),
-            Expanded(
-              child: Padding(
-                  padding: const EdgeInsets.only(top: 40.0, left: 0, right: 0),
-                  child: Html(data: "${widget.htmlData}")),
-            )
           ],
         ));
   }

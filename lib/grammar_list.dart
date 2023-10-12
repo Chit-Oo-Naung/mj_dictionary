@@ -29,7 +29,7 @@ class _GrammarFormListPageState extends State<GrammarFormListPage> {
       "title": "たけい",
       "new": "",
       "html":
-          "<h3><span style='color:#c0392b'><strong>たけい （V+ました）</strong></span></h3><p><span style='font-size:14px'><strong><span style='color:#c0392b'>Group 1</span></strong></span></p><ul><li><span style='font-size:14px'><strong>い、ち、り</strong><strong>　➞　った</strong></span></li><li><span style='font-size:14px'><strong>み、に、び　➞　んで</strong></span></li><li><span style='font-size:14px'><strong>き　　　　　➞　いた</strong></span></li><li><span style='font-size:14px'><strong>ぎ　　　　　➞　いで</strong></span></li><li><span style='font-size:14px'><strong>し　　　　　➞　しで</strong></span></li></ul><p>　　<span style='font-size:14px'>ဥပမာ&nbsp; &nbsp; &nbsp; &nbsp;- <strong>かいます　➞　かった</strong></span></p><p><span style='font-size:14px'>　　ချွင်းချက်&nbsp; - <strong>いきます　➞　いった</strong></span></p><p><span style='font-size:14px'><strong><span style='color:#c0392b'>Group 2</span></strong></span></p><ul><li><span style='font-size:14px'><span style='color:#c0392b'><strong>ます</strong></span>　ဖြုတ်　<span style='color:#c0392b'><strong>た</strong></span>　ပေါင်း</span></li></ul><p><span style='font-size:14px'><strong><span style='color:#c0392b'>Group 3</span></strong></span></p><ul><li><strong>きます　➞　きた</strong></li><li><strong>します　➞　した</strong></li></ul>"
+          "<h3><span style='color:#c0392b'><strong>たけい （V+ました）</strong></span></h3><p><span style='font-size:14px'><strong><span style='color:#c0392b'>Group 1</span></strong></span></p><ul><li><span style='font-size:14px'><strong>い、ち、り</strong><strong>　➞　った</strong></span></li><li><span style='font-size:14px'><strong>み、に、び　➞　んだ</strong></span></li><li><span style='font-size:14px'><strong>き　　　　　➞　いた</strong></span></li><li><span style='font-size:14px'><strong>ぎ　　　　　➞　いだ</strong></span></li><li><span style='font-size:14px'><strong>し　　　　　➞　しだ</strong></span></li></ul><p>　　<span style='font-size:14px'>ဥပမာ&nbsp; &nbsp; &nbsp; &nbsp;- <strong>かいます　➞　かった</strong></span></p><p><span style='font-size:14px'>　　ချွင်းချက်&nbsp; - <strong>いきます　➞　いった</strong></span></p><p><span style='font-size:14px'><strong><span style='color:#c0392b'>Group 2</span></strong></span></p><ul><li><span style='font-size:14px'><span style='color:#c0392b'><strong>ます</strong></span>　ဖြုတ်　<span style='color:#c0392b'><strong>た</strong></span>　ပေါင်း</span></li></ul><p><span style='font-size:14px'><strong><span style='color:#c0392b'>Group 3</span></strong></span></p><ul><li><strong>きます　➞　きた</strong></li><li><strong>します　➞　した</strong></li></ul>"
     }
   ];
 
@@ -88,63 +88,61 @@ class _GrammarFormListPageState extends State<GrammarFormListPage> {
                     ],
                   ),
                 ),
+                Expanded(
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 40.0, left: 0, right: 0),
+                    child: ListView.builder(
+                      keyboardDismissBehavior:
+                          ScrollViewKeyboardDismissBehavior.onDrag,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      // itemExtent: 50,
+                      padding: const EdgeInsets.all(0),
+                      itemCount: grammarList.length,
+                      // separatorBuilder: (BuildContext context, int index) =>
+                      //     const Divider(color: Colors.amberAccent,),
+                      itemBuilder: (BuildContext context, int index) {
+                        // return Container(child: Text("ABC>>> ${snapshot.data.length}"),);
+                        return Container(
+                          padding: const EdgeInsets.all(0),
+                          decoration: BoxDecoration(
+                              color: index % 2 == 0
+                                  ? Colors.white
+                                  : Colors.amber[50]),
+                          child: ListTile(
+                            dense: true,
+                            visualDensity:
+                                const VisualDensity(vertical: 2), // to compact
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return GrammarFormPage(
+                                  title: grammarList[index]["title"],
+                                  htmlData: grammarList[index]["html"],
+                                );
+                              }));
+                            },
+                            title: Text(
+                              grammarList[index]["title"],
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  // color: Color.fromARGB(255, 6, 111, 134),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            trailing: Icon(
+                              Icons.keyboard_arrow_right_rounded,
+                              size: 32,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                )
               ],
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 40.0, left: 0, right: 0),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: ListView.builder(
-                        keyboardDismissBehavior:
-                            ScrollViewKeyboardDismissBehavior.onDrag,
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        // itemExtent: 50,
-                        padding: const EdgeInsets.all(0),
-                        itemCount: grammarList.length,
-                        // separatorBuilder: (BuildContext context, int index) =>
-                        //     const Divider(color: Colors.amberAccent,),
-                        itemBuilder: (BuildContext context, int index) {
-                          // return Container(child: Text("ABC>>> ${snapshot.data.length}"),);
-                          return Container(
-                            padding: const EdgeInsets.all(0),
-                            decoration: BoxDecoration(
-                                color: index % 2 == 0
-                                    ? Colors.white
-                                    : Colors.amber[50]),
-                            child: ListTile(
-                              dense: true,
-                              visualDensity: const VisualDensity(
-                                  vertical: 2), // to compact
-                              onTap: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return GrammarFormPage(
-                                    title: grammarList[index]["title"],
-                                    htmlData: grammarList[index]["html"],
-                                  );
-                                }));
-                              },
-                              title: Text(
-                                grammarList[index]["title"],
-                                style: const TextStyle(
-                                    fontSize: 18,
-                                    // color: Color.fromARGB(255, 6, 111, 134),
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              trailing: Icon(Icons.keyboard_arrow_right_rounded, size: 32,),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
           ],
         ));
   }
