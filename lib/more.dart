@@ -3,6 +3,8 @@ import 'package:mjdictionary/choose_units.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/grammar.dart';
+import 'package:mjdictionary/grammar_form.dart';
+import 'package:mjdictionary/grammar_list.dart';
 import 'package:mjdictionary/kaiwa.dart';
 import 'package:mjdictionary/kotoba.dart';
 import 'package:mjdictionary/lessons.dart';
@@ -43,7 +45,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
     {
       "title": "G Form",
       "icon": Icons.markunread_mailbox_rounded,
-      "page": GrammarPage()
+      "page": GrammarFormListPage()
     },
     {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
     {"title": "FlashCard Kotoba", "icon": Icons.memory_rounded, "page": ChooseUnitsPage()},

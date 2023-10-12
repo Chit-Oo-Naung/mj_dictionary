@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/components/checkbox_type.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:mjdictionary/kotoba.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'components/jsonProvider.dart';
@@ -58,7 +59,7 @@ class _UnitPageState extends State<UnitPage> {
 
         meaningList = jsonList
             .where((o) =>
-                o['level'].contains(widget.level) && o['lesson'].contains(unit))
+                o['level'].contains(widget.level) && o['lesson'].contains(unit) && o["type"] != "kanji")
             .toList();
       });
     }
@@ -200,23 +201,38 @@ class _UnitPageState extends State<UnitPage> {
                         ],
                       ),
                     ),
-                    Text(
-                      "${widget.level} ",
-                      style: TextStyle(
-                        fontSize: 19.0,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()
-                          ..shader = const LinearGradient(
-                            colors: <Color>[
-                              Colors.black,
-                              Color.fromARGB(255, 137, 37, 37),
-                              Color.fromARGB(255, 137, 37, 37),
-                            ],
-                          ).createShader(
-                            const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
-                          ),
+                    GestureDetector(
+                      onTap: () {
+                        debugPrint("CLICK >>");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return KotobaPage(
+                            kotobalist: meaningList,
+                          );
+                        }));
+                      },
+                      child: const Icon(
+                        Icons.memory_rounded,
+                        color: Color.fromARGB(255, 137, 37, 37),
                       ),
                     ),
+                    // Text(
+                    //   "${widget.level} ",
+                    //   style: TextStyle(
+                    //     fontSize: 19.0,
+                    //     fontWeight: FontWeight.bold,
+                    //     foreground: Paint()
+                    //       ..shader = const LinearGradient(
+                    //         colors: <Color>[
+                    //           Colors.black,
+                    //           Color.fromARGB(255, 137, 37, 37),
+                    //           Color.fromARGB(255, 137, 37, 37),
+                    //         ],
+                    //       ).createShader(
+                    //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
+                    //       ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
