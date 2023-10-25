@@ -4,6 +4,7 @@ import 'package:mjdictionary/components/alphabetJSON.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 
 import 'components/gradient_text.dart';
 
@@ -68,7 +69,7 @@ class _AlphabetPageState extends State<AlphabetPage>
                     ),
                     gradient: LinearGradient(colors: [
                       Colors.black,
-                      Color.fromARGB(255, 137, 37, 37),
+                      secondaryColor,
                     ]),
                   ),
                   // Text(
@@ -80,8 +81,8 @@ class _AlphabetPageState extends State<AlphabetPage>
                   //       ..shader = const LinearGradient(
                   //         colors: <Color>[
                   //           Colors.black,
-                  //           Color.fromARGB(255, 137, 37, 37),
-                  //           Color.fromARGB(255, 137, 37, 37),
+                  //           secondaryColor,
+                  //           secondaryColor,
                   //         ],
                   //       ).createShader(
                   //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),

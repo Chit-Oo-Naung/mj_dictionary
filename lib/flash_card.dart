@@ -1,44 +1,49 @@
-import 'dart:convert';
 import 'dart:math';
 
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:mjdictionary/common/global_constant.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
-import 'package:mjdictionary/kaiwa_setting.dart';
+import 'package:mjdictionary/flash_card_setting.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:mjdictionary/utils/formula.dart';
 
-class KotobaPage extends StatefulWidget {
+class FlashCardPage extends StatefulWidget {
   final List kotobalist;
-  const KotobaPage({super.key, required this.kotobalist});
+  const FlashCardPage({super.key, required this.kotobalist});
 
   @override
-  State<KotobaPage> createState() => _KotobaPageState();
+  State<FlashCardPage> createState() => _FlashCardPageState();
 }
 
-class _KotobaPageState extends State<KotobaPage> {
+class _FlashCardPageState extends State<FlashCardPage> {
   final FlutterTts tts = FlutterTts();
   List kotobalist = [];
-  bool random = false;
-  bool showTopRandom = true;
-  bool changeJM = false;
+  List orginalList = [];
+  // bool random = false;
+  // bool showTopRandom = true;
+  // bool changeJM = false;
 
   @override
   void initState() {
     // kotobalist.add(kotobalist[0]["showtop"] = boolValue);
     tts.setLanguage('ja');
     tts.setSpeechRate(0.4);
+
+    orginalList = widget.kotobalist;
     _getList();
 
     super.initState();
   }
 
   _getList() {
+    kotobalist = [];
     if (random) {
-      kotobalist = shuffle(widget.kotobalist);
+      kotobalist = widget.kotobalist.toList()..shuffle();
     } else {
-      kotobalist = widget.kotobalist;
+      kotobalist = orginalList;
     }
 
     for (var i = 0; i < kotobalist.length; i++) {
@@ -80,9 +85,9 @@ class _KotobaPageState extends State<KotobaPage> {
                     onTap: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Icon(
+                    child: Icon(
                       Icons.arrow_back_rounded,
-                      color: Color.fromARGB(255, 137, 37, 37),
+                      color: secondaryColor,
                     ),
                   ),
                   GradientText(
@@ -93,33 +98,37 @@ class _KotobaPageState extends State<KotobaPage> {
                     ),
                     gradient: LinearGradient(colors: [
                       Colors.black,
-                      Color.fromARGB(255, 137, 37, 37),
+                      secondaryColor,
                     ]),
                   ),
                   GestureDetector(
-                    onTap: () {
+                    onTap: () async {
                       debugPrint("CLICK >>");
-                      random = !random;
-                      _getList();
-                      setState(() {});
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) {
-                      //   return KaiwaSettingPage();
-                      // }));
+                      // random = !random;
+                      // _getList();
+                      // setState(() {});
+                      bool res = await Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return FlashCardSettingPage();
+                      }));
+                      if (res) {
+                        _getList();
+                        setState(() {});
+                      }
                     },
-                    onDoubleTap: () {
-                      showTopRandom = !showTopRandom;
-                      _getList();
-                      setState(() {});
-                    },
-                    onLongPress: () {
-                      changeJM = !changeJM;
-                      _getList();
-                      setState(() {});
-                    },
-                    child: const Icon(
+                    // onDoubleTap: () {
+                    //   showTopRandom = !showTopRandom;
+                    //   _getList();
+                    //   setState(() {});
+                    // },
+                    // onLongPress: () {
+                    //   changeJM = !changeJM;
+                    //   _getList();
+                    //   setState(() {});
+                    // },
+                    child: Icon(
                       Icons.settings,
-                      color: Color.fromARGB(255, 137, 37, 37),
+                      color: secondaryColor,
                     ),
                   ),
                 ],

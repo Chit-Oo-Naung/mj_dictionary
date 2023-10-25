@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'components/checkbox.dart';
@@ -200,9 +201,9 @@ class _KanjiPageState extends State<KanjiPage>
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Icon(
+                      child:  Icon(
                         Icons.arrow_back_rounded,
-                        color: Color.fromARGB(255, 137, 37, 37),
+                        color: secondaryColor,
                       ),
                     ),
                     GestureDetector(
@@ -219,7 +220,7 @@ class _KanjiPageState extends State<KanjiPage>
                             ),
                             gradient: LinearGradient(colors: [
                               Colors.black,
-                              Color.fromARGB(255, 137, 37, 37),
+                              secondaryColor,
                             ]),
                           ),
                           // Text(
@@ -231,18 +232,18 @@ class _KanjiPageState extends State<KanjiPage>
                           //       ..shader = const LinearGradient(
                           //         colors: <Color>[
                           //           Colors.black,
-                          //           Color.fromARGB(255, 137, 37, 37),
-                          //           Color.fromARGB(255, 137, 37, 37),
+                          //           secondaryColor,
+                          //           secondaryColor,
                           //         ],
                           //       ).createShader(
                           //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
                           //       ),
                           //   ),
                           // ),
-                          const Icon(
+                           Icon(
                             Icons.keyboard_arrow_down_rounded,
                             size: 30,
-                            color: Color.fromARGB(255, 137, 37, 37),
+                            color: secondaryColor,
                           )
                         ],
                       ),
@@ -253,11 +254,11 @@ class _KanjiPageState extends State<KanjiPage>
                         fontSize: 19.0,
                         fontWeight: FontWeight.bold,
                         foreground: Paint()
-                          ..shader = const LinearGradient(
+                          ..shader =  LinearGradient(
                             colors: <Color>[
                               Colors.black,
-                              Color.fromARGB(255, 137, 37, 37),
-                              Color.fromARGB(255, 137, 37, 37),
+                              secondaryColor,
+                              secondaryColor,
                             ],
                           ).createShader(
                             const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),

@@ -48,6 +48,7 @@ dependencies:
   shared_preferences: ^2.2.1
   card_swiper: ^3.0.1
   flutter_html: ^3.0.0-beta.2
+  # flutter_advanced_switch: ^3.0.1
 
 dev_dependencies:
   flutter_test:

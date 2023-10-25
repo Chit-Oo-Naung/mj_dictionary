@@ -6,10 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/components/checkbox_type.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:mjdictionary/kotoba.dart';
+import 'package:mjdictionary/flash_card.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'components/jsonProvider.dart';
 
 class UnitPage extends StatefulWidget {
   final String unit;
@@ -59,7 +58,9 @@ class _UnitPageState extends State<UnitPage> {
 
         meaningList = jsonList
             .where((o) =>
-                o['level'].contains(widget.level) && o['lesson'].contains(unit) && o["type"] != "kanji")
+                o['level'].contains(widget.level) &&
+                o['lesson'].contains(unit) &&
+                o["type"] != "kanji")
             .toList();
       });
     }
@@ -165,9 +166,9 @@ class _UnitPageState extends State<UnitPage> {
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_back_rounded,
-                        color: Color.fromARGB(255, 137, 37, 37),
+                        color: secondaryColor,
                       ),
                     ),
                     GestureDetector(
@@ -182,21 +183,21 @@ class _UnitPageState extends State<UnitPage> {
                               fontSize: 19.0,
                               fontWeight: FontWeight.bold,
                               foreground: Paint()
-                                ..shader = const LinearGradient(
+                                ..shader = LinearGradient(
                                   colors: <Color>[
                                     Colors.black,
-                                    Color.fromARGB(255, 137, 37, 37),
-                                    Color.fromARGB(255, 137, 37, 37),
+                                    secondaryColor,
+                                    secondaryColor,
                                   ],
                                 ).createShader(
                                   const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
                                 ),
                             ),
                           ),
-                          const Icon(
+                          Icon(
                             Icons.keyboard_arrow_down_rounded,
                             size: 30,
-                            color: Color.fromARGB(255, 137, 37, 37),
+                            color: secondaryColor,
                           )
                         ],
                       ),
@@ -206,14 +207,14 @@ class _UnitPageState extends State<UnitPage> {
                         debugPrint("CLICK >>");
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return KotobaPage(
+                          return FlashCardPage(
                             kotobalist: meaningList,
                           );
                         }));
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.memory_rounded,
-                        color: Color.fromARGB(255, 137, 37, 37),
+                        color: secondaryColor,
                       ),
                     ),
                     // Text(
@@ -225,8 +226,8 @@ class _UnitPageState extends State<UnitPage> {
                     //       ..shader = const LinearGradient(
                     //         colors: <Color>[
                     //           Colors.black,
-                    //           Color.fromARGB(255, 137, 37, 37),
-                    //           Color.fromARGB(255, 137, 37, 37),
+                    //           secondaryColor,
+                    //           secondaryColor,
                     //         ],
                     //       ).createShader(
                     //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
@@ -244,13 +245,13 @@ class _UnitPageState extends State<UnitPage> {
                     CustomCheckbox(
                       size: 20,
                       type: GFCheckboxType.custom,
-                      activeBorderColor: const Color.fromARGB(255, 137, 37, 37),
-                      customColor: const Color.fromARGB(255, 137, 37, 37),
-                      activeColor: const Color.fromARGB(255, 137, 37, 37),
+                      activeBorderColor: secondaryColor,
+                      customColor: secondaryColor,
+                      activeColor: secondaryColor,
                       inactiveColor: Colors.transparent,
                       inactiveBorderColor:
                           const Color.fromARGB(255, 192, 80, 80),
-                      textActiveColor: const Color.fromARGB(255, 137, 37, 37),
+                      textActiveColor: secondaryColor,
                       textInactiveColor: const Color.fromARGB(255, 192, 80, 80),
                       textValue: "Kanji",
                       onChanged: (value) {
@@ -267,13 +268,13 @@ class _UnitPageState extends State<UnitPage> {
                     CustomCheckbox(
                       size: 20,
                       type: GFCheckboxType.custom,
-                      activeBorderColor: const Color.fromARGB(255, 137, 37, 37),
-                      customColor: const Color.fromARGB(255, 137, 37, 37),
-                      activeColor: const Color.fromARGB(255, 137, 37, 37),
+                      activeBorderColor: secondaryColor,
+                      customColor: secondaryColor,
+                      activeColor: secondaryColor,
                       inactiveColor: Colors.transparent,
                       inactiveBorderColor:
                           const Color.fromARGB(255, 192, 80, 80),
-                      textActiveColor: const Color.fromARGB(255, 137, 37, 37),
+                      textActiveColor: secondaryColor,
                       textInactiveColor: const Color.fromARGB(255, 192, 80, 80),
                       textValue: "Hira",
                       onChanged: (value) {
@@ -290,13 +291,13 @@ class _UnitPageState extends State<UnitPage> {
                     CustomCheckbox(
                       size: 20,
                       type: GFCheckboxType.custom,
-                      activeBorderColor: const Color.fromARGB(255, 137, 37, 37),
-                      customColor: const Color.fromARGB(255, 137, 37, 37),
-                      activeColor: const Color.fromARGB(255, 137, 37, 37),
+                      activeBorderColor: secondaryColor,
+                      customColor: secondaryColor,
+                      activeColor: secondaryColor,
                       inactiveColor: Colors.transparent,
                       inactiveBorderColor:
                           const Color.fromARGB(255, 192, 80, 80),
-                      textActiveColor: const Color.fromARGB(255, 137, 37, 37),
+                      textActiveColor: secondaryColor,
                       textInactiveColor: const Color.fromARGB(255, 192, 80, 80),
                       textValue: "Meaning",
                       onChanged: (value) {
@@ -313,13 +314,13 @@ class _UnitPageState extends State<UnitPage> {
                     CustomCheckbox(
                       size: 20,
                       type: GFCheckboxType.custom,
-                      activeBorderColor: const Color.fromARGB(255, 137, 37, 37),
-                      customColor: const Color.fromARGB(255, 137, 37, 37),
-                      activeColor: const Color.fromARGB(255, 137, 37, 37),
+                      activeBorderColor: secondaryColor,
+                      customColor: secondaryColor,
+                      activeColor: secondaryColor,
                       inactiveColor: Colors.transparent,
                       inactiveBorderColor:
                           const Color.fromARGB(255, 192, 80, 80),
-                      textActiveColor: const Color.fromARGB(255, 137, 37, 37),
+                      textActiveColor: secondaryColor,
                       textInactiveColor: const Color.fromARGB(255, 192, 80, 80),
                       textValue: "Random",
                       onChanged: (value) {

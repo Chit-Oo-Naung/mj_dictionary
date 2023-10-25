@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math';
 
 import 'package:mjdictionary/components/colors.dart';
@@ -8,6 +7,7 @@ import 'package:mjdictionary/components/jsonprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:http/http.dart' as http;
+import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:mjdictionary/utils/formula.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -413,7 +413,7 @@ class _HomePageState extends State<HomePage>
                       ),
                       gradient: LinearGradient(colors: [
                         Colors.black,
-                        Color.fromARGB(255, 137, 37, 37),
+                        secondaryColor,
                       ]),
                     ),
                     // Text(
@@ -426,8 +426,8 @@ class _HomePageState extends State<HomePage>
                     //     //   ..shader = const LinearGradient(
                     //     //     colors: <Color>[
                     //     //       Colors.black,
-                    //     //       Color.fromARGB(255, 137, 37, 37),
-                    //     //       Color.fromARGB(255, 137, 37, 37),
+                    //     //       secondaryColor,
+                    //     //       secondaryColor,
                     //     //     ],
                     //     //   ).createShader(
                     //     //     Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),

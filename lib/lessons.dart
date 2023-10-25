@@ -1,11 +1,13 @@
 import 'dart:convert';
 
+import 'package:mjdictionary/common/global_constant.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/jsonprovider.dart';
 import 'package:mjdictionary/kanji.dart';
 import 'package:mjdictionary/unit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'components/gradient_text.dart';
@@ -22,7 +24,7 @@ class LessonsPage extends StatefulWidget {
 }
 
 class _LessonsPageState extends State<LessonsPage> {
-  late String level = "";
+  // late String level = "";
   late String unit = "";
   late List unitList = [];
 
@@ -31,7 +33,10 @@ class _LessonsPageState extends State<LessonsPage> {
     super.initState();
 
     if (levelList.isNotEmpty) {
-      level = levelList[0]["level"];
+      if (level.isEmpty) {
+        level = levelList[0]["level"];
+      }
+
       _getUnits(level);
     }
   }
@@ -156,7 +161,7 @@ class _LessonsPageState extends State<LessonsPage> {
                       ),
                       gradient: LinearGradient(colors: [
                         Colors.black,
-                        Color.fromARGB(255, 137, 37, 37),
+                        secondaryColor,
                       ]),
                     ),
                     // Text(
@@ -168,8 +173,8 @@ class _LessonsPageState extends State<LessonsPage> {
                     //       ..shader = const LinearGradient(
                     //         colors: <Color>[
                     //           Colors.black,
-                    //           Color.fromARGB(255, 137, 37, 37),
-                    //           Color.fromARGB(255, 137, 37, 37),
+                    //           secondaryColor,
+                    //           secondaryColor,
                     //         ],
                     //       ).createShader(
                     //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
@@ -195,7 +200,7 @@ class _LessonsPageState extends State<LessonsPage> {
                                       ),
                                       gradient: LinearGradient(colors: [
                                         Colors.black,
-                                        Color.fromARGB(255, 137, 37, 37),
+                                        secondaryColor,
                                       ]),
                                     ),
                                     // Text(
@@ -207,8 +212,8 @@ class _LessonsPageState extends State<LessonsPage> {
                                     //       ..shader = const LinearGradient(
                                     //         colors: <Color>[
                                     //           Colors.black,
-                                    //           Color.fromARGB(255, 137, 37, 37),
-                                    //           Color.fromARGB(255, 137, 37, 37),
+                                    //           secondaryColor,
+                                    //           secondaryColor,
                                     //         ],
                                     //       ).createShader(
                                     //         const Rect.fromLTWH(
@@ -216,9 +221,9 @@ class _LessonsPageState extends State<LessonsPage> {
                                     //       ),
                                     //   ),
                                     // ),
-                                    const Icon(
+                                     Icon(
                                       Icons.swap_horiz_rounded,
-                                      color: Color.fromARGB(255, 137, 37, 37),
+                                      color: secondaryColor,
                                     )
                                   ],
                                 )

@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:mjdictionary/alphabet.dart';
 import 'package:mjdictionary/more.dart';

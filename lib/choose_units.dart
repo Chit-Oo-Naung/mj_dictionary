@@ -1,12 +1,12 @@
 import 'dart:convert';
 
+import 'package:mjdictionary/common/global_constant.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/jsonprovider.dart';
-import 'package:mjdictionary/kanji.dart';
-import 'package:mjdictionary/kotoba.dart';
-import 'package:mjdictionary/unit.dart';
+import 'package:mjdictionary/flash_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'components/gradient_text.dart';
@@ -21,17 +21,20 @@ class ChooseUnitsPage extends StatefulWidget {
 }
 
 class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
-  late String level = "";
+  // late String level = "";
   late String unit = "";
   late List unitList = [];
   late var storedData;
+  List choosedUnitsLst = [];
 
   @override
   void initState() {
     super.initState();
 
     if (levelList.isNotEmpty) {
-      level = levelList[0]["level"];
+      if (level.isEmpty) {
+        level = levelList[0]["level"];
+      }
       _getUnits(level);
     }
   }
@@ -99,9 +102,10 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
     );
   }
 
-  startKotoba() async {
+  chooseUnit() async {
     debugPrint("SELECTED Start >>> ");
-    List choosedUnitsLst = [];
+
+    choosedUnitsLst = [];
 
     for (var i = 0; i < unitList.length; i++) {
       if (unitList[i]["selected"] == true) {
@@ -114,15 +118,18 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
         }
       }
     }
-    Future.delayed(const Duration(milliseconds: 500), () {
-      if (choosedUnitsLst.isNotEmpty) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return KotobaPage(
-            kotobalist: choosedUnitsLst,
-          );
-        }));
-      }
-    });
+  }
+
+  startKotoba() async {
+    // Future.delayed(const Duration(milliseconds: 500), () {
+    if (choosedUnitsLst.isNotEmpty) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return FlashCardPage(
+          kotobalist: choosedUnitsLst,
+        );
+      }));
+    }
+    // });
   }
 
   @override
@@ -155,9 +162,9 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_back_rounded,
-                        color: Color.fromARGB(255, 137, 37, 37),
+                        color: secondaryColor,
                       ),
                     ),
                     GradientText(
@@ -168,7 +175,7 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                       ),
                       gradient: LinearGradient(colors: [
                         Colors.black,
-                        Color.fromARGB(255, 137, 37, 37),
+                        secondaryColor,
                       ]),
                     ),
                     // Text(
@@ -180,8 +187,8 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                     //       ..shader = const LinearGradient(
                     //         colors: <Color>[
                     //           Colors.black,
-                    //           Color.fromARGB(255, 137, 37, 37),
-                    //           Color.fromARGB(255, 137, 37, 37),
+                    //           secondaryColor,
+                    //           secondaryColor,
                     //         ],
                     //       ).createShader(
                     //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
@@ -207,7 +214,7 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                       ),
                                       gradient: LinearGradient(colors: [
                                         Colors.black,
-                                        Color.fromARGB(255, 137, 37, 37),
+                                        secondaryColor,
                                       ]),
                                     ),
                                     // Text(
@@ -219,8 +226,8 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                     //       ..shader = const LinearGradient(
                                     //         colors: <Color>[
                                     //           Colors.black,
-                                    //           Color.fromARGB(255, 137, 37, 37),
-                                    //           Color.fromARGB(255, 137, 37, 37),
+                                    //           secondaryColor,
+                                    //           secondaryColor,
                                     //         ],
                                     //       ).createShader(
                                     //         const Rect.fromLTWH(
@@ -228,9 +235,9 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                     //       ),
                                     //   ),
                                     // ),
-                                    const Icon(
+                                    Icon(
                                       Icons.swap_horiz_rounded,
-                                      color: Color.fromARGB(255, 137, 37, 37),
+                                      color: secondaryColor,
                                     )
                                   ],
                                 )
@@ -263,6 +270,7 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                   } else {
                                     unitList[index]["selected"] = true;
                                   }
+                                  chooseUnit();
                                 });
                               },
                               child: Card(
@@ -271,7 +279,8 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                   side: unitList[index]["selected"]
                                       ? BorderSide(
                                           // border color
-                                          color: Colors.blue.shade200,
+                                          color: secondaryColor,
+                                          // color: Colors.blue.shade200,
                                           // border thickness
                                           width: 3,
                                         )
@@ -290,9 +299,9 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                         child: Text(
                                           "Unit",
                                           style: TextStyle(
-                                              // color: unitList[index]["selected"]
-                                              //     ? Colors.blue.shade200
-                                              //     : Colors.black,
+                                              color: unitList[index]["selected"]
+                                                  ? secondaryColor
+                                                  : Colors.black,
                                               fontSize: 13,
                                               fontWeight: FontWeight.w400),
                                         )),
@@ -302,9 +311,9 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                                       child: Text(
                                         '${unitList[index]["lesson"]}',
                                         style: TextStyle(
-                                            // color: unitList[index]["selected"]
-                                            //     ? Colors.blue.shade200
-                                            //     : Colors.black,
+                                            color: unitList[index]["selected"]
+                                                ? secondaryColor
+                                                : Colors.black,
                                             fontSize: 23,
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -329,46 +338,48 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: GestureDetector(
-              onTap: () {
-                startKotoba();
-              },
-              child: Container(
-                // color: mainColor,
-                // height: 50,
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30.0),
-                      topRight: Radius.circular(30.0)),
-                  color: mainColor,
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    startKotoba();
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Start",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        // gradient: LinearGradient(colors: [
-                        //   Colors.black,
-                        //   Color.fromARGB(255, 137, 37, 37),
-                        // ]
-                        // ),
+            child: choosedUnitsLst.isEmpty
+                ? Container()
+                : GestureDetector(
+                    onTap: () {
+                      startKotoba();
+                    },
+                    child: Container(
+                      // color: mainColor,
+                      // height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(30.0),
+                            topRight: Radius.circular(30.0)),
+                        color: mainColor,
                       ),
-                    ],
+                      child: GestureDetector(
+                        onTap: () {
+                          startKotoba();
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Start",
+                              style: TextStyle(
+                                fontSize: 19.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              // gradient: LinearGradient(colors: [
+                              //   Colors.black,
+                              //   secondaryColor,
+                              // ]
+                              // ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ),
           ),
         ],
       ),

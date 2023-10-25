@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 
 class TranslatePage extends StatefulWidget {
   const TranslatePage({Key? key}) : super(key: key);
@@ -46,9 +47,9 @@ class _TranslatePageState extends State<TranslatePage> {
                         onTap: () {
                           Navigator.of(context).pop();
                         },
-                        child: const Icon(
+                        child:  Icon(
                           Icons.arrow_back_rounded,
-                          color: Color.fromARGB(255, 137, 37, 37),
+                          color: secondaryColor,
                         ),
                       ),
                       GradientText(
@@ -59,7 +60,7 @@ class _TranslatePageState extends State<TranslatePage> {
                         ),
                         gradient: LinearGradient(colors: [
                           Colors.black,
-                          Color.fromARGB(255, 137, 37, 37),
+                          secondaryColor,
                         ]),
                       ),
                       Container()

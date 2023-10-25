@@ -8,6 +8,7 @@ import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
 import 'package:mjdictionary/components/jsonProvider.dart';
 import 'package:mjdictionary/kaiwa_setting.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -131,9 +132,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Icon(
+                      child:  Icon(
                         Icons.arrow_back_rounded,
-                        color: Color.fromARGB(255, 137, 37, 37),
+                        color: secondaryColor,
                       ),
                     ),
                     GradientText(
@@ -144,7 +145,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
                       ),
                       gradient: LinearGradient(colors: [
                         Colors.black,
-                        Color.fromARGB(255, 137, 37, 37),
+                        secondaryColor,
                       ]),
                     ),
                     GestureDetector(
@@ -154,9 +155,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                           return KaiwaSettingPage();
                         }));
                       },
-                      child: const Icon(
+                      child:  Icon(
                         Icons.settings,
-                        color: Color.fromARGB(255, 137, 37, 37),
+                        color: secondaryColor,
                       ),
                     ),
                   ],

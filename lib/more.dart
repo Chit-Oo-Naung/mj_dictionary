@@ -1,15 +1,11 @@
-import 'package:mjdictionary/alphabet.dart';
 import 'package:mjdictionary/choose_units.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/grammar.dart';
-import 'package:mjdictionary/grammar_form.dart';
 import 'package:mjdictionary/grammar_list.dart';
 import 'package:mjdictionary/kaiwa.dart';
-import 'package:mjdictionary/kotoba.dart';
-import 'package:mjdictionary/lessons.dart';
 import 'package:mjdictionary/translate.dart';
-import 'package:mjdictionary/utils/icons.dart';
+import 'package:mjdictionary/utils/colors_util.dart';
 
 import 'components/gradient_text.dart';
 
@@ -93,7 +89,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
                     ),
                     gradient: LinearGradient(colors: [
                       Colors.black,
-                      Color.fromARGB(255, 137, 37, 37),
+                      secondaryColor,
                     ]),
                   ),
                   // Text("More",
@@ -104,8 +100,8 @@ class _BookmarkPageState extends State<BookmarkPage> {
                   //           ..shader = const LinearGradient(
                   //             colors: <Color>[
                   //               Colors.black,
-                  //               Color.fromARGB(255, 137, 37, 37),
-                  //               Color.fromARGB(255, 137, 37, 37),
+                  //               secondaryColor,
+                  //               secondaryColor,
                   //             ],
                   //           ).createShader(
                   //               Rect.fromLTWH(0.0, 0.0, 200.0, 100.0))))
