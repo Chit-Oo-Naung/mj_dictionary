@@ -34,6 +34,11 @@ class _BookmarkPageState extends State<BookmarkPage> {
     //   ),
     // },
     {
+      "title": "Numbers",
+      "icon": Icons.numbers_rounded,
+      "page": GrammarPage()
+    },
+    {
       "title": "Grammar",
       "icon": Icons.menu_book_rounded,
       "page": GrammarPage()

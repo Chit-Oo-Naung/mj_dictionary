@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:mjdictionary/kanji_writing.dart';
 import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -201,7 +202,7 @@ class _KanjiPageState extends State<KanjiPage>
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child:  Icon(
+                      child: Icon(
                         Icons.arrow_back_rounded,
                         color: secondaryColor,
                       ),
@@ -240,7 +241,7 @@ class _KanjiPageState extends State<KanjiPage>
                           //       ),
                           //   ),
                           // ),
-                           Icon(
+                          Icon(
                             Icons.keyboard_arrow_down_rounded,
                             size: 30,
                             color: secondaryColor,
@@ -254,7 +255,7 @@ class _KanjiPageState extends State<KanjiPage>
                         fontSize: 19.0,
                         fontWeight: FontWeight.bold,
                         foreground: Paint()
-                          ..shader =  LinearGradient(
+                          ..shader = LinearGradient(
                             colors: <Color>[
                               Colors.black,
                               secondaryColor,
@@ -536,21 +537,29 @@ class KanjiWritingListView extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Container(
-                        height: 80,
-                        width: MediaQuery.of(context).size.width * 0.25,
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(10.0),
-                              bottomLeft: Radius.circular(0.0)),
-                          color: mainColor,
+                      GestureDetector(
+                        onLongPress: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return KanjiWritingPage();
+                          }));
+                        },
+                        child: Container(
+                          height: 80,
+                          width: MediaQuery.of(context).size.width * 0.25,
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(10.0),
+                                bottomLeft: Radius.circular(0.0)),
+                            color: mainColor,
+                          ),
+                          child: Center(
+                              child: Text(
+                            kanjiList[index]["kanji"],
+                            style: TextStyle(
+                                fontSize: 40, fontWeight: FontWeight.bold),
+                          )),
                         ),
-                        child: Center(
-                            child: Text(
-                          kanjiList[index]["kanji"],
-                          style: TextStyle(
-                              fontSize: 40, fontWeight: FontWeight.bold),
-                        )),
                       ),
                       Container(
                         // color:Colors.blue,
