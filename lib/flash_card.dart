@@ -19,6 +19,8 @@ class FlashCardPage extends StatefulWidget {
 }
 
 class _FlashCardPageState extends State<FlashCardPage> {
+  SwiperController swiperCtrl = SwiperController();
+
   final FlutterTts tts = FlutterTts();
   List kotobalist = [];
   List orginalList = [];
@@ -112,6 +114,7 @@ class _FlashCardPageState extends State<FlashCardPage> {
                         return FlashCardSettingPage();
                       }));
                       if (res) {
+                        swiperCtrl.move(0);
                         _getList();
                         setState(() {});
                       }
@@ -148,6 +151,7 @@ class _FlashCardPageState extends State<FlashCardPage> {
                     ),
                     Expanded(
                       child: Swiper(
+                        controller: swiperCtrl,
                         onIndexChanged: (value) {},
                         onTap: (index) {
                           setState(() {});

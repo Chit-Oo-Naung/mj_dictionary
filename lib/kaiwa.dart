@@ -278,7 +278,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                             Text(
                                               snapshot.data[index]["myanmar"],
                                               style: const TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 13,
                                                   color: Colors.black54,
                                                   fontWeight:
                                                       FontWeight.normal),

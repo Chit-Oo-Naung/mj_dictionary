@@ -391,7 +391,7 @@ class _UnitPageState extends State<UnitPage> {
                                             ? meaningList[index]["myanmar"]
                                             : "",
                                         style: const TextStyle(
-                                            fontSize: 11,
+                                            fontSize: 13,
                                             color: Colors.black54,
                                             fontWeight: FontWeight.normal),
                                       ),

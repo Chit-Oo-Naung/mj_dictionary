@@ -6,6 +6,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:mjdictionary/kanji_writing.dart';
 import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:mjdictionary/flash_card.dart';
 
 import 'components/checkbox.dart';
 import 'components/checkbox_type.dart';
@@ -249,23 +250,38 @@ class _KanjiPageState extends State<KanjiPage>
                         ],
                       ),
                     ),
-                    Text(
-                      "${widget.level} ",
-                      style: TextStyle(
-                        fontSize: 19.0,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()
-                          ..shader = LinearGradient(
-                            colors: <Color>[
-                              Colors.black,
-                              secondaryColor,
-                              secondaryColor,
-                            ],
-                          ).createShader(
-                            const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
-                          ),
+                    GestureDetector(
+                      onTap: () {
+                        debugPrint("CLICK >>");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return FlashCardPage(
+                            kotobalist: meaningList,
+                          );
+                        }));
+                      },
+                      child: Icon(
+                        Icons.memory_rounded,
+                        color: secondaryColor,
                       ),
                     ),
+                    // Text(
+                    //   "${widget.level} ",
+                    //   style: TextStyle(
+                    //     fontSize: 19.0,
+                    //     fontWeight: FontWeight.bold,
+                    //     foreground: Paint()
+                    //       ..shader = LinearGradient(
+                    //         colors: <Color>[
+                    //           Colors.black,
+                    //           secondaryColor,
+                    //           secondaryColor,
+                    //         ],
+                    //       ).createShader(
+                    //         const Rect.fromLTWH(0.0, 0.0, 200.0, 100.0),
+                    //       ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -773,7 +789,7 @@ class KanjiMeaningListView extends StatelessWidget {
             subtitle: Text(
               meaning ? meaningList[index]["myanmar"] : "",
               style: const TextStyle(
-                  fontSize: 11,
+                  fontSize: 13,
                   color: Colors.black54,
                   fontWeight: FontWeight.normal),
             ),

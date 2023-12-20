@@ -81,7 +81,7 @@ class _KanjiWritingPageState extends State<KanjiWritingPage> {
                         child: Text(
                           kanjiStr,
                           style: const TextStyle(
-                              fontFamily: 'strokeOrders', fontSize: 128),
+                              fontFamily: 'strokeOrders', fontSize: 200),
                           textScaleFactor: 1,
                           textAlign: TextAlign.center,
                         ),

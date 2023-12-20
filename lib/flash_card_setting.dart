@@ -25,6 +25,16 @@ class _FlashCardSettingPageState extends State<FlashCardSettingPage> {
     super.initState();
   }
 
+  savedChange() {
+    bool randomVal = randomCtrl.value;
+    random = randomVal;
+    bool showTopRandomVal = showTopRandomCtrl.value;
+    showTopRandom = showTopRandomVal;
+    bool changeJMVal = changeJMCtrl.value;
+    changeJM = changeJMVal;
+    Navigator.of(context).pop(true);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,7 +179,7 @@ class _FlashCardSettingPageState extends State<FlashCardSettingPage> {
                         height: 30,
                       ),
                       GradientText(
-                        "* If you change and saved the setting, flash card list will reset",
+                        "* If you do saved change the setting, flash card list will reset",
                         style: TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
@@ -198,7 +208,7 @@ class _FlashCardSettingPageState extends State<FlashCardSettingPage> {
           right: 0,
           child: GestureDetector(
             onTap: () {
-              // startKotoba();
+              savedChange();
             },
             child: Container(
               // color: mainColor,
@@ -213,14 +223,14 @@ class _FlashCardSettingPageState extends State<FlashCardSettingPage> {
               ),
               child: GestureDetector(
                 onTap: () {
-                  // startKotoba();
-                  bool randomVal = randomCtrl.value;
-                  random = randomVal;
-                  bool showTopRandomVal = showTopRandomCtrl.value;
-                  showTopRandom = showTopRandomVal;
-                  bool changeJMVal = changeJMCtrl.value;
-                  changeJM = changeJMVal;
-                  Navigator.of(context).pop(true);
+                  savedChange();
+                  // bool randomVal = randomCtrl.value;
+                  // random = randomVal;
+                  // bool showTopRandomVal = showTopRandomCtrl.value;
+                  // showTopRandom = showTopRandomVal;
+                  // bool changeJMVal = changeJMCtrl.value;
+                  // changeJM = changeJMVal;
+                  // Navigator.of(context).pop(true);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

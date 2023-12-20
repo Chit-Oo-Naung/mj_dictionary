@@ -657,7 +657,7 @@ class _HomePageState extends State<HomePage>
                                     ? snapshot.data[index]["myanmar"]
                                     : snapshot.data[index]["japan"],
                                 style: const TextStyle(
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     color: Colors.black54,
                                     fontWeight: FontWeight.normal),
                               ),

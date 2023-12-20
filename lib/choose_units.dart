@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:drag_select_grid_view/drag_select_grid_view.dart';
 import 'package:mjdictionary/common/global_constant.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/jsonprovider.dart';
@@ -20,12 +21,15 @@ class ChooseUnitsPage extends StatefulWidget {
   State<ChooseUnitsPage> createState() => _ChooseUnitsPageState();
 }
 
+late String unit = "";
+late List unitList = [];
+late var storedData;
+List choosedUnitsLst = [];
+
 class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
   // late String level = "";
-  late String unit = "";
-  late List unitList = [];
-  late var storedData;
-  List choosedUnitsLst = [];
+
+  final controller = DragSelectGridViewController();
 
   @override
   void initState() {
@@ -37,6 +41,13 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
       }
       _getUnits(level);
     }
+    controller.addListener(scheduleRebuild);
+  }
+
+  @override
+  void dispose() {
+    controller.removeListener(scheduleRebuild);
+    super.dispose();
   }
 
   _getUnits(lvl) async {
@@ -100,24 +111,6 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
         ],
       ),
     );
-  }
-
-  chooseUnit() async {
-    debugPrint("SELECTED Start >>> ");
-
-    choosedUnitsLst = [];
-
-    for (var i = 0; i < unitList.length; i++) {
-      if (unitList[i]["selected"] == true) {
-        List jsonList = json.decode(storedData);
-        for (var j = 0; j < jsonList.length; j++) {
-          if ((unitList[i]["lesson"] == jsonList[j]["lesson"]) &&
-              jsonList[j]["type"] != "kanji") {
-            choosedUnitsLst.add(jsonList[j]);
-          }
-        }
-      }
-    }
   }
 
   startKotoba() async {
@@ -255,76 +248,101 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                   child: Column(
                     children: [
                       Expanded(
-                        child: GridView.builder(
+                        child: DragSelectGridView(
+                          gridController: controller,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 10),
+                          itemCount: unitList.length,
+                          itemBuilder: (context, index, selected) {
+                            return SelectableItem(
+                              index: index,
+                              color: Colors.amber,
+                              selected: selected,
+                              unitList: unitList,
+                            );
+                          },
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4),
-                          itemCount: unitList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                              onTap: () {
-                                // clickCard(unitList[index]["lesson"]);
-                                setState(() {
-                                  if (unitList[index]["selected"]) {
-                                    unitList[index]["selected"] = false;
-                                  } else {
-                                    unitList[index]["selected"] = true;
-                                  }
-                                  chooseUnit();
-                                });
-                              },
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  side: unitList[index]["selected"]
-                                      ? BorderSide(
-                                          // border color
-                                          color: secondaryColor,
-                                          // color: Colors.blue.shade200,
-                                          // border thickness
-                                          width: 3,
-                                        )
-                                      : BorderSide.none,
-                                  //set border radius more than 50% of height and width to make circle
-                                ),
-                                elevation: 5,
-                                shadowColor: Colors.black,
-                                color: Colors.amber[100],
-                                // color: Colors.primaries[index % 10][100],
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                        top: 5,
-                                        left: 10,
-                                        child: Text(
-                                          "Unit",
-                                          style: TextStyle(
-                                              color: unitList[index]["selected"]
-                                                  ? secondaryColor
-                                                  : Colors.black,
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w400),
-                                        )),
-                                    Center(
-                                        child: Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Text(
-                                        '${unitList[index]["lesson"]}',
-                                        style: TextStyle(
-                                            color: unitList[index]["selected"]
-                                                ? secondaryColor
-                                                : Colors.black,
-                                            fontSize: 23,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    )),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
+                          // gridDelegate:
+                          //     const SliverGridDelegateWithMaxCrossAxisExtent(
+                          //   maxCrossAxisExtent: 150,
+                          //   crossAxisSpacing: 5,
+                          //   mainAxisSpacing: 5,
+                          // ),
                         ),
                       ),
+                      // Expanded(
+                      //   child: GridView.builder(
+                      //     gridDelegate:
+                      //         const SliverGridDelegateWithFixedCrossAxisCount(
+                      //             crossAxisCount: 4),
+                      //     itemCount: unitList.length,
+                      //     itemBuilder: (BuildContext context, int index) {
+                      //       return GestureDetector(
+                      //         onTap: () {
+                      //           // clickCard(unitList[index]["lesson"]);
+                      //           setState(() {
+                      //             if (unitList[index]["selected"]) {
+                      //               unitList[index]["selected"] = false;
+                      //             } else {
+                      //               unitList[index]["selected"] = true;
+                      //             }
+                      //             chooseUnit();
+                      //           });
+                      //         },
+                      //         child: Card(
+                      //           shape: RoundedRectangleBorder(
+                      //             borderRadius: BorderRadius.circular(10),
+                      //             side: unitList[index]["selected"]
+                      //                 ? BorderSide(
+                      //                     // border color
+                      //                     color: secondaryColor,
+                      //                     // color: Colors.blue.shade200,
+                      //                     // border thickness
+                      //                     width: 3,
+                      //                   )
+                      //                 : BorderSide.none,
+                      //             //set border radius more than 50% of height and width to make circle
+                      //           ),
+                      //           elevation: 5,
+                      //           shadowColor: Colors.black,
+                      //           color: Colors.amber[100],
+                      //           // color: Colors.primaries[index % 10][100],
+                      //           child: Stack(
+                      //             children: [
+                      //               Positioned(
+                      //                   top: 5,
+                      //                   left: 10,
+                      //                   child: Text(
+                      //                     "Unit",
+                      //                     style: TextStyle(
+                      //                         color: unitList[index]["selected"]
+                      //                             ? secondaryColor
+                      //                             : Colors.black,
+                      //                         fontSize: 13,
+                      //                         fontWeight: FontWeight.w400),
+                      //                   )),
+                      //               Center(
+                      //                   child: Padding(
+                      //                 padding: const EdgeInsets.only(top: 8.0),
+                      //                 child: Text(
+                      //                   '${unitList[index]["lesson"]}',
+                      //                   style: TextStyle(
+                      //                       color: unitList[index]["selected"]
+                      //                           ? secondaryColor
+                      //                           : Colors.black,
+                      //                       fontSize: 23,
+                      //                       fontWeight: FontWeight.bold),
+                      //                 ),
+                      //               )),
+                      //             ],
+                      //           ),
+                      //         ),
+                      //       );
+                      //     },
+                      //   ),
+                      // ),
                       const SizedBox(
                         height: 10,
                       )
@@ -383,6 +401,205 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
           ),
         ],
       ),
+    );
+  }
+
+  void scheduleRebuild() => Future.delayed(Duration(milliseconds: 300), (){setState(() {});});
+}
+
+chooseUnit() async {
+  debugPrint("SELECTED Start >>> ");
+
+  choosedUnitsLst = [];
+
+  for (var i = 0; i < unitList.length; i++) {
+    if (unitList[i]["selected"] == true) {
+      List jsonList = json.decode(storedData);
+      for (var j = 0; j < jsonList.length; j++) {
+        if ((unitList[i]["lesson"] == jsonList[j]["lesson"]) &&
+            jsonList[j]["type"] != "kanji") {
+          choosedUnitsLst.add(jsonList[j]);
+        }
+      }
+    }
+  }
+}
+
+// Copyright (c) 2019 Simon Lightfoot
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+// import 'package:flutter/material.dart';
+
+class SelectableItem extends StatefulWidget {
+  const SelectableItem({
+    Key? key,
+    required this.index,
+    required this.color,
+    required this.selected,
+    required this.unitList,
+  }) : super(key: key);
+
+  final int index;
+  final MaterialColor color;
+  final bool selected;
+  final List unitList;
+
+  @override
+  _SelectableItemState createState() => _SelectableItemState();
+}
+
+class _SelectableItemState extends State<SelectableItem>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  late final Animation<double> _scaleAnimation;
+  late final List unitList;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      value: widget.selected ? 1 : 0,
+      duration: kThemeChangeDuration,
+      vsync: this,
+    );
+
+    _scaleAnimation = Tween<double>(begin: 1, end: 0.8).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.ease,
+      ),
+    );
+  }
+
+  @override
+  void didUpdateWidget(SelectableItem oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.selected != widget.selected) {
+      if (widget.unitList[widget.index]["selected"]) {
+        widget.unitList[widget.index]["selected"] = false;
+      } else {
+        widget.unitList[widget.index]["selected"] = true;
+      }
+      chooseUnit();
+      if (widget.selected) {
+        _controller.forward();
+      } else {
+        _controller.reverse();
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _scaleAnimation,
+      builder: (context, child) {
+        return Container(
+          child: Transform.scale(
+            scale: _scaleAnimation.value,
+            child: DecoratedBox(
+              child: child,
+              position: DecorationPosition.background,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: calculateColor(),
+              ),
+            ),
+          ),
+        );
+      },
+      child: Container(
+        color: Colors.transparent,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            // side: widget.unitList[widget.index]["selected"]
+            //     ? BorderSide(
+            //         // border color
+            //         color: secondaryColor,
+            //         // color: Colors.blue.shade200,
+            //         // border thickness
+            //         width: 3,
+            //       )
+            //     : BorderSide.none,
+            //set border radius more than 50% of height and width to make circle
+          ),
+          elevation: 5,
+          shadowColor: Colors.black,
+          color: Colors.amber[100],
+          // color: Colors.primaries[index % 10][100],
+          child: Stack(
+            children: [
+              Positioned(
+                  top: 5,
+                  left: 10,
+                  child: Text(
+                    "Unit",
+                    style: TextStyle(
+                        color: widget.unitList[widget.index]["selected"]
+                            ? secondaryColor
+                            : Colors.black,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400),
+                  )),
+              Center(
+                  child: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text(
+                  '${widget.unitList[widget.index]["lesson"]}',
+                  style: TextStyle(
+                      color: widget.unitList[widget.index]["selected"]
+                          ? secondaryColor
+                          : Colors.black,
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold),
+                ),
+              )),
+            ],
+          ),
+        ),
+      ),
+
+      // Container(
+      //   alignment: Alignment.center,
+      //   child: Text(
+      //     'Item\n#${widget.index}',
+      //     textAlign: TextAlign.center,
+      //     style: TextStyle(fontSize: 18, color: Colors.white),
+      //   ),
+      // ),
+    );
+  }
+
+  Color? calculateColor() {
+    return Color.lerp(
+      Colors.transparent,
+      secondaryColor,
+      _controller.value,
     );
   }
 }
