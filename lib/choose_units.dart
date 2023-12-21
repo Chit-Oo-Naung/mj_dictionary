@@ -153,6 +153,11 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                   children: [
                     GestureDetector(
                       onTap: () {
+                        CloseButton();
+                        if (choosedUnitsLst.isNotEmpty) {
+                          choosedUnitsLst = [];
+                          Navigator.of(context).pop();
+                        }
                         Navigator.of(context).pop();
                       },
                       child: Icon(
@@ -251,7 +256,7 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                         child: DragSelectGridView(
                           gridController: controller,
                           padding: const EdgeInsets.symmetric(
-                              vertical: 20, horizontal: 10),
+                              vertical: 20, horizontal: 0),
                           itemCount: unitList.length,
                           itemBuilder: (context, index, selected) {
                             return SelectableItem(
@@ -404,7 +409,9 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
     );
   }
 
-  void scheduleRebuild() => Future.delayed(Duration(milliseconds: 300), (){setState(() {});});
+  void scheduleRebuild() => Future.delayed(Duration(milliseconds: 300), () {
+        setState(() {});
+      });
 }
 
 chooseUnit() async {
@@ -424,26 +431,6 @@ chooseUnit() async {
     }
   }
 }
-
-// Copyright (c) 2019 Simon Lightfoot
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
 
 // import 'package:flutter/material.dart';
 
@@ -518,15 +505,34 @@ class _SelectableItemState extends State<SelectableItem>
     return AnimatedBuilder(
       animation: _scaleAnimation,
       builder: (context, child) {
-        return Container(
-          child: Transform.scale(
-            scale: _scaleAnimation.value,
-            child: DecoratedBox(
-              child: child,
-              position: DecorationPosition.background,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: calculateColor(),
+        return GestureDetector(
+          onTap: () {
+            debugPrint("SSS111 >> ${widget.index}");
+
+            // if (widget.unitList[widget.index]["selected"]) {
+            //   widget.unitList[widget.index]["selected"] = false;
+            // } else {
+            //   widget.unitList[widget.index]["selected"] = true;
+            // }
+            // chooseUnit();
+            // Future.delayed(Duration(seconds: 1), () {
+              if (_controller.value == 0) {
+                _controller.value = 1;
+              } else {
+                _controller.value = 0;
+              }
+            // });
+          },
+          child: Container(
+            child: Transform.scale(
+              scale: _scaleAnimation.value,
+              child: DecoratedBox(
+                child: child,
+                position: DecorationPosition.background,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: calculateColor(),
+                ),
               ),
             ),
           ),
