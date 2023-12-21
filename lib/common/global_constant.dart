@@ -1,7 +1,20 @@
+import 'package:auto_animated/auto_animated.dart';
+
 String level = "";
 bool random = false;
 bool showTopRandom = true;
 bool changeJM = false;
+
+//Card Animation
+final options = LiveOptions(
+    // Start animation after (default zero)
+    // delay: Duration(seconds: 0),
+    showItemInterval: Duration(milliseconds: 80),
+    showItemDuration: Duration(milliseconds: 100),
+    visibleFraction: 0.1,
+    reAnimateOnVisibility: false,
+  );
+
 
 const Set<String> allVideoFiles = {
   "一",

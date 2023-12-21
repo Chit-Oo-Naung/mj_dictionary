@@ -1,4 +1,6 @@
+import 'package:auto_animated/auto_animated.dart';
 import 'package:mjdictionary/choose_units.dart';
+import 'package:mjdictionary/common/global_constant.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/grammar.dart';
@@ -16,7 +18,8 @@ class BookmarkPage extends StatefulWidget {
   State<BookmarkPage> createState() => _BookmarkPageState();
 }
 
-class _BookmarkPageState extends State<BookmarkPage> {
+class _BookmarkPageState extends State<BookmarkPage>
+    with AutomaticKeepAliveClientMixin {
   List moreList = [
     // {"title": "Alphabet", "icon": font, "page": AlphabetPage()},
     // {
@@ -33,11 +36,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
     //     tabIndex: 3,
     //   ),
     // },
-    {
-      "title": "Numbers",
-      "icon": Icons.numbers_rounded,
-      "page": GrammarPage()
-    },
+    {"title": "Numbers", "icon": Icons.numbers_rounded, "page": GrammarPage()},
     {
       "title": "Grammar",
       "icon": Icons.menu_book_rounded,
@@ -49,12 +48,80 @@ class _BookmarkPageState extends State<BookmarkPage> {
       "page": GrammarFormListPage()
     },
     {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
-    {"title": "FlashCard Kotoba", "icon": Icons.memory_rounded, "page": ChooseUnitsPage()},
+    {
+      "title": "FlashCard Kotoba",
+      "icon": Icons.memory_rounded,
+      "page": ChooseUnitsPage()
+    },
     {"title": "Translate", "icon": Icons.translate, "page": TranslatePage()},
   ];
 
   @override
   Widget build(BuildContext context) {
+    // Build animated item (helper for all examples)
+    Widget buildAnimatedItem(
+      BuildContext context,
+      int index,
+      Animation<double> animation,
+    ) =>
+        // For example wrap with fade transition
+        FadeTransition(
+          opacity: Tween<double>(
+            begin: 0,
+            end: 1,
+          ).animate(animation),
+          // And slide transition
+          child: SlideTransition(
+              position: Tween<Offset>(
+                begin: Offset(0, -0.1),
+                end: Offset.zero,
+              ).animate(animation),
+              // Paste you Widget
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return moreList[index]["page"];
+                  }));
+                },
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    //set border radius more than 50% of height and width to make circle
+                  ),
+                  elevation: 5,
+                  shadowColor: Colors.black,
+                  color: Colors.amber[100],
+                  // color: Colors.primaries[index % 10][100],
+                  child: Stack(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(moreList[index]["icon"]),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            '${moreList[index]["title"]}',
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              )),
+        );
+
     return Scaffold(
         // backgroundColor: mainColor,
         body: Stack(
@@ -119,73 +186,95 @@ class _BookmarkPageState extends State<BookmarkPage> {
                 child: Column(
                   children: [
                     Expanded(
-                      child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 4),
+                      child: LiveGrid.options(
+                        options: options,
+                        itemBuilder: buildAnimatedItem,
                         itemCount: moreList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return moreList[index]["page"];
-                              }));
-                            },
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                //set border radius more than 50% of height and width to make circle
-                              ),
-                              elevation: 5,
-                              shadowColor: Colors.black,
-                              color: Colors.amber[100],
-                              // color: Colors.primaries[index % 10][100],
-                              child: Stack(
-                                children: [
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(moreList[index]["icon"]),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),                                    
-                                      Text(
-                                        '${moreList[index]["title"]}',
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 4,
+                          // crossAxisSpacing: 16,
+                          // mainAxisSpacing: 16,
+                        ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    )
                   ],
                 ),
               ),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 18.0, left: 10, right: 10),
+              //   child: Column(
+              //     children: [
+              //       Expanded(
+              //         child: GridView.builder(
+              //           gridDelegate:
+              //               const SliverGridDelegateWithFixedCrossAxisCount(
+              //                   crossAxisCount: 4),
+              //           itemCount: moreList.length,
+              //           itemBuilder: (BuildContext context, int index) {
+              //             return GestureDetector(
+              //               onTap: () {
+              //                 Navigator.push(context,
+              //                     MaterialPageRoute(builder: (context) {
+              //                   return moreList[index]["page"];
+              //                 }));
+              //               },
+              //               child: Card(
+              //                 shape: RoundedRectangleBorder(
+              //                   borderRadius: BorderRadius.circular(10),
+              //                   //set border radius more than 50% of height and width to make circle
+              //                 ),
+              //                 elevation: 5,
+              //                 shadowColor: Colors.black,
+              //                 color: Colors.amber[100],
+              //                 // color: Colors.primaries[index % 10][100],
+              //                 child: Stack(
+              //                   children: [
+              //                     Column(
+              //                       mainAxisAlignment: MainAxisAlignment.center,
+              //                       crossAxisAlignment:
+              //                           CrossAxisAlignment.center,
+              //                       children: [
+              //                         Row(
+              //                           mainAxisAlignment:
+              //                               MainAxisAlignment.center,
+              //                           crossAxisAlignment:
+              //                               CrossAxisAlignment.center,
+              //                           children: [
+              //                             Icon(moreList[index]["icon"]),
+              //                           ],
+              //                         ),
+              //                         SizedBox(
+              //                           height: 5,
+              //                         ),
+              //                         Text(
+              //                           '${moreList[index]["title"]}',
+              //                           textAlign: TextAlign.center,
+              //                           style: const TextStyle(
+              //                               fontSize: 13,
+              //                               fontWeight: FontWeight.bold),
+              //                         ),
+              //                       ],
+              //                     ),
+              //                   ],
+              //                 ),
+              //               ),
+              //             );
+              //           },
+              //         ),
+              //       ),
+              //       const SizedBox(
+              //         height: 10,
+              //       )
+              //     ],
+              //   ),
+              // ),
             ),
           ],
         ),
       ],
     ));
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

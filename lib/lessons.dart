@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:auto_animated/auto_animated.dart';
 import 'package:mjdictionary/common/global_constant.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/jsonprovider.dart';
@@ -23,7 +24,8 @@ class LessonsPage extends StatefulWidget {
   State<LessonsPage> createState() => _LessonsPageState();
 }
 
-class _LessonsPageState extends State<LessonsPage> {
+class _LessonsPageState extends State<LessonsPage>
+    with AutomaticKeepAliveClientMixin {
   // late String level = "";
   late String unit = "";
   late List unitList = [];
@@ -129,6 +131,63 @@ class _LessonsPageState extends State<LessonsPage> {
 
   @override
   Widget build(BuildContext context) {
+    Widget buildAnimatedItem(
+      BuildContext context,
+      int index,
+      Animation<double> animation,
+    ) =>
+        // For example wrap with fade transition
+        FadeTransition(
+          opacity: Tween<double>(
+            begin: 0,
+            end: 1,
+          ).animate(animation),
+          // And slide transition
+          child: SlideTransition(
+            position: Tween<Offset>(
+              begin: Offset(0, -0.1),
+              end: Offset.zero,
+            ).animate(animation),
+            // Paste you Widget
+            child: GestureDetector(
+              onTap: () {
+                clickCard(unitList[index]["lesson"]);
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  //set border radius more than 50% of height and width to make circle
+                ),
+                elevation: 5,
+                shadowColor: Colors.black,
+                color: Colors.amber[100],
+                // color: Colors.primaries[index % 10][100],
+                child: Stack(
+                  children: [
+                    const Positioned(
+                        top: 5,
+                        left: 10,
+                        child: Text(
+                          "Unit",
+                          style: TextStyle(
+                              fontSize: 13, fontWeight: FontWeight.w400),
+                        )),
+                    Center(
+                        child: Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        '${unitList[index]["lesson"]}',
+                        style: const TextStyle(
+                            fontSize: 23, fontWeight: FontWeight.bold),
+                      ),
+                    )),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+
     return Scaffold(
       body: Stack(
         children: [
@@ -221,7 +280,7 @@ class _LessonsPageState extends State<LessonsPage> {
                                     //       ),
                                     //   ),
                                     // ),
-                                     Icon(
+                                    Icon(
                                       Icons.swap_horiz_rounded,
                                       color: secondaryColor,
                                     )
@@ -242,52 +301,63 @@ class _LessonsPageState extends State<LessonsPage> {
                   child: Column(
                     children: [
                       Expanded(
-                        child: GridView.builder(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 4),
+                        child: LiveGrid.options(
+                          options: options,
+                          itemBuilder: buildAnimatedItem,
                           itemCount: unitList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                              onTap: () {
-                                clickCard(unitList[index]["lesson"]);
-                              },
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  //set border radius more than 50% of height and width to make circle
-                                ),
-                                elevation: 5,
-                                shadowColor: Colors.black,
-                                color: Colors.amber[100],
-                                // color: Colors.primaries[index % 10][100],
-                                child: Stack(
-                                  children: [
-                                    const Positioned(
-                                        top: 5,
-                                        left: 10,
-                                        child: Text(
-                                          "Unit",
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w400),
-                                        )),
-                                    Center(
-                                        child: Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Text(
-                                        '${unitList[index]["lesson"]}',
-                                        style: const TextStyle(
-                                            fontSize: 23,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    )),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4,
+                            // crossAxisSpacing: 16,
+                            // mainAxisSpacing: 16,
+                          ),
                         ),
+                        // GridView.builder(
+                        //   gridDelegate:
+                        //       const SliverGridDelegateWithFixedCrossAxisCount(
+                        //           crossAxisCount: 4),
+                        //   itemCount: unitList.length,
+                        //   itemBuilder: (BuildContext context, int index) {
+                        //     return GestureDetector(
+                        //       onTap: () {
+                        //         clickCard(unitList[index]["lesson"]);
+                        //       },
+                        //       child: Card(
+                        //         shape: RoundedRectangleBorder(
+                        //           borderRadius: BorderRadius.circular(10),
+                        //           //set border radius more than 50% of height and width to make circle
+                        //         ),
+                        //         elevation: 5,
+                        //         shadowColor: Colors.black,
+                        //         color: Colors.amber[100],
+                        //         // color: Colors.primaries[index % 10][100],
+                        //         child: Stack(
+                        //           children: [
+                        //             const Positioned(
+                        //                 top: 5,
+                        //                 left: 10,
+                        //                 child: Text(
+                        //                   "Unit",
+                        //                   style: TextStyle(
+                        //                       fontSize: 13,
+                        //                       fontWeight: FontWeight.w400),
+                        //                 )),
+                        //             Center(
+                        //                 child: Padding(
+                        //               padding: const EdgeInsets.only(top: 8.0),
+                        //               child: Text(
+                        //                 '${unitList[index]["lesson"]}',
+                        //                 style: const TextStyle(
+                        //                     fontSize: 23,
+                        //                     fontWeight: FontWeight.bold),
+                        //               ),
+                        //             )),
+                        //           ],
+                        //         ),
+                        //       ),
+                        //     );
+                        //   },
+                        // ),
                       ),
                       const SizedBox(
                         height: 10,
@@ -302,4 +372,7 @@ class _LessonsPageState extends State<LessonsPage> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

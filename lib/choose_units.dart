@@ -197,6 +197,9 @@ class _ChooseUnitsPageState extends State<ChooseUnitsPage> {
                         ? Container()
                         : GestureDetector(
                             onTap: () {
+                              if (choosedUnitsLst.isNotEmpty) {
+                                Navigator.of(context).pop();
+                              }
                               _showLevelActionSheet(context);
                               debugPrint("Click Level>>");
                             },
@@ -479,6 +482,7 @@ class _SelectableItemState extends State<SelectableItem>
   @override
   void didUpdateWidget(SelectableItem oldWidget) {
     super.didUpdateWidget(oldWidget);
+    // debugPrint("UPDATE WIDGET >>>");
     if (oldWidget.selected != widget.selected) {
       if (widget.unitList[widget.index]["selected"]) {
         widget.unitList[widget.index]["selected"] = false;
@@ -505,87 +509,82 @@ class _SelectableItemState extends State<SelectableItem>
     return AnimatedBuilder(
       animation: _scaleAnimation,
       builder: (context, child) {
-        return GestureDetector(
-          onTap: () {
-            debugPrint("SSS111 >> ${widget.index}");
-
-            // if (widget.unitList[widget.index]["selected"]) {
-            //   widget.unitList[widget.index]["selected"] = false;
-            // } else {
-            //   widget.unitList[widget.index]["selected"] = true;
-            // }
-            // chooseUnit();
-            // Future.delayed(Duration(seconds: 1), () {
-              if (_controller.value == 0) {
-                _controller.value = 1;
-              } else {
-                _controller.value = 0;
-              }
-            // });
-          },
-          child: Container(
-            child: Transform.scale(
-              scale: _scaleAnimation.value,
-              child: DecoratedBox(
-                child: child,
-                position: DecorationPosition.background,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: calculateColor(),
-                ),
+        return Container(
+          child: Transform.scale(
+            scale: _scaleAnimation.value,
+            child: DecoratedBox(
+              child: child,
+              position: DecorationPosition.background,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: calculateColor(),
               ),
             ),
           ),
         );
       },
-      child: Container(
-        color: Colors.transparent,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            // side: widget.unitList[widget.index]["selected"]
-            //     ? BorderSide(
-            //         // border color
-            //         color: secondaryColor,
-            //         // color: Colors.blue.shade200,
-            //         // border thickness
-            //         width: 3,
-            //       )
-            //     : BorderSide.none,
-            //set border radius more than 50% of height and width to make circle
-          ),
-          elevation: 5,
-          shadowColor: Colors.black,
-          color: Colors.amber[100],
-          // color: Colors.primaries[index % 10][100],
-          child: Stack(
-            children: [
-              Positioned(
-                  top: 5,
-                  left: 10,
+      child: GestureDetector(
+        onTap: () {
+          // debugPrint("SSS111 >> ${widget.index}");
+
+          // // Future.delayed(Duration(seconds: 1), () {
+          // if (_controller.value == 0) {
+          //   _controller.value = 1;
+          // } else {
+          //   _controller.value = 0;
+          // }
+          // _controller.stop();
+          // // });
+        },
+        child: Container(
+          color: Colors.transparent,
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+              // side: widget.unitList[widget.index]["selected"]
+              //     ? BorderSide(
+              //         // border color
+              //         color: secondaryColor,
+              //         // color: Colors.blue.shade200,
+              //         // border thickness
+              //         width: 3,
+              //       )
+              //     : BorderSide.none,
+              //set border radius more than 50% of height and width to make circle
+            ),
+            elevation: 5,
+            shadowColor: Colors.black,
+            color: Colors.amber[100],
+            // color: Colors.primaries[index % 10][100],
+            child: Stack(
+              children: [
+                Positioned(
+                    top: 5,
+                    left: 10,
+                    child: Text(
+                      "Unit",
+                      style: TextStyle(
+                          color: widget.unitList[widget.index]["selected"]
+                              ? secondaryColor
+                              : Colors.black,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400),
+                    )),
+                Center(
+                    child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
-                    "Unit",
+                    '${widget.unitList[widget.index]["lesson"]}',
                     style: TextStyle(
                         color: widget.unitList[widget.index]["selected"]
                             ? secondaryColor
                             : Colors.black,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400),
-                  )),
-              Center(
-                  child: Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text(
-                  '${widget.unitList[widget.index]["lesson"]}',
-                  style: TextStyle(
-                      color: widget.unitList[widget.index]["selected"]
-                          ? secondaryColor
-                          : Colors.black,
-                      fontSize: 23,
-                      fontWeight: FontWeight.bold),
-                ),
-              )),
-            ],
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )),
+              ],
+            ),
           ),
         ),
       ),
