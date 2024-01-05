@@ -87,6 +87,7 @@ flutter:
     - assets/
     - assets/alphabet/hiragana/
     - assets/alphabet/katakana/
+    - assets/avatar/
     - assets/video/
     - assets/lesson1.mp3
   #   - images/a_dot_burr.jpeg

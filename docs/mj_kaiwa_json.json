@@ -1,700 +1,700 @@
 {
     "items": [
         {
-            "myanmar": "",
+            "myanmar": "ရတာပေါ့ / သေချာတာပေါ့။",
             "english": "Sure. / Of course.",
             "japan": "もちろんです。",
             "romaji": "mochirondesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဂုဏ်ယူပါတယ်။",
             "english": "Congratulations!",
             "japan": "おめでとう　ございます。",
             "romaji": "omedetougozaimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အခုဘယ်အချိန်ရှိပြီလဲ။",
             "english": "What time is it now?",
             "japan": "いま なんじですか。",
             "romaji": "imananjidesuka",
             "kanji": "今　何時ですか。"
         },
         {
-            "myanmar": "",
+            "myanmar": "၈ နာရီပါ။",
             "english": "It’s 8:00.",
             "japan": "８じです。",
             "romaji": "hachigidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အိပ်ချင်နေပြီ။",
             "english": "I’m sleepy.",
             "japan": "ねむいです。",
             "romaji": "nemuidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကျွန်တော်က တိုကျိုမှာ နေတာပါ။",
             "english": "I live in Tokyo.",
             "japan": "とうきょうに すんでいます。",
             "romaji": "toukyounisundeimasu",
             "kanji": "東京に住んでいます。"
         },
         {
-            "myanmar": "",
+            "myanmar": "အခုတလော အခြေအနေဘယ်လိုရှိလဲ။",
             "english": "How are you doing lately?",
             "japan": "さいきん、どうですか？",
             "romaji": "saikindoudesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အအေးမိခဲ့တယ်။",
             "english": "I caught a cold.",
             "japan": "さぜを ひきました。",
             "romaji": "sazewohikimashita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဖျားနေတယ်။",
             "english": "I have a fever.",
             "japan": "ねつがあります。",
             "romaji": "netsugaarimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ခေါင်းကိုက်နေတယ်။",
             "english": "I have a headache.",
             "japan": "あたまが いたいです。",
             "romaji": "atamagaitaidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဗိုက်ဆာတယ်။",
             "english": "I’m hungry.",
             "japan": "おなか すきました。",
             "romaji": "onakasukimashita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဗိုက်ပြည့်နေပြီ။",
             "english": "I’m full.",
             "japan": "おなか いっぱいです。",
             "romaji": "onakaippaidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ရေဆာတယ်။",
             "english": "I’m thirsty.",
             "japan": "のどが かわいました。",
             "romaji": "nodogakawaimashita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "Anime ကြိုက်တယ်။",
             "english": "I love anime.",
             "japan": "アニメが だいすきです。",
             "romaji": "animegadaisukidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အဲ့တာကို သိပ်မကြိုက်ဘူး။",
             "english": "I don’t really like it.",
             "japan": "あんまり すきじゃないです。",
             "romaji": "anmarisukijyanaidesu",
             "kanji": "あんまり 好きじゃないです。"
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘာလို့လဲ။",
             "english": "Why?",
             "japan": "どしてですか。",
             "romaji": "doshitedesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အသက်ဘယ်လောက်လဲ။",
             "english": "How old are you?",
             "japan": "なんさいですか。",
             "romaji": "nansaidesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘာပြောလိုက်တာလဲ။",
             "english": "What did you say?",
             "japan": "なんていいましたか。",
             "romaji": "nanteiimashitaka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အခုဘယ်မှာလဲ။",
             "english": "Where are you now?",
             "japan": "いま どこにいますか。",
             "romaji": "imadokoniimasuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘယ်သွားမလို့လဲ။",
             "english": "Where are you going?",
             "japan": "どこにいくんですか。",
             "romaji": "dokoniikundesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကြိုးစားထား။",
             "english": "Break your leg.",
             "japan": "がんばってください。",
             "romaji": "ganbattekudasai",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကြားရလား။",
             "english": "Can you hear me?",
             "japan": "きこえますか。",
             "romaji": "kikoemasuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘယ်လောက်လဲ။",
             "english": "How much?",
             "japan": "いくらですか。",
             "romaji": "ikuradesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ငွေသားနဲ့ ရှင်းပါမယ်။",
             "english": "I’ll pay in cash.",
             "japan": "げんきんで はらいます。",
             "romaji": "genkindeharaimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ခရက်ဒစ်ကတ်နဲ့ ရှင်းပါမယ်။",
             "english": "I’ll pay by credit card.",
             "japan": "かーどで はらいます。",
             "romaji": "kadodeharaimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အစားအစာအတွက် ကျေးဇူးတင်ပါတယ်။",
             "english": "Thanks for the food /meal. (Before)",
             "japan": "いただきます。",
             "romaji": "itadakimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အစားအစာအတွက် ကျေးဇူးတင်ပါတယ်။",
             "english": "Thanks for the food /meal. (After)",
             "japan": "ごちそうさまでした。",
             "romaji": "gochisousamadeshita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဝါသနာက ဘာလဲ။",
             "english": "What’re your hobbies?",
             "japan": "しゅみわなんですか。",
             "romaji": "syumiwanandesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဂစ်တာတီးရတာ ဝါသနာပါတယ်။",
             "english": "My hobby is Guitar.",
             "japan": "しゅみは ギターです。",
             "romaji": "syumihagitadesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အင်္ဂလိပ်လို ပြောနိုင်လား။",
             "english": "Do/can you speak English?",
             "japan": "えいごが はなせですか。",
             "romaji": "eigogahanasedesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အနည်းငယ် ပြောနိုင်ပါတယ် ။",
             "english": "I can speak a little.",
             "japan": "すこし はなせます。",
             "romaji": "sukoshihanasemasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မေ့သွားတယ်။",
             "english": "I forgot.",
             "japan": "わすれました。",
             "romaji": "wasuremashita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘယ်လိုလဲ။",
             "english": "How is that?",
             "japan": "どうですか。",
             "romaji": "doudesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘယ်လိုဖြစ်ခဲ့လဲ။",
             "english": "How was it?",
             "japan": "どうでしたか。",
             "romaji": "doudeshitaka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မနေ့က ဘာလုပ်ခဲ့လဲ။",
             "english": "What did you do yesterday.",
             "japan": "きのうは なにを しましたか。",
             "romaji": "kinouhananiwoshimashitaka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဒီနေ့ ဘာလုပ်မှာလဲ။",
             "english": "What are you doing today?",
             "japan": "きょうは なにを しますか。",
             "romaji": "kyouhananiwoshimasuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အခု ဘာလုပ်နေတာလဲ။",
             "english": "What are you doing now.",
             "japan": "いま なにを していますか。",
             "romaji": "imananiwoshiteimasuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘာလုပ်ချင်တာလဲ။",
             "english": "What do you want to do?",
             "japan": "なにをしたいですか。",
             "romaji": "naniwoshitaidesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကာရာအိုကေ သွားကြမလား?။",
             "english": "Why don’t we go to Karaoke?",
             "japan": "カラオケにいきませんか。",
             "romaji": "karaokeniikimasenka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကောင်းသားပဲ။",
             "english": "Sounds good.",
             "japan": "いいですね。",
             "romaji": "iidesune",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ရှက်စရာကောင်းလိုက်တာ။",
             "english": "I’m embarrassed. It’s embarrassing.",
             "japan": "はずかしいです。",
             "romaji": "hazukashiidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အလုပ်များနေလို့ပါ။",
             "english": "I’m busy.",
             "japan": "いすがしいです。",
             "romaji": "isugashiidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မလုပ်ရသေးပါ။",
             "english": "Not yet.",
             "japan": "まだです。",
             "romaji": "madadesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘယ်ဟာကို ပိုကြိုက်လဲ။",
             "english": "Which do you prefer?",
             "japan": "どうちのほうがすきですか。",
             "romaji": "douchinohougasukidesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကျွန်တော်လည်း တူတူပဲ။",
             "english": "Me too.",
             "japan": "わたしもです。",
             "romaji": "watashimodesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မြန်မြန်လုပ်ပေးပါ။",
             "english": "Hurry up.",
             "japan": "いそいでください。",
             "romaji": "isoidekudasai",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဂရုစိုက်ပါ။",
             "english": "Be careful.",
             "japan": "きをつけてください。",
             "romaji": "kiwotsuketekudasai",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကားတစ်စီးရချင်တယ်။",
             "english": "I want a car.",
             "japan": "くるまがほしいです。",
             "romaji": "kurumagahoshiidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘယ်လိုထင်လဲ။",
             "english": "What do you think?",
             "japan": "どうおもいますか。",
             "romaji": "douomoimasuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ပင်ပန်းသွားပြီနော်။",
             "english": "Good job! / Well done!",
             "japan": "おつかれさまでした。",
             "romaji": "otsukaresamadeshita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။",
             "english": "Nice to meet you.",
             "japan": "はじめまして。",
             "romaji": "hajimemashite",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။",
             "english": "Good morning.",
             "japan": "おはようございます。",
             "romaji": "ohayougozaimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မင်္ဂလာနေ့လယ်ခင်းပါ။",
             "english": "Good afternoon. / Hi",
             "japan": "こんにちは。",
             "romaji": "konnichiha",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မင်္ဂလာညနေခင်းပါ။",
             "english": "Good evening.",
             "japan": "こんばんは。",
             "romaji": "konbanha",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကောင်းသောည ဖြစ်ပါစေ။",
             "english": "Good night.",
             "japan": "おやつみなさい。",
             "romaji": "oyatsuminasai",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "နှုတ်ဆက်ပါတယ်။",
             "english": "Good bye.",
             "japan": "さようなら。",
             "romaji": "sayounara",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မနက်ဖြန်တွေ့မယ်။",
             "english": "See you tomorrow.",
             "japan": "また あした。",
             "romaji": "mataashita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "နောက်မှဆုံကြမယ်။",
             "english": "See you later.",
             "japan": "また あとで。",
             "romaji": "mataatode",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "တစ်ကယ်လား။",
             "english": "Really?",
             "japan": "ほんとうですか。",
             "romaji": "hontoudesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "နောက်တာပါ။",
             "english": "I’m just kidding.",
             "japan": "うそです。",
             "romaji": "usodesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "နားလည်ပြီ။",
             "english": "I see. / That makes sense.",
             "japan": "なるほど。",
             "romaji": "naruhodo",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အဲ့တာကို မသိခဲ့ဘူး။",
             "english": "I didn’t know that.",
             "japan": "しりませんでした。",
             "romaji": "shirimasendeshita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "သုံးဆောင်ပါ / ဒီမှာပါ / ကျေးဇူးပြု၍။",
             "english": "Here you go. / Please",
             "japan": "どうぞ。",
             "romaji": "douzo",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကျေးဇူးတင်ပါတယ်။",
             "english": "Thank you.",
             "japan": "ありがとうございます。",
             "romaji": "arigatougozaimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ရပါတယ်။",
             "english": "Don’t mention it.",
             "japan": "いえいえ。",
             "romaji": "ieie",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကျေးဇူးတင်ပါတယ်။",
             "english": "Thank you, too.",
             "japan": "こちらこそ。",
             "romaji": "kochirakoso",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "တောင်းပန်ပါတယ်။",
             "english": "I’m sorry.",
             "japan": "すみません。",
             "romaji": "sumimasen",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အဆင်ပြေရဲ့လား။",
             "english": "Are you alright?",
             "japan": "だいじょうぶですか。",
             "romaji": "daijyoubudesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ရပါတယ်။",
             "english": "I’m alright./Ok/Fine.",
             "japan": "だいじょうぶです。",
             "romaji": "daijyoubudesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဖြစ်ကောင်းဖြစ်နိုင်ပါတယ်။",
             "english": "May be.",
             "japan": "たぶん。",
             "romaji": "tabun",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကျေးဇူးပြု၍။",
             "english": "Please.",
             "japan": "おねがいします。",
             "romaji": "onegaishimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "နောက်တစ်ခု/တစ်ခေါက် လောက်ပါ။",
             "english": "One more, Please?",
             "japan": "もいちど おねがいします。",
             "romaji": "moichidoonegaishimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဖြည်းဖြည်းလုပ်ပါ။",
             "english": "Slowly, please?",
             "japan": "ゆっくりおねがいします。",
             "romaji": "yukkurionegaishimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကြည့်ရှုစောင့်ရှောက်ပေးပါဦး။",
             "english": "Please be nice to me.",
             "japan": "よろしくおねがいします。",
             "romaji": "yoroshikuonegaishimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ခနလေးပါ။",
             "english": "Just a moment.",
             "japan": "ちょっとまってください。",
             "romaji": "cyottomattekudasai",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မေးစရာရှိလို့ပါ။",
             "english": "I’ve a question.",
             "japan": "しつもんが あります。",
             "romaji": "shitsumongaarimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "နားလည်လား။",
             "english": "Do you understand so far?",
             "japan": "わかりましたか。",
             "romaji": "wakarimashitaka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဟုတ်ကဲ့။ နားလည်ပါတယ်။",
             "english": "Yes, I got it./ It’s clear.",
             "japan": "はい、わかりました。",
             "romaji": "hai wakarimashita",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဟင့်အင့်း။ နားမလည်သေးဘူး။",
             "english": "No, I don’t understand./ It’s not clear.",
             "japan": "いいえ、わかりません。",
             "romaji": "iie wakarimasen",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မင်းသိလား။",
             "english": "Do you know?",
             "japan": "しっていますか。",
             "romaji": "shitteimasuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "သိတယ်။",
             "english": "I know.",
             "japan": "しっています。",
             "romaji": "shitteimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ငါမသိဘူး။",
             "english": "I don’t know",
             "japan": "しりません。",
             "romaji": "shirimasen",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "သွားကြစို့။",
             "english": "Let’s go.",
             "japan": "いきましょう！",
             "romaji": "ikimasyou",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "လှတယ်။",
             "english": "It/She/You are beautiful.",
             "japan": "きれいです。",
             "romaji": "kireidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "မိုက်တယ်။",
             "english": "It/She/You are cool.",
             "japan": "かっこいいです。",
             "romaji": "kakkoiidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အရသာရှိတယ်။",
             "english": "It’s delicious.",
             "japan": "おいしいです。",
             "romaji": "oishiidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အရသာမရှိဘူး။",
             "english": "It’s not delicious.",
             "japan": "おいしくないです。",
             "romaji": "oishikunaidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "လွယ်တယ်။",
             "english": "It’s easy.",
             "japan": "かんたんです。",
             "romaji": "kantandesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ခက်တယ်။",
             "english": "It’s difficult.",
             "japan": "むずかしいです。",
             "romaji": "muzukashiidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "နီးတယ်။",
             "english": "It’s near.",
             "japan": "ちかいです。",
             "romaji": "chikaidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဝေးတယ်။",
             "english": "It’s far.",
             "japan": "とおいです。",
             "romaji": "tooidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဈေးကြီးတယ်။",
             "english": "It’s expensive.",
             "japan": "たかいです。",
             "romaji": "takaidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဈေးချိုတယ်။",
             "english": "It’s cheap.",
             "japan": "やすいです。",
             "romaji": "yasuidesu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဟုတ်တယ်နော်။",
             "english": "You are right./ I agree./ That’s right.",
             "japan": "そうですね。",
             "romaji": "soudesune",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "Gym သွားမယ်။",
             "english": "I go to a gym./ I’ll go to a gym.",
             "japan": "ジムに いきます。",
             "romaji": "jimuniikimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဆူရှိစားမယ်။",
             "english": "I eat Sushi./ I’ll eat Sushi.",
             "japan": "すしをたべます。",
             "romaji": "sushiwotabemasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ကဖေးမှာ စာလုပ်မယ်။",
             "english": "I study at a Cafe./ I’ll study at a Cafe.",
             "japan": "カフェで べんきょうします。",
             "romaji": "kafudebenkyoushimasu",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဘူတာရုံက ဘယ်နားမှာလဲ။",
             "english": "Where is the station?",
             "japan": "えきはどこですか。",
             "romaji": "ekihadokodesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "အဲ့တာက ဘာလဲ။",
             "english": "What’s that?",
             "japan": "それは なんですか。",
             "romaji": "sorehanandesuka",
             "kanji": ""
         },
         {
-            "myanmar": "",
+            "myanmar": "ဒါက ပန်းသီးနဲ့ ဘောပင်ပါ။",
             "english": "This’s an apple and pen.",
             "japan": "それは りんご と ペン です。",
             "romaji": "soreharingotopendesu",
