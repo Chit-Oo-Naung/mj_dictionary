@@ -5,6 +5,7 @@ import 'package:mjdictionary/components/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/grammar.dart';
 import 'package:mjdictionary/grammar_list.dart';
+import 'package:mjdictionary/conversation.dart';
 import 'package:mjdictionary/kaiwa.dart';
 import 'package:mjdictionary/translate.dart';
 import 'package:mjdictionary/utils/colors_util.dart';
@@ -47,7 +48,7 @@ class _BookmarkPageState extends State<BookmarkPage>
       "icon": Icons.markunread_mailbox_rounded,
       "page": GrammarFormListPage()
     },
-    {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": ConversationPage()},
+    {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
     {"title": "Conversation", "icon": Icons.tag_faces_sharp, "page": ConversationPage()},{
       "title": "FlashCard Kotoba",
       "icon": Icons.memory_rounded,

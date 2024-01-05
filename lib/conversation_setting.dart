@@ -3,14 +3,14 @@ import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
 import 'package:mjdictionary/utils/colors_util.dart';
 
-class KaiwaSettingPage extends StatefulWidget {
-  const KaiwaSettingPage({super.key});
+class ConversationSettingPage extends StatefulWidget {
+  const ConversationSettingPage({super.key});
 
   @override
-  State<KaiwaSettingPage> createState() => _KaiwaSettingPageState();
+  State<ConversationSettingPage> createState() => _ConversationSettingPageState();
 }
 
-class _KaiwaSettingPageState extends State<KaiwaSettingPage> {
+class _ConversationSettingPageState extends State<ConversationSettingPage> {
   
   @override
   Widget build(BuildContext context) {
