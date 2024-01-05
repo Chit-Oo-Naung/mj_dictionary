@@ -12,14 +12,14 @@ import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class KaiwaPage extends StatefulWidget {
-  const KaiwaPage({Key? key}) : super(key: key);
+class ConversationPage extends StatefulWidget {
+  const ConversationPage({Key? key}) : super(key: key);
 
   @override
-  _KaiwaPageState createState() => _KaiwaPageState();
+  _ConversationPageState createState() => _ConversationPageState();
 }
 
-class _KaiwaPageState extends State<KaiwaPage> {
+class _ConversationPageState extends State<ConversationPage> {
   late Stream _stream;
   FocusNode nodeSearch = FocusNode();
   StreamController _streamController = StreamController();

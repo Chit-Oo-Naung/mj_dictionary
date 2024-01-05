@@ -47,8 +47,8 @@ class _BookmarkPageState extends State<BookmarkPage>
       "icon": Icons.markunread_mailbox_rounded,
       "page": GrammarFormListPage()
     },
-    {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
-    {
+    {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": ConversationPage()},
+    {"title": "Conversation", "icon": Icons.tag_faces_sharp, "page": ConversationPage()},{
       "title": "FlashCard Kotoba",
       "icon": Icons.memory_rounded,
       "page": ChooseUnitsPage()
