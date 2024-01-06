@@ -36,43 +36,92 @@ class _KaiwaPageState extends State<KaiwaPage> {
   final player = AudioPlayer();
   Duration? duration;
 
-  final List<Message> messages = [
-    Message(
-        sender: sato,
-        time: 'さとうさん',
-        avatar: sato.avatar,
-        isRead: true,
-        text: "おはようございます。\nမင်္ဂလာနံနက်ခင်းပါ။",
-        unreadCount: 0,
-        isMe: false),
-    Message(
-        sender: yamada,
-        time: 'やまださん',
-        isRead: true,
-        avatar: yamada.avatar,
-        text:
-            "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。\nမင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
-        unreadCount: 0,
-        isMe: true),
-    Message(
-        sender: mira,
-        time: 'ミラー さん',
-        isRead: true,
-        avatar: mira.avatar,
-        text:
-            "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。\nတွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
-        unreadCount: 0,
-        isMe: false),
-    Message(
-        sender: sato,
-        time: 'さとうさん',
-        avatar: sato.avatar,
-        isRead: true,
-        text:
-            "さとうけいこです。 どうぞ　よろしく。\nစတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
-        unreadCount: 0,
-        isMe: false),
+  final List messages = [
+    {
+      "speaker": "",
+      "japan": "はじめまして",
+      "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။",
+      "isMe": false,
+      "avatar": "",
+      "type": "title",
+      "newline": ""
+    },
+    {
+      "speaker": "さとうさん",
+      "japan": "おはようございます。",
+      "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။",
+      "isMe": false,
+      "avatar": "sato",
+      "type": "text",
+      "newline": ""
+    },
+    {
+      "speaker": "やまださん",
+      "japan": "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。",
+      "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
+      "isMe": true,
+      "avatar": "yamada",
+      "type": "text",
+      "newline": ""
+    },
+    {
+      "speaker": "ミラー さん",
+      "japan": "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。",
+      "myanmar":
+          "တွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+      "isMe": false,
+      "avatar": "mira",
+      "type": "text",
+      "newline": ""
+    },
+    {
+      "speaker": "さとうさん",
+      "japan": "さとうけいこです。 どうぞ　よろしく。",
+      "myanmar": "စတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+      "isMe": true,
+      "avatar": "sato",
+      "type": "text",
+      "newline": ""
+    }
   ];
+
+  // final List<Message> messages = [
+  //   Message(
+  //       sender: sato,
+  //       time: 'さとうさん',
+  //       avatar: sato.avatar,
+  //       isRead: true,
+  //       text: "おはようございます。\nမင်္ဂလာနံနက်ခင်းပါ။",
+  //       unreadCount: 0,
+  //       isMe: false),
+  //   Message(
+  //       sender: yamada,
+  //       time: 'やまださん',
+  //       isRead: true,
+  //       avatar: yamada.avatar,
+  //       text:
+  //           "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。\nမင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
+  //       unreadCount: 0,
+  //       isMe: true),
+  //   Message(
+  //       sender: mira,
+  //       time: 'ミラー さん',
+  //       isRead: true,
+  //       avatar: mira.avatar,
+  //       text:
+  //           "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。\nတွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+  //       unreadCount: 0,
+  //       isMe: false),
+  //   Message(
+  //       sender: sato,
+  //       time: 'さとうさん',
+  //       avatar: sato.avatar,
+  //       isRead: true,
+  //       text:
+  //           "さとうけいこです。 どうぞ　よろしく。\nစတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+  //       unreadCount: 0,
+  //       isMe: false),
+  // ];
 
   final User user = currentUser;
 
@@ -92,23 +141,38 @@ class _KaiwaPageState extends State<KaiwaPage> {
     letterSpacing: 1,
   );
 
+  var audioUrl =
+      "https://drive.google.com/uc?export=view&id=1TOi_7FxttBXv_YFEzW-C04ZF4yF48YuX";
+  // var audioLocalUrl = "assets/lesson1.mp3";
+
   @override
   void initState() {
     setPlayerConfig();
+    player.onDurationChanged.listen((Duration d) {
+      duration = d;
+      debugPrint('Max duration: $d');
+    });
+    player.onPositionChanged.listen((event) {
+      print("Current Position : $event");
+    });
+    player.onSeekComplete.listen((event) {
+      print("Seek Complete!");
+    });
+    player.onPlayerComplete.listen((event) async {
+      print("Player Complete!");
+      await player.play(UrlSource(audioUrl.toString()));
+
+      await player.pause();
+      setState(() {});
+    });
     super.initState();
   }
 
   setPlayerConfig() async {
-    var audioUrl =
-        "https://drive.google.com/uc?export=view&id=1TOi_7FxttBXv_YFEzW-C04ZF4yF48YuX";
-    // var audioLocalUrl = "assets/lesson1.mp3";
-    player.onDurationChanged.listen((Duration d) {
-      duration = d;
-      print('Max duration: $d');
-    });
     await player.play(UrlSource(audioUrl.toString()));
 
     await player.pause();
+
     setState(() {});
     // await player.play(AssetSource(audioLocalUrl));
   }
@@ -195,102 +259,156 @@ class _KaiwaPageState extends State<KaiwaPage> {
                           itemCount: messages.length,
                           itemBuilder: (context, int index) {
                             final message = messages[index];
-                            bool isMe = message.isMe;
-                            return Container(
-                              margin:
-                                  EdgeInsets.only(top: 5, left: 10, right: 10),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 5),
-                                    child: Row(
-                                      mainAxisAlignment: isMe
-                                          ? MainAxisAlignment.end
-                                          : MainAxisAlignment.start,
+                            bool isMe = message["isMe"];
+                            return message["type"] == "title"
+                                ? Container(
+                                    padding: EdgeInsets.only(top: 5),
+                                    child: Column(
                                       children: [
-                                        if (!isMe)
-                                          SizedBox(
-                                            width: 40,
-                                          ),
-                                        // Icon(
-                                        //   Icons.done_all,
-                                        //   size: 20,
-                                        //   color: bodyTextTime.color,
-                                        // ),
-                                        SizedBox(
-                                          width: 8,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              message["japan"],
+                                              style: bodyTextMessage.copyWith(
+                                                  color: Colors.grey[900]
+                                                  // isMe
+                                                  //     ? Colors.white
+                                                  //     : Colors.grey[800]
+                                                  ),
+                                            ),
+                                          ],
                                         ),
-                                        Text(
-                                          message.time,
-                                          style: bodyTextTime,
-                                        ),
-                                        if (isMe)
-                                          SizedBox(
-                                            width: 45,
-                                          ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              message["myanmar"],
+                                              style: bodyTextMessage.copyWith(
+                                                  color: Colors.grey[900]
+                                                  // isMe
+                                                  //     ? Colors.white
+                                                  //     : Colors.grey[800]
+                                                  ),
+                                            ),
+                                          ],
+                                        )
                                       ],
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: isMe
-                                        ? MainAxisAlignment.end
-                                        : MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      if (!isMe)
-                                        CircleAvatar(
-                                          radius: 15,
-                                          backgroundImage:
-                                              AssetImage(message.sender.avatar),
-                                        ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        padding: EdgeInsets.all(10),
-                                        constraints: BoxConstraints(
-                                            maxWidth: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.6),
-                                        decoration: BoxDecoration(
-                                            color:
-                                                // Colors.amberAccent,
-                                                isMe
-                                                    ? Colors.amberAccent
-                                                    : Colors.grey[200],
-                                            borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(16),
-                                              topRight: Radius.circular(16),
-                                              bottomLeft: Radius.circular(
-                                                  isMe ? 12 : 0),
-                                              bottomRight: Radius.circular(
-                                                  isMe ? 0 : 12),
-                                            )),
-                                        child: Text(
-                                          messages[index].text,
-                                          style: bodyTextMessage.copyWith(
-                                              color: Colors.grey[800]
-                                              // isMe
-                                              //     ? Colors.white
-                                              //     : Colors.grey[800]
+                                  )
+                                : Container(
+                                    margin: EdgeInsets.only(
+                                        top: 5, left: 10, right: 10),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 5),
+                                          child: Row(
+                                            mainAxisAlignment: isMe
+                                                ? MainAxisAlignment.end
+                                                : MainAxisAlignment.start,
+                                            children: [
+                                              if (!isMe)
+                                                SizedBox(
+                                                  width: 40,
+                                                ),
+                                              // Icon(
+                                              //   Icons.done_all,
+                                              //   size: 20,
+                                              //   color: bodyTextTime.color,
+                                              // ),
+                                              SizedBox(
+                                                width: 8,
                                               ),
+                                              Text(
+                                                message["speaker"],
+                                                style: bodyTextTime,
+                                              ),
+                                              if (isMe)
+                                                SizedBox(
+                                                  width: 45,
+                                                ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      if (isMe)
-                                        CircleAvatar(
-                                          radius: 15,
-                                          backgroundImage:
-                                              AssetImage(message.sender.avatar),
+                                        Row(
+                                          mainAxisAlignment: isMe
+                                              ? MainAxisAlignment.end
+                                              : MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            if (!isMe)
+                                              ConvertAvatar(
+                                                  name: message["avatar"]),
+                                            // CircleAvatar(
+                                            //   radius: 15,
+                                            //   backgroundImage: convertAvatar(message["avatar"]),
+                                            //       // AssetImage(message.sender.avatar),
+                                            // ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.all(10),
+                                              constraints: BoxConstraints(
+                                                  maxWidth:
+                                                      MediaQuery.of(context)
+                                                              .size
+                                                              .width *
+                                                          0.6),
+                                              decoration: BoxDecoration(
+                                                  color:
+                                                      // Colors.amberAccent,
+                                                      isMe
+                                                          ? Colors.amberAccent
+                                                          : Colors.grey[200],
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                    topLeft:
+                                                        Radius.circular(16),
+                                                    topRight:
+                                                        Radius.circular(16),
+                                                    bottomLeft: Radius.circular(
+                                                        isMe ? 12 : 0),
+                                                    bottomRight:
+                                                        Radius.circular(
+                                                            isMe ? 0 : 12),
+                                                  )),
+                                              child: Text(
+                                                '${message["japan"]}\n${message["myanmar"]}',
+                                                style: bodyTextMessage.copyWith(
+                                                    color: Colors.grey[800]
+                                                    // isMe
+                                                    //     ? Colors.white
+                                                    //     : Colors.grey[800]
+                                                    ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            if (isMe)
+                                              ConvertAvatar(
+                                                  name: message["avatar"]),
+                                            // CircleAvatar(
+                                            //   radius: 15,
+                                            //   backgroundImage: AssetImage(
+                                            //       "asssets/avatar/sato.jpg"),
+                                            //   // AssetImage(message.sender.avatar),
+                                            // ),
+                                          ],
                                         ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            );
+                                      ],
+                                    ),
+                                  );
                           }),
                     ),
                   ),
@@ -409,6 +527,27 @@ class _KaiwaPageState extends State<KaiwaPage> {
             ),
           ],
         ));
+  }
+}
+
+class ConvertAvatar extends StatelessWidget {
+  final String name;
+  const ConvertAvatar({super.key, required this.name});
+
+  @override
+  Widget build(BuildContext context) {
+    // if (name == "sato") {
+    return CircleAvatar(
+      radius: 15,
+      backgroundImage: AssetImage(name == "sato"
+          ? sato.avatar
+          : name == "yamada"
+              ? yamada.avatar
+              : name == "mira"
+                  ? mira.avatar
+                  : currentUser.avatar),
+    );
+    // }
   }
 }
 
