@@ -5,6 +5,7 @@ import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
 import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:intl/intl.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
 class KaiwaPage extends StatefulWidget {
   const KaiwaPage({super.key});
@@ -34,9 +35,11 @@ class KaiwaPage extends StatefulWidget {
 // }
 
 class _KaiwaPageState extends State<KaiwaPage> {
+  AutoScrollController _autoScrollController = AutoScrollController();
   final player = AudioPlayer();
   Duration? duration;
-  var currentIndex =0;
+  var currentIndex = 0;
+  String currentTime = "";
 
   final List audioClip = [
     {"time": "0:00:05", "index": 1},
@@ -154,7 +157,8 @@ class _KaiwaPageState extends State<KaiwaPage> {
   );
 
   var audioUrl =
-      "https://drive.google.com/uc?export=view&id=1TOi_7FxttBXv_YFEzW-C04ZF4yF48YuX";
+      "https://drive.google.com/uc?export=view&id=1MQjL6FtRIGoRdziQYvZew7l9_zqNU2eb";
+      
   // var audioLocalUrl = "assets/lesson1.mp3";
 
   @override
@@ -166,34 +170,83 @@ class _KaiwaPageState extends State<KaiwaPage> {
     });
     player.onPositionChanged.listen((event) {
       print("Current Position : $event");
+      currentTime = event.toString();
       // var currentAudio = event.toString();
       // TimeOfDay _startTime = TimeOfDay(
       //   hour: int.parse(currentAudio.split(":")[0]),
       //   minute: int.parse(currentAudio.split(":")[1]),
       // );
-      DateTime currentAudio = DateFormat("hh:mm:ss").parse(event.toString());
+      // DateTime currentAudio = DateFormat("hh:mm:ss").parse(event.toString());
 
       for (var i = 0; i < audioClip.length; i++) {
-        DateTime clipAudio = DateFormat("hh:mm:ss").parse(audioClip[i]["time"]);
+        // DateTime clipAudio = DateFormat("hh:mm:ss").parse(audioClip[i]["time"]);
         // final range = DateTimeRange(start: currentAudio, end: clipAudio);
         // debugPrint("RANGE >> $range");
         if (event.toString().startsWith(audioClip[i]["time"])) {
           setState(() {
             debugPrint("Change Index!");
             currentIndex = audioClip[i]["index"];
+            _autoScrollController.scrollToIndex(currentIndex,
+                preferPosition: AutoScrollPosition.middle);
           });
         }
       }
     });
-    player.onSeekComplete.listen((event) {
-      print("Seek Complete!");
-    });
+
     player.onPlayerComplete.listen((event) async {
       print("Player Complete!");
       await player.play(UrlSource(audioUrl.toString()));
       await player.pause();
       currentIndex = 0;
+      _autoScrollController.scrollToIndex(currentIndex,
+          preferPosition: AutoScrollPosition.middle);
       setState(() {});
+    });
+    player.onSeekComplete.listen((event) {
+      print("Seek Complete!");
+      Future.delayed(Duration(milliseconds: 300), () async {
+        print("Seek Complete! $currentTime");
+        DateTime currentAudio = DateFormat("h:mm:ss").parse(currentTime);
+        bool check = true;
+        for (var i = 0; i < audioClip.length; i++) {
+          DateTime clipAudio =
+              await DateFormat("h:mm:ss").parse(audioClip[i]["time"]);
+          // final range = DateTimeRange(start: currentAudio, end: clipAudio);
+          // debugPrint("RANGE >> $range");
+          var compareTime = currentAudio.isBefore(clipAudio);
+         
+          if (compareTime && check) {
+            check = false;
+            print("AAAA >> ${audioClip[i]["time"]}");
+            if(i > 0){
+
+            }else{
+              setState(() {
+              debugPrint("Change Index!");
+              currentIndex = audioClip[i]["index"];
+              _autoScrollController.scrollToIndex(currentIndex,
+                  preferPosition: AutoScrollPosition.middle);
+            });
+            }
+          }
+          if (!compareTime && check && i == audioClip.length - 1) {
+            setState(() {
+              debugPrint("Change Index!");
+              currentIndex = audioClip[i]["index"];
+              _autoScrollController.scrollToIndex(currentIndex,
+                  preferPosition: AutoScrollPosition.middle);
+            });
+          }
+          // if (event.toString().startsWith(audioClip[i]["time"])) {
+          //   setState(() {
+          //     debugPrint("Change Index!");
+          //     currentIndex = audioClip[i]["index"];
+          //     _autoScrollController.scrollToIndex(currentIndex,
+          //         preferPosition: AutoScrollPosition.middle);
+          //   });
+          // }
+        }
+      });
     });
     super.initState();
   }
@@ -279,17 +332,31 @@ class _KaiwaPageState extends State<KaiwaPage> {
                 //     ),
                 //   ],
                 // ),
-                Container(
-                  child: Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20.0, bottom: 85),
-                      child: ListView.builder(
-                          reverse: false,
-                          itemCount: messages.length,
-                          itemBuilder: (context, int index) {
-                            final message = messages[index];
-                            bool isMe = message["isMe"];
-                            return message["type"] == "title"
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0, bottom: 85),
+                    child: ListView.builder(
+                        controller: _autoScrollController,
+                        keyboardDismissBehavior:
+                            ScrollViewKeyboardDismissBehavior.onDrag,
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        // itemExtent: 50,
+                        padding: const EdgeInsets.all(0.0),
+                        // itemCount: snapshot.data.length,
+                        itemCount: messages.length,
+                        // separatorBuilder: (BuildContext context, int index) =>
+                        //     const Divider(height: 0),
+                        itemBuilder: (BuildContext context, int index) {
+                          final message = messages[index];
+                          bool isMe = message["isMe"];
+                          return AutoScrollTag(
+                            key: ValueKey(index),
+                            controller: _autoScrollController,
+                            index: index,
+                            // highlightColor:
+                            //     const Color.fromRGBO(244, 67, 54, 1),
+                            child: message["type"] == "title"
                                 ? Container(
                                     padding: EdgeInsets.only(top: 5),
                                     child: Column(
@@ -443,9 +510,172 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                         ),
                                       ],
                                     ),
-                                  );
-                          }),
-                    ),
+                                  ),
+                          );
+                        }),
+
+                    // ListView.builder(
+                    //     reverse: false,
+                    //     itemCount: messages.length,
+                    //     itemBuilder: (context, int index) {
+                    //       final message = messages[index];
+                    //       bool isMe = message["isMe"];
+                    //       return message["type"] == "title"
+                    //           ? Container(
+                    //               padding: EdgeInsets.only(top: 5),
+                    //               child: Column(
+                    //                 children: [
+                    //                   Row(
+                    //                     mainAxisAlignment:
+                    //                         MainAxisAlignment.center,
+                    //                     crossAxisAlignment:
+                    //                         CrossAxisAlignment.center,
+                    //                     children: [
+                    //                       Text(
+                    //                         message["japan"],
+                    //                         style: bodyTextMessage.copyWith(
+                    //                             color: currentIndex == index
+                    //                                 ? Colors.red
+                    //                                 : Colors.grey[900]
+                    //                             // isMe
+                    //                             //     ? Colors.white
+                    //                             //     : Colors.grey[800]
+                    //                             ),
+                    //                       ),
+                    //                     ],
+                    //                   ),
+                    //                   Row(
+                    //                     mainAxisAlignment:
+                    //                         MainAxisAlignment.center,
+                    //                     crossAxisAlignment:
+                    //                         CrossAxisAlignment.center,
+                    //                     children: [
+                    //                       Text(
+                    //                         message["myanmar"],
+                    //                         style: bodyTextMessage.copyWith(
+                    //                             color: currentIndex == index
+                    //                                 ? Colors.red
+                    //                                 : Colors.grey[900]
+                    //                             // isMe
+                    //                             //     ? Colors.white
+                    //                             //     : Colors.grey[800]
+                    //                             ),
+                    //                       ),
+                    //                     ],
+                    //                   )
+                    //                 ],
+                    //               ),
+                    //             )
+                    //           : Container(
+                    //               margin: EdgeInsets.only(
+                    //                   top: 5, left: 10, right: 10),
+                    //               child: Column(
+                    //                 children: [
+                    //                   Padding(
+                    //                     padding:
+                    //                         const EdgeInsets.only(top: 5),
+                    //                     child: Row(
+                    //                       mainAxisAlignment: isMe
+                    //                           ? MainAxisAlignment.end
+                    //                           : MainAxisAlignment.start,
+                    //                       children: [
+                    //                         if (!isMe)
+                    //                           SizedBox(
+                    //                             width: 40,
+                    //                           ),
+                    //                         // Icon(
+                    //                         //   Icons.done_all,
+                    //                         //   size: 20,
+                    //                         //   color: bodyTextTime.color,
+                    //                         // ),
+                    //                         SizedBox(
+                    //                           width: 8,
+                    //                         ),
+                    //                         Text(
+                    //                           message["speaker"],
+                    //                           style: bodyTextTime,
+                    //                         ),
+                    //                         if (isMe)
+                    //                           SizedBox(
+                    //                             width: 45,
+                    //                           ),
+                    //                       ],
+                    //                     ),
+                    //                   ),
+                    //                   Row(
+                    //                     mainAxisAlignment: isMe
+                    //                         ? MainAxisAlignment.end
+                    //                         : MainAxisAlignment.start,
+                    //                     crossAxisAlignment:
+                    //                         CrossAxisAlignment.end,
+                    //                     children: [
+                    //                       if (!isMe)
+                    //                         ConvertAvatar(
+                    //                             name: message["avatar"]),
+                    //                       // CircleAvatar(
+                    //                       //   radius: 15,
+                    //                       //   backgroundImage: convertAvatar(message["avatar"]),
+                    //                       //       // AssetImage(message.sender.avatar),
+                    //                       // ),
+                    //                       SizedBox(
+                    //                         width: 10,
+                    //                       ),
+                    //                       Container(
+                    //                         padding: EdgeInsets.all(10),
+                    //                         constraints: BoxConstraints(
+                    //                             maxWidth:
+                    //                                 MediaQuery.of(context)
+                    //                                         .size
+                    //                                         .width *
+                    //                                     0.6),
+                    //                         decoration: BoxDecoration(
+                    //                             color:
+                    //                                 // Colors.amberAccent,
+                    //                                 isMe
+                    //                                     ? Colors.amberAccent
+                    //                                     : Colors.grey[200],
+                    //                             borderRadius:
+                    //                                 BorderRadius.only(
+                    //                               topLeft:
+                    //                                   Radius.circular(16),
+                    //                               topRight:
+                    //                                   Radius.circular(16),
+                    //                               bottomLeft: Radius.circular(
+                    //                                   isMe ? 12 : 0),
+                    //                               bottomRight:
+                    //                                   Radius.circular(
+                    //                                       isMe ? 0 : 12),
+                    //                             )),
+                    //                         child: Text(
+                    //                           '${message["japan"]}\n${message["myanmar"]}',
+                    //                           style: bodyTextMessage.copyWith(
+                    //                               color: currentIndex == index
+                    //                                   ? Colors.red
+                    //                                   : Colors.grey[800]
+                    //                               // isMe
+                    //                               //     ? Colors.white
+                    //                               //     : Colors.grey[800]
+                    //                               ),
+                    //                         ),
+                    //                       ),
+                    //                       SizedBox(
+                    //                         width: 10,
+                    //                       ),
+                    //                       if (isMe)
+                    //                         ConvertAvatar(
+                    //                             name: message["avatar"]),
+                    //                       // CircleAvatar(
+                    //                       //   radius: 15,
+                    //                       //   backgroundImage: AssetImage(
+                    //                       //       "asssets/avatar/sato.jpg"),
+                    //                       //   // AssetImage(message.sender.avatar),
+                    //                       // ),
+                    //                     ],
+                    //                   ),
+                    //                 ],
+                    //               ),
+                    //             );
+                    //     }),
                   ),
                 )
               ],
