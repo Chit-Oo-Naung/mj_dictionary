@@ -53,6 +53,7 @@ dependencies:
   auto_animated: ^3.2.0
   audioplayers: ^5.2.1
   audio_video_progress_bar: ^2.0.1
+  intl: ^0.19.0
   # flutter_advanced_switch: ^3.0.1
 
 dev_dependencies:

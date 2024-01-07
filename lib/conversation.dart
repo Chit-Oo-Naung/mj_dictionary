@@ -173,13 +173,13 @@ class _ConversationPageState extends State<ConversationPage> {
                     builder: (BuildContext ctx, AsyncSnapshot snapshot) {
                       if (snapshot.data == null) {
                         return const Center(
-                          child: Text("Enter a search word"),
+                          child: Text("Oops! no results found!"),
                         );
                       }
 
                       if (snapshot.data.length == 0) {
                         return const Center(
-                          child: Text("Oops! no results found"),
+                          child: Text("Oops! no results found!"),
                         );
                       }
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
 import 'package:mjdictionary/utils/colors_util.dart';
+import 'package:intl/intl.dart';
 
 class KaiwaPage extends StatefulWidget {
   const KaiwaPage({super.key});
@@ -12,29 +13,40 @@ class KaiwaPage extends StatefulWidget {
   State<KaiwaPage> createState() => _KaiwaPageState();
 }
 
-class Message {
-  final User sender;
-  final String avatar;
-  final String time;
-  final int unreadCount;
-  final bool isRead;
-  final String text;
-  final bool isMe;
+// class Message {
+//   final User sender;
+//   final String avatar;
+//   final String time;
+//   final int unreadCount;
+//   final bool isRead;
+//   final String text;
+//   final bool isMe;
 
-  Message({
-    required this.sender,
-    required this.avatar,
-    required this.time,
-    required this.unreadCount,
-    required this.text,
-    required this.isRead,
-    required this.isMe,
-  });
-}
+//   Message({
+//     required this.sender,
+//     required this.avatar,
+//     required this.time,
+//     required this.unreadCount,
+//     required this.text,
+//     required this.isRead,
+//     required this.isMe,
+//   });
+// }
 
 class _KaiwaPageState extends State<KaiwaPage> {
   final player = AudioPlayer();
   Duration? duration;
+  var currentIndex =0;
+
+  final List audioClip = [
+    {"time": "0:00:05", "index": 1},
+    {"time": "0:00:07", "index": 2},
+    {"time": "0:00:12", "index": 3},
+    {"time": "0:00:18", "index": 4},
+  ];
+
+  // String titleJapan = "はじめまして";
+  // String titleMyanmar = "တွေ့ရတာ ဝမ်းသာပါတယ်။";
 
   final List messages = [
     {
@@ -154,6 +166,24 @@ class _KaiwaPageState extends State<KaiwaPage> {
     });
     player.onPositionChanged.listen((event) {
       print("Current Position : $event");
+      // var currentAudio = event.toString();
+      // TimeOfDay _startTime = TimeOfDay(
+      //   hour: int.parse(currentAudio.split(":")[0]),
+      //   minute: int.parse(currentAudio.split(":")[1]),
+      // );
+      DateTime currentAudio = DateFormat("hh:mm:ss").parse(event.toString());
+
+      for (var i = 0; i < audioClip.length; i++) {
+        DateTime clipAudio = DateFormat("hh:mm:ss").parse(audioClip[i]["time"]);
+        // final range = DateTimeRange(start: currentAudio, end: clipAudio);
+        // debugPrint("RANGE >> $range");
+        if (event.toString().startsWith(audioClip[i]["time"])) {
+          setState(() {
+            debugPrint("Change Index!");
+            currentIndex = audioClip[i]["index"];
+          });
+        }
+      }
     });
     player.onSeekComplete.listen((event) {
       print("Seek Complete!");
@@ -161,8 +191,8 @@ class _KaiwaPageState extends State<KaiwaPage> {
     player.onPlayerComplete.listen((event) async {
       print("Player Complete!");
       await player.play(UrlSource(audioUrl.toString()));
-
       await player.pause();
+      currentIndex = 0;
       setState(() {});
     });
     super.initState();
@@ -170,7 +200,6 @@ class _KaiwaPageState extends State<KaiwaPage> {
 
   setPlayerConfig() async {
     await player.play(UrlSource(audioUrl.toString()));
-
     await player.pause();
 
     setState(() {});
@@ -274,7 +303,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                             Text(
                                               message["japan"],
                                               style: bodyTextMessage.copyWith(
-                                                  color: Colors.grey[900]
+                                                  color: currentIndex == index
+                                                      ? Colors.red
+                                                      : Colors.grey[900]
                                                   // isMe
                                                   //     ? Colors.white
                                                   //     : Colors.grey[800]
@@ -291,7 +322,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                             Text(
                                               message["myanmar"],
                                               style: bodyTextMessage.copyWith(
-                                                  color: Colors.grey[900]
+                                                  color: currentIndex == index
+                                                      ? Colors.red
+                                                      : Colors.grey[900]
                                                   // isMe
                                                   //     ? Colors.white
                                                   //     : Colors.grey[800]
@@ -385,7 +418,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                               child: Text(
                                                 '${message["japan"]}\n${message["myanmar"]}',
                                                 style: bodyTextMessage.copyWith(
-                                                    color: Colors.grey[800]
+                                                    color: currentIndex == index
+                                                        ? Colors.red
+                                                        : Colors.grey[800]
                                                     // isMe
                                                     //     ? Colors.white
                                                     //     : Colors.grey[800]
