@@ -1,4 +1,5 @@
 import 'package:auto_animated/auto_animated.dart';
+import 'package:mjdictionary/choose_kaiwa.dart';
 import 'package:mjdictionary/choose_units.dart';
 import 'package:mjdictionary/common/global_constant.dart';
 import 'package:mjdictionary/components/colors.dart';
@@ -48,8 +49,8 @@ class _BookmarkPageState extends State<BookmarkPage>
       "icon": Icons.markunread_mailbox_rounded,
       "page": GrammarFormListPage()
     },
-    {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": KaiwaPage()},
-    {"title": "Conversation", "icon": Icons.tag_faces_sharp, "page": ConversationPage()},{
+    {"title": "Kaiwa", "icon": Icons.tag_faces_sharp, "page": ChooseKaiwaPage()},
+    {"title": "Conversation", "icon": Icons.view_list_rounded, "page": ConversationPage()},{
       "title": "FlashCard Kotoba",
       "icon": Icons.memory_rounded,
       "page": ChooseUnitsPage()

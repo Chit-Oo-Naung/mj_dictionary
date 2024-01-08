@@ -1,0 +1,226 @@
+{
+    "items": [
+        {
+            "lesson": "1",
+            "level": "N5",
+            "audioUrl": "https://drive.google.com/uc?export=view&id=1kenoe5kudkLZpKmrJ0uzF2of0vh_2cfs",
+            "new": "",
+            "messages": [
+                {
+                    "speaker": "",
+                    "speakerkanji": "",
+                    "japan": "はじめまして",
+                    "kanji": "",
+                    "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။",
+                    "romaji": "hajimemashite.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "title",
+                    "newline": ""
+                },
+                {
+                    "speaker": "さとうさん",
+                    "speakerkanji": "",
+                    "japan": "おはようございます。",
+                    "kanji": "ohayou gozai masu.",
+                    "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။",
+                    "romaji": "",
+                    "isMe": false,
+                    "avatar": "sato",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "やまだいちろうさん",
+                    "speakerkanji": "山田一郎さん",
+                    "japan": "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。",
+                    "kanji": "おはようございます。佐藤さん、こちらは　マイク・ミラーさんです。",
+                    "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
+                    "romaji": "ohayou gozai masu. satosan, kochira wa maiku mira-san desu.",
+                    "isMe": true,
+                    "avatar": "yamada",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "ミラー さん",
+                    "speakerkanji": "",
+                    "japan": "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。",
+                    "kanji": "初めまして。マイク・ミラーです。アメリカから　来ました。どうぞ　よろしく。",
+                    "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+                    "romaji": "hajimemashite. maiku mira-desu. amerika kara kimashita. douzo yoroshiku.",
+                    "isMe": false,
+                    "avatar": "mira",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "さとうさん",
+                    "speakerkanji": "",
+                    "japan": "さとうけいこです。 どうぞ　よろしく。",
+                    "kanji": "佐藤けい子です。 どうぞ　よろしく。",
+                    "myanmar": "စတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+                    "romaji": "sato keiko desu. douzo yoroshiku.",
+                    "isMe": true,
+                    "avatar": "sato",
+                    "type": "text",
+                    "newline": ""
+                }
+            ],
+            "audioclip": [
+                {
+                    "time": "0:00:05",
+                    "index": 1
+                },
+                {
+                    "time": "0:00:07",
+                    "index": 2
+                },
+                {
+                    "time": "0:00:12",
+                    "index": 3
+                },
+                {
+                    "time": "0:00:18",
+                    "index": 4
+                }
+            ]
+        },
+        {
+            "lesson": "2",
+            "level": "N5",
+            "audioUrl": "https://drive.google.com/uc?export=view&id=1fCsTEqfIsmAj-hnxTxXal-93FnP3cnko",
+            "new": "",
+            "messages": [
+                {
+                    "speaker": "",
+                    "speakerkanji": "",
+                    "japan": "これから、おせわに　なります。",
+                    "kanji": "これから、お世話に　なります。",
+                    "myanmar": "အစစအရာရာ ကူညီဖေးမပေးပါ။　",
+                    "romaji": "korekara osewani narimasu.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "title",
+                    "newline": ""
+                },
+                {
+                    "speaker": "やまだいちろうさん",
+                    "speakerkanji": "山田一郎さん",
+                    "japan": "はい、どなたですか。",
+                    "kanji": "",
+                    "myanmar": "ဟုတ်ကဲ့၊ ဘယ်သူပါလဲ။",
+                    "romaji": "hai. donata desuka.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "サントスさん",
+                    "speakerkanji": "",
+                    "japan": "408の　サントスです。",
+                    "kanji": "",
+                    "myanmar": "၄၀၈ က စန်တိုစု ဖြစ်ပါတယ်။",
+                    "romaji": "408 no santosu desu.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "サントスさん",
+                    "speakerkanji": "",
+                    "japan": "こんにちは。サントスです。　これから、おせわに　なります。　どうぞ　よろしく　おねがいします。",
+                    "kanji": "こんにちは。サントスです。　これから、お世話に　なります。　どうぞ　よろしく　お願いします。",
+                    "myanmar": "မင်္ဂလာနေ့ခင်းပါ။ စန်တိုစုဖြစ်ပါတယ်။ အစစအရာရာ ကူညီဖေးမပေးပါ။ မိတ်ဆွေအဖြစ် အသိအမှတ်ပြုပါ ခင်ဗျား။",
+                    "romaji": "konnichiwa. santosu desu. korekara osewani narimasu. douzo yoroshiku onegaishimasu.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "やまだいちろうさん",
+                    "speakerkanji": "山田一郎さん",
+                    "japan": "こちらこそ　よろしく おねがいします。",
+                    "kanji": "こちらこそ　よろしく お願いします。",
+                    "myanmar": "ကျွန်တော့ကိုလည်း မိတ်ဆွေအဖြစ်အသိအမှတ်ပြုပါ။",
+                    "romaji": "kochirakoso yoroshiku onegaishimasu.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "サントスさん",
+                    "speakerkanji": "",
+                    "japan": "あのう、これ、コーヒーです。どうぞ。",
+                    "kanji": "",
+                    "myanmar": "ဟိုလေ–ဒါ ကော်ဖီပါ။ သုံးဆောင်ပါ။",
+                    "romaji": "anou, kore, ko-hi-desu. douzo.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "text",
+                    "newline": ""
+                },
+                {
+                    "speaker": "やまだいちろうさん",
+                    "speakerkanji": "山田一郎さん",
+                    "japan": "どうも、ありがとう　ございます。",
+                    "kanji": "",
+                    "myanmar": "ကျေးဇူးတင်ပါတယ်။",
+                    "romaji": "doumo arigatou gozaimasu.",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "text",
+                    "newline": ""
+                }
+            ],
+            "audioclip": [
+                {
+                    "time": "0:00:05",
+                    "index": 1
+                }
+            ]
+        },
+        {
+            "lesson": "3",
+            "level": "N5",
+            "audioUrl": "",
+            "new": "",
+            "messages": [
+                {
+                    "speaker": "",
+                    "speakerkanji": "",
+                    "japan": "",
+                    "kanji": "",
+                    "myanmar": "",
+                    "romaji": "",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "title",
+                    "newline": ""
+                },
+                {
+                    "speaker": "",
+                    "speakerkanji": "",
+                    "japan": "",
+                    "kanji": "",
+                    "myanmar": "",
+                    "romaji": "",
+                    "isMe": false,
+                    "avatar": "",
+                    "type": "text",
+                    "newline": ""
+                }
+            ],
+            "audioclip": [
+                {
+                    "time": "0:00:05",
+                    "index": 1
+                }
+            ]
+        }
+    ]
+}

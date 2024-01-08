@@ -8,7 +8,11 @@ import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class KaiwaPage extends StatefulWidget {
-  const KaiwaPage({super.key});
+  final String lesson;
+  final String audioUrl;
+  final List messages;
+  final List audioClip;
+  const KaiwaPage({super.key, required this.lesson, required this.messages, required this.audioClip, required this.audioUrl});
 
   @override
   State<KaiwaPage> createState() => _KaiwaPageState();
@@ -40,65 +44,68 @@ class _KaiwaPageState extends State<KaiwaPage> {
   Duration? duration;
   var currentIndex = 0;
   String currentTime = "";
+  bool showMyanmar = true;
+  bool showLeftSide = false;
+  bool loading = true;
 
-  final List audioClip = [
-    {"time": "0:00:05", "index": 1},
-    {"time": "0:00:07", "index": 2},
-    {"time": "0:00:12", "index": 3},
-    {"time": "0:00:18", "index": 4},
-  ];
+  // final List audioClip = [
+  //   {"time": "0:00:05", "index": 1},
+  //   {"time": "0:00:07", "index": 2},
+  //   {"time": "0:00:12", "index": 3},
+  //   {"time": "0:00:18", "index": 4},
+  // ];
 
-  // String titleJapan = "はじめまして";
-  // String titleMyanmar = "တွေ့ရတာ ဝမ်းသာပါတယ်။";
+  // // String titleJapan = "はじめまして";
+  // // String titleMyanmar = "တွေ့ရတာ ဝမ်းသာပါတယ်။";
 
-  final List messages = [
-    {
-      "speaker": "",
-      "japan": "はじめまして",
-      "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။",
-      "isMe": false,
-      "avatar": "",
-      "type": "title",
-      "newline": ""
-    },
-    {
-      "speaker": "さとうさん",
-      "japan": "おはようございます。",
-      "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။",
-      "isMe": false,
-      "avatar": "sato",
-      "type": "text",
-      "newline": ""
-    },
-    {
-      "speaker": "やまださん",
-      "japan": "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。",
-      "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
-      "isMe": true,
-      "avatar": "yamada",
-      "type": "text",
-      "newline": ""
-    },
-    {
-      "speaker": "ミラー さん",
-      "japan": "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。",
-      "myanmar":
-          "တွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
-      "isMe": false,
-      "avatar": "mira",
-      "type": "text",
-      "newline": ""
-    },
-    {
-      "speaker": "さとうさん",
-      "japan": "さとうけいこです。 どうぞ　よろしく。",
-      "myanmar": "စတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
-      "isMe": true,
-      "avatar": "sato",
-      "type": "text",
-      "newline": ""
-    }
-  ];
+  // final List messages = [
+  //   {
+  //     "speaker": "",
+  //     "japan": "はじめまして",
+  //     "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။",
+  //     "isMe": false,
+  //     "avatar": "",
+  //     "type": "title",
+  //     "newline": ""
+  //   },
+  //   {
+  //     "speaker": "さとうさん",
+  //     "japan": "おはようございます。",
+  //     "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။",
+  //     "isMe": false,
+  //     "avatar": "sato",
+  //     "type": "text",
+  //     "newline": ""
+  //   },
+  //   {
+  //     "speaker": "やまださん",
+  //     "japan": "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。",
+  //     "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
+  //     "isMe": true,
+  //     "avatar": "yamada",
+  //     "type": "text",
+  //     "newline": ""
+  //   },
+  //   {
+  //     "speaker": "ミラー さん",
+  //     "japan": "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。",
+  //     "myanmar":
+  //         "တွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+  //     "isMe": false,
+  //     "avatar": "mira",
+  //     "type": "text",
+  //     "newline": ""
+  //   },
+  //   {
+  //     "speaker": "さとうさん",
+  //     "japan": "さとうけいこです。 どうぞ　よろしく。",
+  //     "myanmar": "စတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
+  //     "isMe": true,
+  //     "avatar": "sato",
+  //     "type": "text",
+  //     "newline": ""
+  //   }
+  // ];
 
   // final List<Message> messages = [
   //   Message(
@@ -156,8 +163,8 @@ class _KaiwaPageState extends State<KaiwaPage> {
     letterSpacing: 1,
   );
 
-  var audioUrl =
-      "https://drive.google.com/uc?export=view&id=1MQjL6FtRIGoRdziQYvZew7l9_zqNU2eb";
+  // var audioUrl =
+  //     "https://drive.google.com/uc?export=view&id=1OtVK0zS9SlN2UomNVqt3RUgCFq4LVQlp";
 
   // var audioLocalUrl = "assets/lesson1.mp3";
 
@@ -178,14 +185,14 @@ class _KaiwaPageState extends State<KaiwaPage> {
       // );
       // DateTime currentAudio = DateFormat("hh:mm:ss").parse(event.toString());
 
-      for (var i = 0; i < audioClip.length; i++) {
-        // DateTime clipAudio = DateFormat("hh:mm:ss").parse(audioClip[i]["time"]);
+      for (var i = 0; i < widget.audioClip.length; i++) {
+        // DateTime clipAudio = DateFormat("hh:mm:ss").parse(widget.audioClip[i]["time"]);
         // final range = DateTimeRange(start: currentAudio, end: clipAudio);
         // debugPrint("RANGE >> $range");
-        if (event.toString().startsWith(audioClip[i]["time"])) {
+        if (event.toString().startsWith(widget.audioClip[i]["time"])) {
           setState(() {
             debugPrint("Change Index!");
-            currentIndex = audioClip[i]["index"];
+            currentIndex = widget.audioClip[i]["index"];
             _autoScrollController.scrollToIndex(currentIndex,
                 preferPosition: AutoScrollPosition.middle);
           });
@@ -195,7 +202,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
 
     player.onPlayerComplete.listen((event) async {
       print("Player Complete!");
-      await player.play(UrlSource(audioUrl.toString()));
+      await player.play(UrlSource(widget.audioUrl.toString()));
       await player.pause();
       currentIndex = 0;
       _autoScrollController.scrollToIndex(currentIndex,
@@ -208,20 +215,20 @@ class _KaiwaPageState extends State<KaiwaPage> {
         print("Seek Complete! $currentTime");
         DateTime currentAudio = DateFormat("h:mm:ss").parse(currentTime);
         bool check = true;
-        for (var i = 0; i < audioClip.length; i++) {
+        for (var i = 0; i < widget.audioClip.length; i++) {
           DateTime clipAudio =
-              await DateFormat("h:mm:ss").parse(audioClip[i]["time"]);
+              await DateFormat("h:mm:ss").parse(widget.audioClip[i]["time"]);
           // final range = DateTimeRange(start: currentAudio, end: clipAudio);
           // debugPrint("RANGE >> $range");
           var compareTime = currentAudio.isBefore(clipAudio);
 
           if (compareTime && check) {
             check = false;
-            print("AAAA >> ${audioClip[i]["time"]}");
+            print("AAAA >> ${widget.audioClip[i]["time"]}");
             if (i > 0) {
               setState(() {
                 debugPrint("Change Index!");
-                currentIndex = audioClip[i]["index"] - 1;
+                currentIndex = widget.audioClip[i]["index"] - 1;
                 _autoScrollController.scrollToIndex(currentIndex,
                     preferPosition: AutoScrollPosition.middle);
               });
@@ -234,10 +241,10 @@ class _KaiwaPageState extends State<KaiwaPage> {
               });
             }
           }
-          if (!compareTime && check && i == audioClip.length - 1) {
+          if (!compareTime && check && i == widget.audioClip.length - 1) {
             setState(() {
               debugPrint("Change Index!");
-              currentIndex = audioClip[i]["index"];
+              currentIndex = widget.audioClip[i]["index"];
               _autoScrollController.scrollToIndex(currentIndex,
                   preferPosition: AutoScrollPosition.middle);
             });
@@ -249,9 +256,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
   }
 
   setPlayerConfig() async {
-    await player.play(UrlSource(audioUrl.toString()));
+    await player.play(UrlSource(widget.audioUrl.toString()));
     await player.pause();
-
+    loading = false;
     setState(() {});
     // await player.play(AssetSource(audioLocalUrl));
   }
@@ -303,7 +310,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
                         ),
                       ),
                       GradientText(
-                        "Kaiwa",
+                        "Unit ${widget.lesson} - Kaiwa",
                         style: TextStyle(
                           fontSize: 19.0,
                           fontWeight: FontWeight.bold,
@@ -341,12 +348,12 @@ class _KaiwaPageState extends State<KaiwaPage> {
                         // itemExtent: 50,
                         padding: const EdgeInsets.all(0.0),
                         // itemCount: snapshot.data.length,
-                        itemCount: messages.length,
+                        itemCount: widget.messages.length,
                         // separatorBuilder: (BuildContext context, int index) =>
                         //     const Divider(height: 0),
                         itemBuilder: (BuildContext context, int index) {
-                          final message = messages[index];
-                          bool isMe = message["isMe"];
+                          final message = widget.messages[index];
+                          bool isMe = message["isMe"] && !showLeftSide;
                           return AutoScrollTag(
                             key: ValueKey(index),
                             controller: _autoScrollController,
@@ -368,7 +375,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                               message["japan"],
                                               style: bodyTextMessage.copyWith(
                                                   color: currentIndex == index
-                                                      ? Colors.red
+                                                      ? secondaryColor
                                                       : Colors.grey[900]
                                                   // isMe
                                                   //     ? Colors.white
@@ -387,7 +394,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                               message["myanmar"],
                                               style: bodyTextMessage.copyWith(
                                                   color: currentIndex == index
-                                                      ? Colors.red
+                                                      ? secondaryColor
                                                       : Colors.grey[900]
                                                   // isMe
                                                   //     ? Colors.white
@@ -480,10 +487,12 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                                             isMe ? 0 : 12),
                                                   )),
                                               child: Text(
-                                                '${message["japan"]}\n${message["myanmar"]}',
+                                                showMyanmar
+                                                    ? '${message["japan"]}\n${message["myanmar"]}'
+                                                    : '${message["japan"]}',
                                                 style: bodyTextMessage.copyWith(
                                                     color: currentIndex == index
-                                                        ? Colors.red
+                                                        ? secondaryColor
                                                         : Colors.grey[800]
                                                     // isMe
                                                     //     ? Colors.white
@@ -732,30 +741,38 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                       width: MediaQuery.of(context).size.width *
                                           0.02,
                                     ),
-                                    GestureDetector(
-                                      onTap: () async {
-                                        if (player.state ==
-                                            PlayerState.playing) {
-                                          await player.pause();
-                                        } else {
-                                          await player.resume();
-                                        }
-                                        setState(() {});
-                                      },
-                                      child: Container(
-                                        // color: Colors.blue,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.13,
-                                        child: Icon(
-                                          player.state == PlayerState.playing
-                                              ? Icons.pause_circle
-                                              : Icons.play_circle,
-                                          color: Colors.black,
-                                          size: 55,
-                                        ),
-                                      ),
-                                    ),
+                                    loading
+                                        ? Container(
+                                            width: 30,
+                                            height: 30,
+                                            // padding: EdgeInsets.only(left: 5),
+                                            child: CircularProgressIndicator(color: Colors.black26,))
+                                        : GestureDetector(
+                                            onTap: () async {
+                                              if (player.state ==
+                                                  PlayerState.playing) {
+                                                await player.pause();
+                                              } else {
+                                                await player.resume();
+                                              }
+                                              setState(() {});
+                                            },
+                                            child: Container(
+                                              // color: Colors.blue,
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.13,
+                                              child: Icon(
+                                                player.state ==
+                                                        PlayerState.playing
+                                                    ? Icons.pause_circle
+                                                    : Icons.play_circle,
+                                                color: Colors.black,
+                                                size: 55,
+                                              ),
+                                            ),
+                                          ),
                                   ],
                                 ),
                               ],
