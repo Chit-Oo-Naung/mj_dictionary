@@ -158,7 +158,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
 
   var audioUrl =
       "https://drive.google.com/uc?export=view&id=1MQjL6FtRIGoRdziQYvZew7l9_zqNU2eb";
-      
+
   // var audioLocalUrl = "assets/lesson1.mp3";
 
   @override
@@ -214,19 +214,24 @@ class _KaiwaPageState extends State<KaiwaPage> {
           // final range = DateTimeRange(start: currentAudio, end: clipAudio);
           // debugPrint("RANGE >> $range");
           var compareTime = currentAudio.isBefore(clipAudio);
-         
+
           if (compareTime && check) {
             check = false;
             print("AAAA >> ${audioClip[i]["time"]}");
-            if(i > 0){
-
-            }else{
+            if (i > 0) {
               setState(() {
-              debugPrint("Change Index!");
-              currentIndex = audioClip[i]["index"];
-              _autoScrollController.scrollToIndex(currentIndex,
-                  preferPosition: AutoScrollPosition.middle);
-            });
+                debugPrint("Change Index!");
+                currentIndex = audioClip[i]["index"] - 1;
+                _autoScrollController.scrollToIndex(currentIndex,
+                    preferPosition: AutoScrollPosition.middle);
+              });
+            } else {
+              setState(() {
+                debugPrint("Change Index!");
+                currentIndex = 0;
+                _autoScrollController.scrollToIndex(currentIndex,
+                    preferPosition: AutoScrollPosition.middle);
+              });
             }
           }
           if (!compareTime && check && i == audioClip.length - 1) {
@@ -237,14 +242,6 @@ class _KaiwaPageState extends State<KaiwaPage> {
                   preferPosition: AutoScrollPosition.middle);
             });
           }
-          // if (event.toString().startsWith(audioClip[i]["time"])) {
-          //   setState(() {
-          //     debugPrint("Change Index!");
-          //     currentIndex = audioClip[i]["index"];
-          //     _autoScrollController.scrollToIndex(currentIndex,
-          //         preferPosition: AutoScrollPosition.middle);
-          //   });
-          // }
         }
       });
     });
