@@ -3,6 +3,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:mjdictionary/components/colors.dart';
 import 'package:mjdictionary/components/gradient_text.dart';
+import 'package:mjdictionary/components/kaiwa_text.dart';
 import 'package:mjdictionary/utils/colors_util.dart';
 import 'package:intl/intl.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -12,7 +13,12 @@ class KaiwaPage extends StatefulWidget {
   final String audioUrl;
   final List messages;
   final List audioClip;
-  const KaiwaPage({super.key, required this.lesson, required this.messages, required this.audioClip, required this.audioUrl});
+  const KaiwaPage(
+      {super.key,
+      required this.lesson,
+      required this.messages,
+      required this.audioClip,
+      required this.audioUrl});
 
   @override
   State<KaiwaPage> createState() => _KaiwaPageState();
@@ -111,7 +117,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
   //   Message(
   //       sender: sato,
   //       time: 'さとうさん',
-  //       avatar: sato.avatar,
+  //       kanji: '', avatar: sato.avatar,
   //       isRead: true,
   //       text: "おはようございます。\nမင်္ဂလာနံနက်ခင်းပါ။",
   //       unreadCount: 0,
@@ -120,7 +126,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
   //       sender: yamada,
   //       time: 'やまださん',
   //       isRead: true,
-  //       avatar: yamada.avatar,
+  //       kanji: '', avatar: yamada.avatar,
   //       text:
   //           "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。\nမင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
   //       unreadCount: 0,
@@ -129,7 +135,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
   //       sender: mira,
   //       time: 'ミラー さん',
   //       isRead: true,
-  //       avatar: mira.avatar,
+  //       kanji: '', avatar: mira.avatar,
   //       text:
   //           "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。\nတွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
   //       unreadCount: 0,
@@ -137,7 +143,7 @@ class _KaiwaPageState extends State<KaiwaPage> {
   //   Message(
   //       sender: sato,
   //       time: 'さとうさん',
-  //       avatar: sato.avatar,
+  //       kanji: '', avatar: sato.avatar,
   //       isRead: true,
   //       text:
   //           "さとうけいこです。 どうぞ　よろしく。\nစတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
@@ -153,15 +159,15 @@ class _KaiwaPageState extends State<KaiwaPage> {
   // static Color kAccentColorVariant = Color(0xffF7A3A2);
   // static Color kUnreadChatBG = Color(0xffEE1D1D);
 
-  static final TextStyle bodyTextMessage =
-      TextStyle(fontSize: 15, fontWeight: FontWeight.w600);
+  // static final TextStyle bodyTextMessage =
+  //     TextStyle(fontSize: 15, fontWeight: FontWeight.w600);
 
-  static final TextStyle bodyTextTime = TextStyle(
-    color: Color(0xffAEABC9),
-    fontSize: 11,
-    fontWeight: FontWeight.bold,
-    letterSpacing: 1,
-  );
+  // static final TextStyle bodyTextTime = TextStyle(
+  //   color: Color(0xffAEABC9),
+  //   fontSize: 11,
+  //   fontWeight: FontWeight.bold,
+  //   letterSpacing: 1,
+  // );
 
   // var audioUrl =
   //     "https://drive.google.com/uc?export=view&id=1OtVK0zS9SlN2UomNVqt3RUgCFq4LVQlp";
@@ -431,9 +437,12 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                               SizedBox(
                                                 width: 8,
                                               ),
-                                              Text(
-                                                message["speaker"],
-                                                style: bodyTextTime,
+                                              // Text(
+                                              //   message["speaker"],
+                                              //   style: bodyTextTime,
+                                              // ),
+                                              ConvertSpeaker(
+                                                name: message["avatar"],
                                               ),
                                               if (isMe)
                                                 SizedBox(
@@ -746,7 +755,9 @@ class _KaiwaPageState extends State<KaiwaPage> {
                                             width: 30,
                                             height: 30,
                                             // padding: EdgeInsets.only(left: 5),
-                                            child: CircularProgressIndicator(color: Colors.black26,))
+                                            child: CircularProgressIndicator(
+                                              color: Colors.black26,
+                                            ))
                                         : GestureDetector(
                                             onTap: () async {
                                               if (player.state ==
@@ -809,6 +820,30 @@ class _KaiwaPageState extends State<KaiwaPage> {
   }
 }
 
+class ConvertSpeaker extends StatelessWidget {
+  final String name;
+  const ConvertSpeaker({super.key, required this.name});
+
+  @override
+  Widget build(BuildContext context) {
+    // if (name == "sato") {
+    return Text(
+      name == "sato"
+          ? sato.name
+          : name == "yamada"
+              ? yamada.name
+              : name == "mira"
+                  ? mira.name
+                  : name == "santosu"
+                      ? santosu.name
+                      : currentUser.name,
+      style: bodyTextTime,
+    );
+
+    // }
+  }
+}
+
 class ConvertAvatar extends StatelessWidget {
   final String name;
   const ConvertAvatar({super.key, required this.name});
@@ -824,7 +859,9 @@ class ConvertAvatar extends StatelessWidget {
               ? yamada.avatar
               : name == "mira"
                   ? mira.avatar
-                  : currentUser.avatar),
+                  : name == "santosu"
+                      ? santosu.avatar
+                      : currentUser.avatar),
     );
     // }
   }
@@ -833,36 +870,28 @@ class ConvertAvatar extends StatelessWidget {
 class User {
   final int id;
   final String name;
+  final String kanji;
   final String avatar;
 
   User({
     required this.id,
     required this.name,
+    required this.kanji,
     required this.avatar,
   });
 }
 
-final User currentUser = User(id: 0, name: 'You', avatar: 'assets/logo.png');
+final User currentUser =
+    User(id: 0, name: 'You', kanji: '', avatar: 'assets/logo.png');
 
-final User mira = User(id: 1, name: 'sato', avatar: 'assets/avatar/mira.jpg');
+final User mira =
+    User(id: 1, name: 'ミラーさん', kanji: '', avatar: 'assets/avatar/mira.jpg');
 
-final User sato = User(id: 2, name: 'Angel', avatar: 'assets/avatar/sato.jpg');
+final User sato =
+    User(id: 2, name: 'さとうさん', kanji: '佐藤さん', avatar: 'assets/avatar/sato.jpg');
 
-final User yamada =
-    User(id: 3, name: 'Deanna', avatar: 'assets/avatar/yamada.jpg');
+final User yamada = User(
+    id: 3, name: 'やまださん', kanji: '山田さん', avatar: 'assets/avatar/yamada.jpg');
 
-final User jason = User(id: 4, name: 'Json', avatar: 'assets/images/Jason.jpg');
-
-final User judd = User(id: 5, name: 'Judd', avatar: 'assets/images/Judd.jpg');
-
-final User leslie =
-    User(id: 6, name: 'Leslie', avatar: 'assets/images/Leslie.jpg');
-
-final User nathan =
-    User(id: 7, name: 'Nathan', avatar: 'assets/images/Nathan.jpg');
-
-final User stanley =
-    User(id: 8, name: 'Stanley', avatar: 'assets/images/Stanley.jpg');
-
-final User virgil =
-    User(id: 9, name: 'Virgil', avatar: 'assets/images/Virgil.jpg');
+final User santosu =
+    User(id: 4, name: 'サントスさん', kanji: '', avatar: 'assets/avatar/santosu.jpg');

@@ -7,8 +7,6 @@
             "new": "",
             "messages": [
                 {
-                    "speaker": "",
-                    "speakerkanji": "",
                     "japan": "はじめまして",
                     "kanji": "",
                     "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။",
@@ -19,8 +17,6 @@
                     "newline": ""
                 },
                 {
-                    "speaker": "さとうさん",
-                    "speakerkanji": "",
                     "japan": "おはようございます。",
                     "kanji": "ohayou gozai masu.",
                     "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။",
@@ -31,8 +27,6 @@
                     "newline": ""
                 },
                 {
-                    "speaker": "やまだいちろうさん",
-                    "speakerkanji": "山田一郎さん",
                     "japan": "おはようございます。さとうさん、こちらは　マイク・ミラーさんです。",
                     "kanji": "おはようございます。佐藤さん、こちらは　マイク・ミラーさんです。",
                     "myanmar": "မင်္ဂလာနံနက်ခင်းပါ။ စတိုစံ သူက မိုက်(ခ်)မီလာစံဖြစ်ပါတယ်။",
@@ -43,8 +37,6 @@
                     "newline": ""
                 },
                 {
-                    "speaker": "ミラー さん",
-                    "speakerkanji": "",
                     "japan": "はじめまして。マイク・ミラーです。アメリカから　きました。どうぞ　よろしく。",
                     "kanji": "初めまして。マイク・ミラーです。アメリカから　来ました。どうぞ　よろしく。",
                     "myanmar": "တွေ့ရတာ ဝမ်းသာပါတယ်။ မိုက်(ခ်)မီလာဖြစ်ပါတယ်။ အမေရိကားကနေ လာခဲ့ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
@@ -55,8 +47,6 @@
                     "newline": ""
                 },
                 {
-                    "speaker": "さとうさん",
-                    "speakerkanji": "",
                     "japan": "さとうけいこです。 どうぞ　よろしく。",
                     "kanji": "佐藤けい子です。 どうぞ　よろしく。",
                     "myanmar": "စတိုခဲအိကို ဖြစ်ပါတယ်။ ခင်ခင်မင်မင်ဆက်ဆံပေးပါ။",
@@ -93,8 +83,6 @@
             "new": "",
             "messages": [
                 {
-                    "speaker": "",
-                    "speakerkanji": "",
                     "japan": "これから、おせわに　なります。",
                     "kanji": "これから、お世話に　なります。",
                     "myanmar": "အစစအရာရာ ကူညီဖေးမပေးပါ။　",
@@ -105,74 +93,62 @@
                     "newline": ""
                 },
                 {
-                    "speaker": "やまだいちろうさん",
-                    "speakerkanji": "山田一郎さん",
                     "japan": "はい、どなたですか。",
                     "kanji": "",
                     "myanmar": "ဟုတ်ကဲ့၊ ဘယ်သူပါလဲ။",
                     "romaji": "hai. donata desuka.",
                     "isMe": false,
-                    "avatar": "",
+                    "avatar": "yamada",
                     "type": "text",
                     "newline": ""
                 },
                 {
-                    "speaker": "サントスさん",
-                    "speakerkanji": "",
                     "japan": "408の　サントスです。",
                     "kanji": "",
                     "myanmar": "၄၀၈ က စန်တိုစု ဖြစ်ပါတယ်။",
                     "romaji": "408 no santosu desu.",
-                    "isMe": false,
-                    "avatar": "",
+                    "isMe": true,
+                    "avatar": "santosu",
                     "type": "text",
                     "newline": ""
                 },
                 {
-                    "speaker": "サントスさん",
-                    "speakerkanji": "",
                     "japan": "こんにちは。サントスです。　これから、おせわに　なります。　どうぞ　よろしく　おねがいします。",
                     "kanji": "こんにちは。サントスです。　これから、お世話に　なります。　どうぞ　よろしく　お願いします。",
                     "myanmar": "မင်္ဂလာနေ့ခင်းပါ။ စန်တိုစုဖြစ်ပါတယ်။ အစစအရာရာ ကူညီဖေးမပေးပါ။ မိတ်ဆွေအဖြစ် အသိအမှတ်ပြုပါ ခင်ဗျား။",
                     "romaji": "konnichiwa. santosu desu. korekara osewani narimasu. douzo yoroshiku onegaishimasu.",
-                    "isMe": false,
-                    "avatar": "",
+                    "isMe": true,
+                    "avatar": "santosu",
                     "type": "text",
                     "newline": ""
                 },
                 {
-                    "speaker": "やまだいちろうさん",
-                    "speakerkanji": "山田一郎さん",
                     "japan": "こちらこそ　よろしく おねがいします。",
                     "kanji": "こちらこそ　よろしく お願いします。",
                     "myanmar": "ကျွန်တော့ကိုလည်း မိတ်ဆွေအဖြစ်အသိအမှတ်ပြုပါ။",
                     "romaji": "kochirakoso yoroshiku onegaishimasu.",
                     "isMe": false,
-                    "avatar": "",
+                    "avatar": "yamada",
                     "type": "text",
                     "newline": ""
                 },
                 {
-                    "speaker": "サントスさん",
-                    "speakerkanji": "",
                     "japan": "あのう、これ、コーヒーです。どうぞ。",
                     "kanji": "",
                     "myanmar": "ဟိုလေ–ဒါ ကော်ဖီပါ။ သုံးဆောင်ပါ။",
                     "romaji": "anou, kore, ko-hi-desu. douzo.",
-                    "isMe": false,
-                    "avatar": "",
+                    "isMe": true,
+                    "avatar": "santosu",
                     "type": "text",
                     "newline": ""
                 },
                 {
-                    "speaker": "やまだいちろうさん",
-                    "speakerkanji": "山田一郎さん",
                     "japan": "どうも、ありがとう　ございます。",
                     "kanji": "",
                     "myanmar": "ကျေးဇူးတင်ပါတယ်။",
                     "romaji": "doumo arigatou gozaimasu.",
                     "isMe": false,
-                    "avatar": "",
+                    "avatar": "yamada",
                     "type": "text",
                     "newline": ""
                 }
@@ -181,6 +157,21 @@
                 {
                     "time": "0:00:05",
                     "index": 1
+                },{
+                    "time": "0:00:12",
+                    "index": 2
+                },{
+                    "time": "0:00:15",
+                    "index": 3
+                },{
+                    "time": "0:00:26",
+                    "index": 4
+                },{
+                    "time": "0:00:29",
+                    "index": 5
+                },{
+                    "time": "0:00:32",
+                    "index": 6
                 }
             ]
         },
@@ -191,8 +182,6 @@
             "new": "",
             "messages": [
                 {
-                    "speaker": "",
-                    "speakerkanji": "",
                     "japan": "",
                     "kanji": "",
                     "myanmar": "",
@@ -203,8 +192,6 @@
                     "newline": ""
                 },
                 {
-                    "speaker": "",
-                    "speakerkanji": "",
                     "japan": "",
                     "kanji": "",
                     "myanmar": "",
